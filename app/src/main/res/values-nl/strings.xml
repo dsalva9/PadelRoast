@@ -1,0 +1,90 @@
+<resources>
+    <string name="app_name">PadelRoast</string>
+    <string name="app_description">Verander padelzweet en gefaalde slagen in virale AI-sportkaarten</string>
+    <string name="nav_log_match">Match Loggen</string>
+    <string name="nav_history">Historie</string>
+    <string name="header_score">Voer Matchscore In</string>
+    <string name="set_label">Set %1$d</string>
+    <string name="team_a">Team A (Jij &amp; Partner)</string>
+    <string name="team_b">Team B (Tegenstanders)</string>
+    <string name="player_hint">Naam Speler</string>
+    <string name="same_lineup_btn">Zelfde Opstelling 🔄</string>
+    <string name="tone_label">Banter Niveau</string>
+    <string name="tone_casual">Subtiel</string>
+    <string name="tone_balanced">Gebalanceerd</string>
+    <string name="tone_savage">Meedogenloos</string>
+    <string name="generate_btn">Genereer Roast 🔥</string>
+    <string name="expand_details">Details Tonen 🔽</string>
+    <string name="match_recap_title">Match Samenvatting</string>
+    <string name="rematch_title">Trash-Talk voor Revanche</string>
+    <string name="history_empty">Nog geen wedstrijden gelogd. Tijd om die bon te sturen!</string>
+    <string name="header_archives">Baanarchieven</string>
+    <string name="archives_subtitle">Houd je historische roasts, setscores en lokale ELO-rangschikkingen bij.</string>
+    <string name="history_tab">Wedstrijdhistorie</string>
+    <string name="rankings_tab">ELO-rangschikking van Spelers</string>
+    <string name="reshare_card_btn">Kaart Opnieuw Delen</string>
+    <string name="trigger_label">Trigger: %1$s</string>
+    <string name="tone_prefix">Banter: %1$s</string>
+    <string name="leaderboard_rank_name">RANG &amp; NAAM</string>
+    <string name="leaderboard_wl_rate">W/V (RATIO)</string>
+    <string name="leaderboard_elo">ELO</string>
+    <string name="win_rate_suffix">%1$d%% Win</string>
+    <string name="title_receipt">De Bon van de Roast</string>
+    <string name="swipe_instruction">Veeg horizontaal voor andere varianten 🤖</string>
+    <string name="tactical_diagnostics_title">Tactische Matchdiagnose</string>
+    <string name="expand_text">Details Tonen</string>
+    <string name="collapse_text">Inklappen</string>
+    <string name="comedic_recap">Grappige Wedstrijdsamenvatting:</string>
+    <string name="clown_mvp">De Clown MVP Highlight:</string>
+    <string name="rematch_hype_title">Revanche-dreigingen &amp; Hype:</string>
+    <string name="player_label">Speler %1$d</string>
+    <string name="set_label_selector">Set %1$d Score</string>
+    <string name="set_label_selector_optional">Set 3 Score (Optioneel)</string>
+    <string name="team_a_score">Score Team A:</string>
+    <string name="team_b_score">Score Team B:</string>
+    <string name="share_btn_text">Stuur de Bon 🧾</string>
+    <string name="log_another_btn">Log Nog een Match</string>
+    <string name="generating_text">Statistieken van falen analyseren… ⏳</string>
+    <string name="generating_sub">Op maat gemaakte spelersroasts &amp; ELO-logs voorbereiden…</string>
+    <string name="tactical_match_diagnostics">Tactische Matchdiagnose</string>
+    <string name="flavor_tags_title">Kies Spelstijl Tags</string>
+    <string name="tag_demolished">Gesloopt</string>
+    <string name="tag_choked">Gefaald (Choke)</string>
+    <string name="tag_lucky">Gelukkige Winst</string>
+    <string name="tag_comeback">Comeback</string>
+    <string name="history_empty_title">ARCHIEF IS LEEG</string>
+    <string name="history_empty_desc">Log je eerste padelmatch onder de Banter Deck om virale roasts te maken!</string>
+    <string name="leaderboard_empty_title">GEEN ELO STANDEN</string>
+    <string name="leaderboard_empty_desc">ELO-beoordelingen worden automatisch berekend bij het loggen van wedstrijden.</string>
+
+    <!-- Settings -->
+    <string name="settings_tab">Instellingen</string>
+    <string name="settings_title">INSTELLINGEN</string>
+    <string name="settings_language_title">App-taal</string>
+    <string name="settings_language_system">Systeemstandaard</string>
+    <string name="settings_pro_title">PadelRoast Pro</string>
+    <string name="settings_current_plan">Huidig abonnement:</string>
+    <string name="settings_plan_free">GRATIS</string>
+    <string name="settings_plan_pro">PRO</string>
+    <string name="settings_ai_remaining">AI roasts over vandaag: %1$d/%2$d</string>
+    <string name="settings_ai_unlimited">Onbeperkt AI roasts</string>
+    <string name="settings_pro_benefit_unlimited">Onbeperkt AI-gegenereerde roasts</string>
+    <string name="settings_pro_benefit_savage">💀 MEEDOGENLOOS!! modus</string>
+    <string name="settings_pro_benefit_model">Aangedreven door GPT-4o</string>
+    <string name="settings_upgrade_btn">Upgraden naar Pro ⚡</string>
+    <string name="settings_upgrade_coming_soon">Binnenkort beschikbaar!</string>
+    <string name="settings_about">Over</string>
+    <string name="settings_version">Versie %1$s</string>
+    <string name="settings_made_with">Gemaakt met 🔥 door PadelRoast</string>
+
+    <!-- Tone: SAVAGE!! -->
+    <string name="tone_savage_pro">MEEDOGENLOOS!!</string>
+    <string name="tone_savage_pro_locked">MEEDOGENLOOS!! maakt gebruik van onze krachtigste AI voor absoluut losgeslagen roasts. Upgrade naar Pro om te ontgrendelen. 💀</string>
+
+    <!-- AI Quota -->
+    <string name="ai_quota_remaining">⚡ %1$d AI roasts over vandaag</string>
+    <string name="ai_quota_exhausted">Sjabloon gebruiken — Ga Pro voor onbeperkt AI roasts ⚡</string>
+    <string name="ai_quota_pro">⚡ Onbeperkt AI roasts</string>
+    <string name="template_banner">Sjabloon roast. Ga Pro voor unieke AI-gegenereerde inhoud ⚡</string>
+    <string name="generate_template_btn">Genereer Sjabloon Roast 📝</string>
+</resources>

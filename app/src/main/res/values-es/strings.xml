@@ -1,0 +1,90 @@
+<resources>
+    <string name="app_name">PadelRoast</string>
+    <string name="app_description">Convierte el sudor del padel y las pifias en cromos deportivos de IA virales</string>
+    <string name="nav_log_match">Registrar Partido</string>
+    <string name="nav_history">Historial</string>
+    <string name="header_score">Introduce el Resultado</string>
+    <string name="set_label">Set %1$d</string>
+    <string name="team_a">Equipo A (Tú y tu Pareja)</string>
+    <string name="team_b">Equipo B (Rivales)</string>
+    <string name="player_hint">Nombre del Jugador</string>
+    <string name="same_lineup_btn">Mismos Jugadores 🔄</string>
+    <string name="tone_label">Nivel de Vacile</string>
+    <string name="tone_casual">Tranquilo</string>
+    <string name="tone_balanced">Equilibrado</string>
+    <string name="tone_savage">Salvaje</string>
+    <string name="generate_btn">Generar Vacile 🔥</string>
+    <string name="expand_details">Ver Detalles 🔽</string>
+    <string name="match_recap_title">Resumen del Partido</string>
+    <string name="rematch_title">Hype para la Revancha</string>
+    <string name="history_empty">No hay partidos registrados. ¡Empieza a repartir estopa!</string>
+    <string name="header_archives">Archivos de la Pista</string>
+    <string name="archives_subtitle">Sigue el historial de tus vaciles, resultados de sets y clasificaciones locales de ELO.</string>
+    <string name="history_tab">Historial de Partidos</string>
+    <string name="rankings_tab">Ranking de Jugadores ELO</string>
+    <string name="reshare_card_btn">Re-compartir Cromo</string>
+    <string name="trigger_label">Detonante: %1$s</string>
+    <string name="tone_prefix">Tono: %1$s</string>
+    <string name="leaderboard_rank_name">RANGO Y NOMBRE</string>
+    <string name="leaderboard_wl_rate">V/D (TASA)</string>
+    <string name="leaderboard_elo">ELO</string>
+    <string name="win_rate_suffix">%1$d%% Victorias</string>
+    <string name="title_receipt">Recibo del Vacile</string>
+    <string name="swipe_instruction">Desliza horizontalmente para ver otras versiones 🤖</string>
+    <string name="tactical_diagnostics_title">Diagnóstico Táctico del Partido</string>
+    <string name="expand_text">Ver Detalles</string>
+    <string name="collapse_text">Contraer</string>
+    <string name="comedic_recap">Resumen Comediante del Partido:</string>
+    <string name="clown_mvp">El Jugador Payaso MVP:</string>
+    <string name="rematch_hype_title">Amenazas y Hype de Revancha:</string>
+    <string name="player_label">Jugador %1$d</string>
+    <string name="set_label_selector">Marcador del Set %1$d</string>
+    <string name="set_label_selector_optional">Marcador del Set 3 (Opcional)</string>
+    <string name="team_a_score">Marcador del Equipo A:</string>
+    <string name="team_b_score">Marcador del Equipo B:</string>
+    <string name="share_btn_text">Soltar el Recibo 🧾</string>
+    <string name="log_another_btn">Registrar Otro Partido</string>
+    <string name="generating_text">Analizando estadísticas de pifias… ⏳</string>
+    <string name="generating_sub">Preparando vaciles de jugadores a medida y registros de ELO…</string>
+    <string name="tactical_match_diagnostics">Diagnóstico Táctico del Partido</string>
+    <string name="flavor_tags_title">Elige Etiquetas de Estilo de Juego</string>
+    <string name="tag_demolished">Demolido</string>
+    <string name="tag_choked">Chokeado</string>
+    <string name="tag_lucky">Victoria de Suerte</string>
+    <string name="tag_comeback">Remontada</string>
+    <string name="history_empty_title">ARCHIVO VACÍO</string>
+    <string name="history_empty_desc">¡Registra tu primer partido en la pestaña Banter Deck para producir vaciles virales!</string>
+    <string name="leaderboard_empty_title">SIN PUNTUACIÓN DE ELO</string>
+    <string name="leaderboard_empty_desc">Los puntos Elo se calculan automáticamente al registrar partidos.</string>
+
+    <!-- Settings -->
+    <string name="settings_tab">Ajustes</string>
+    <string name="settings_title">AJUSTES</string>
+    <string name="settings_language_title">Idioma de la App</string>
+    <string name="settings_language_system">Predeterminado del sistema</string>
+    <string name="settings_pro_title">PadelRoast Pro</string>
+    <string name="settings_current_plan">Plan actual:</string>
+    <string name="settings_plan_free">GRATIS</string>
+    <string name="settings_plan_pro">PRO</string>
+    <string name="settings_ai_remaining">Vaciles de IA restantes hoy: %1$d/%2$d</string>
+    <string name="settings_ai_unlimited">Vaciles de IA ilimitados</string>
+    <string name="settings_pro_benefit_unlimited">Vaciles ilimitados generados por IA</string>
+    <string name="settings_pro_benefit_savage">💀 Modo ¡¡SALVAJE!!</string>
+    <string name="settings_pro_benefit_model">Con tecnología GPT-4o</string>
+    <string name="settings_upgrade_btn">Mejorar a Pro ⚡</string>
+    <string name="settings_upgrade_coming_soon">¡Próximamente!</string>
+    <string name="settings_about">Acerca de</string>
+    <string name="settings_version">Versión %1$s</string>
+    <string name="settings_made_with">Hecho con 🔥 por PadelRoast</string>
+
+    <!-- Tone: SAVAGE!! -->
+    <string name="tone_savage_pro">¡¡SALVAJE!!</string>
+    <string name="tone_savage_pro_locked">¡¡SALVAJE!! utiliza nuestra IA más potente para vaciles totalmente desquiciados. Mejora a Pro para desbloquearlo. 💀</string>
+
+    <!-- AI Quota -->
+    <string name="ai_quota_remaining">⚡ %1$d vaciles de IA restantes hoy</string>
+    <string name="ai_quota_exhausted">Usando plantilla — Pásate a Pro para vaciles ilimitados de IA ⚡</string>
+    <string name="ai_quota_pro">⚡ Vaciles de IA ilimitados</string>
+    <string name="template_banner">Vacile de plantilla. Pásate a Pro para contenido de IA único ⚡</string>
+    <string name="generate_template_btn">Generar Vacile de Plantilla 📝</string>
+</resources>

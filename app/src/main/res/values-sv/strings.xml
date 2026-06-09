@@ -1,0 +1,90 @@
+<resources>
+    <string name="app_name">PadelRoast</string>
+    <string name="app_description">Förvandla padelsvett och chokes till virala AI-sportkort</string>
+    <string name="nav_log_match">Registrera Match</string>
+    <string name="nav_history">Historik</string>
+    <string name="header_score">Ange Matchresultat</string>
+    <string name="set_label">Set %1$d</string>
+    <string name="team_a">Lag A (Du &amp; Partner)</string>
+    <string name="team_b">Lag B (Motståndare)</string>
+    <string name="player_hint">Spelarnamn</string>
+    <string name="same_lineup_btn">Samma Spelare 🔄</string>
+    <string name="tone_label">Hånfull Ton</string>
+    <string name="tone_casual">Mjuk</string>
+    <string name="tone_balanced">Balanserad</string>
+    <string name="tone_savage">Savage</string>
+    <string name="generate_btn">Generera Hån 🔥</string>
+    <string name="expand_details">Visa Detaljer 🔽</string>
+    <string name="match_recap_title">Matchsammanfattning</string>
+    <string name="rematch_title">Skitsnack inför Returmatchen</string>
+    <string name="history_empty">Inga matcher registrerade än. Dags att visa kvittot!</string>
+    <string name="header_archives">Banans Arkiv</string>
+    <string name="archives_subtitle">Följ din historik av pikar, setresultat och lokala ELO-rankningar.</string>
+    <string name="history_tab">Matchhistorik</string>
+    <string name="rankings_tab">Spelarnas ELO-rankning</string>
+    <string name="reshare_card_btn">Dela Kort Igen</string>
+    <string name="trigger_label">Trigger: %1$s</string>
+    <string name="tone_prefix">Ton: %1$s</string>
+    <string name="leaderboard_rank_name">RANK &amp; NAMN</string>
+    <string name="leaderboard_wl_rate">V/F (TASA)</string>
+    <string name="leaderboard_elo">ELO</string>
+    <string name="win_rate_suffix">%1$d%% Vinster</string>
+    <string name="title_receipt">Kvittot av Pikar</string>
+    <string name="swipe_instruction">Svep horisontellt för andra versioner 🤖</string>
+    <string name="tactical_diagnostics_title">Taktisk Matchdiagnos</string>
+    <string name="expand_text">Visa Detaljer</string>
+    <string name="collapse_text">Minimera</string>
+    <string name="comedic_recap">Komisk Matchsammanfattning:</string>
+    <string name="clown_mvp">Clownen MVP Highlight:</string>
+    <string name="rematch_hype_title">Returmatch-hot &amp; Hype:</string>
+    <string name="player_label">Spelare %1$d</string>
+    <string name="set_label_selector">Set %1$d Resultat</string>
+    <string name="set_label_selector_optional">Set 3 Resultat (Valfritt)</string>
+    <string name="team_a_score">Lag A Resultat:</string>
+    <string name="team_b_score">Lag B Resultat:</string>
+    <string name="share_btn_text">Släng Fram Kvittot 🧾</string>
+    <string name="log_another_btn">Registrera En Ny Match</string>
+    <string name="generating_text">Analyserar chokesstatistiken… ⏳</string>
+    <string name="generating_sub">Förbereder skräddarsydda pikar &amp; ELO-loggar…</string>
+    <string name="tactical_match_diagnostics">Taktisk Matchdiagnos</string>
+    <string name="flavor_tags_title">Välj Spelstil Taggar</string>
+    <string name="tag_demolished">Demolerad</string>
+    <string name="tag_choked">Chokad</string>
+    <string name="tag_lucky">Turvinst</string>
+    <string name="tag_comeback">Comeback</string>
+    <string name="history_empty_title">ARKIVET ÄR TOMT</string>
+    <string name="history_empty_desc">Registrera din första padelmatch under Banter Deck för att producera pikar!</string>
+    <string name="leaderboard_empty_title">INGA ELO-RANKNINGAR</string>
+    <string name="leaderboard_empty_desc">Elo-rankningar beräknas automatiskt när matcher registreras.</string>
+
+    <!-- Settings -->
+    <string name="settings_tab">Inställningar</string>
+    <string name="settings_title">INSTÄLLNINGAR</string>
+    <string name="settings_language_title">Appspråk</string>
+    <string name="settings_language_system">Systemstandard</string>
+    <string name="settings_pro_title">PadelRoast Pro</string>
+    <string name="settings_current_plan">Nuvarande plan:</string>
+    <string name="settings_plan_free">GRATIS</string>
+    <string name="settings_plan_pro">PRO</string>
+    <string name="settings_ai_remaining">AI-pikar kvar idag: %1$d/%2$d</string>
+    <string name="settings_ai_unlimited">Obegränsat med AI-pikar</string>
+    <string name="settings_pro_benefit_unlimited">Obegränsat antal AI-genererade pikar</string>
+    <string name="settings_pro_benefit_savage">💀 OMEDGÖRLIG!! läge</string>
+    <string name="settings_pro_benefit_model">Drivs av GPT-4o</string>
+    <string name="settings_upgrade_btn">Uppgradera till Pro ⚡</string>
+    <string name="settings_upgrade_coming_soon">Kommer snart!</string>
+    <string name="settings_about">Om oss</string>
+    <string name="settings_version">Version %1$s</string>
+    <string name="settings_made_with">Skapad med 🔥 av PadelRoast</string>
+
+    <!-- Tone: SAVAGE!! -->
+    <string name="tone_savage_pro">OMEDGÖRLIG!!</string>
+    <string name="tone_savage_pro_locked">OMEDGÖRLIG!! använder vår kraftfullaste AI för helt galna pikar. Uppgradera till Pro för att låsa upp. 💀</string>
+
+    <!-- AI Quota -->
+    <string name="ai_quota_remaining">⚡ %1$d AI-pikar kvar idag</string>
+    <string name="ai_quota_exhausted">Använder mall — Gå Pro för obegränsat med AI-pikar ⚡</string>
+    <string name="ai_quota_pro">⚡ Obegränsade AI-pikar</string>
+    <string name="template_banner">Mallpik. Gå Pro för unikt AI-genererat innehåll ⚡</string>
+    <string name="generate_template_btn">Generera Mallpik 📝</string>
+</resources>

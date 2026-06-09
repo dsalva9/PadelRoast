@@ -1,0 +1,90 @@
+<resources>
+    <string name="app_name">PadelRoast</string>
+    <string name="app_description">Trasforma il sudore del padel e i soffocamenti in carte sportive AI virali</string>
+    <string name="nav_log_match">Registra Partita</string>
+    <string name="nav_history">Cronologia</string>
+    <string name="header_score">Inserisci il Punteggio</string>
+    <string name="set_label">Set %1$d</string>
+    <string name="team_a">Squadra A (Tu e il tuo Compagno)</string>
+    <string name="team_b">Squadra B (Avversari)</string>
+    <string name="player_hint">Nome Giocatore</string>
+    <string name="same_lineup_btn">Stessa Formazione 🔄</string>
+    <string name="tone_label">Tonalità del Preso in Giro</string>
+    <string name="tone_casual">Leggero</string>
+    <string name="tone_balanced">Bilanciato</string>
+    <string name="tone_savage">Spietato</string>
+    <string name="generate_btn">Genera Preso in Giro 🔥</string>
+    <string name="expand_details">Espandi Dettagli 🔽</string>
+    <string name="match_recap_title">Riepilogo Partita</string>
+    <string name="rematch_title">Provocazione per la Rivincita</string>
+    <string name="history_empty">Nessuna partita registrata. Vai ad asfaltare qualcuno!</string>
+    <string name="header_archives">Archivi del Campo</string>
+    <string name="archives_subtitle">Tieni d\'occhio i tuoi sfottò storici, i punteggi dei set e i ranking ELO locali.</string>
+    <string name="history_tab">Cronologia Partite</string>
+    <string name="rankings_tab">Classifiche ELO dei Giocatori</string>
+    <string name="reshare_card_btn">Ricondividi Carta</string>
+    <string name="trigger_label">Innesco: %1$s</string>
+    <string name="tone_prefix">Tonalità: %1$s</string>
+    <string name="leaderboard_rank_name">POSIZIONE E NOME</string>
+    <string name="leaderboard_wl_rate">V/P (TIPO)</string>
+    <string name="leaderboard_elo">ELO</string>
+    <string name="win_rate_suffix">%1$d%% Vittorie</string>
+    <string name="title_receipt">Ricevuta dello Sfottò</string>
+    <string name="swipe_instruction">Scorri a destra o sinistra per altre versioni 🤖</string>
+    <string name="tactical_diagnostics_title">Diagnostica Tattica della Partita</string>
+    <string name="expand_text">Mostra Dettagli</string>
+    <string name="collapse_text">Riduci</string>
+    <string name="comedic_recap">Riepilogo Comico della Partita:</string>
+    <string name="clown_mvp">Il Pagliaccio MVP della Partita:</string>
+    <string name="rematch_hype_title">Minacce e Hype per Rivincita:</string>
+    <string name="player_label">Giocatore %1$d</string>
+    <string name="set_label_selector">Punteggio Set %1$d</string>
+    <string name="set_label_selector_optional">Punteggio Set 3 (Opzionale)</string>
+    <string name="team_a_score">Punteggio Squadra A:</string>
+    <string name="team_b_score">Punteggio Squadra B:</string>
+    <string name="share_btn_text">Lancia lo Sfottò 🧾</string>
+    <string name="log_another_btn">Registra un\'altra Partita</string>
+    <string name="generating_text">Analisi delle pifiazze in corso… ⏳</string>
+    <string name="generating_sub">Preparazione degli sfottò personalizzati e log ELO…</string>
+    <string name="tactical_match_diagnostics">Diagnostica Tattica della Partita</string>
+    <string name="flavor_tags_title">Scegli i Tag dello Stile di Gioco</string>
+    <string name="tag_demolished">Demolito</string>
+    <string name="tag_choked">Soffocato</string>
+    <string name="tag_lucky">Vittoria Fortunata</string>
+    <string name="tag_comeback">Rimonta</string>
+    <string name="history_empty_title">ARCHIVIO VUOTO</string>
+    <string name="history_empty_desc">Registra la tua prima partita nella pestaña Banter Deck per produrre sfottò virali!</string>
+    <string name="leaderboard_empty_title">NESSUN PUNTEGGIO ELO</string>
+    <string name="leaderboard_empty_desc">Le valutazioni Elo vengono calcolate in automatico quando registri le partite.</string>
+
+    <!-- Settings -->
+    <string name="settings_tab">Impostazioni</string>
+    <string name="settings_title">IMPOSTAZIONI</string>
+    <string name="settings_language_title">Lingua dell\'App</string>
+    <string name="settings_language_system">Predefinito di sistema</string>
+    <string name="settings_pro_title">PadelRoast Pro</string>
+    <string name="settings_current_plan">Piano attuale:</string>
+    <string name="settings_plan_free">GRATIS</string>
+    <string name="settings_plan_pro">PRO</string>
+    <string name="settings_ai_remaining">Sfottò IA rimasti oggi: %1$d/%2$d</string>
+    <string name="settings_ai_unlimited">Sfottò IA illimitati</string>
+    <string name="settings_pro_benefit_unlimited">Sfottò illimitati generati dall\'IA</string>
+    <string name="settings_pro_benefit_savage">💀 Modalità SPIETATA!!</string>
+    <string name="settings_pro_benefit_model">Alimentato da GPT-4o</string>
+    <string name="settings_upgrade_btn">Migliora a Pro ⚡</string>
+    <string name="settings_upgrade_coming_soon">Prossimamente!</string>
+    <string name="settings_about">Info</string>
+    <string name="settings_version">Versione %1$s</string>
+    <string name="settings_made_with">Fatto con 🔥 da PadelRoast</string>
+
+    <!-- Tone: SAVAGE!! -->
+    <string name="tone_savage_pro">SPIETATO!!</string>
+    <string name="tone_savage_pro_locked">SPIETATO!! utilizza la nostra IA più potente per sfottò totalmente folli. Migliora a Pro per sbloccare. 💀</string>
+
+    <!-- AI Quota -->
+    <string name="ai_quota_remaining">⚡ %1$d sfottò IA rimasti oggi</string>
+    <string name="ai_quota_exhausted">Usando un modello — Passa a Pro per sfottò IA illimitati ⚡</string>
+    <string name="ai_quota_pro">⚡ Sfottò IA illimitati</string>
+    <string name="template_banner">Sfottò da modello. Passa a Pro per contenuti IA unici ⚡</string>
+    <string name="generate_template_btn">Genera Sfottò Modello 📝</string>
+</resources>

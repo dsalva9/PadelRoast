@@ -1,0 +1,90 @@
+<resources>
+    <string name="app_name">PadelRoast</string>
+    <string name="app_description">Transformez la sueur du padel et les ratés en cartes de sport IA virales</string>
+    <string name="nav_log_match">Saisir Match</string>
+    <string name="nav_history">Historique</string>
+    <string name="header_score">Saisir le Score</string>
+    <string name="set_label">Set %1$d</string>
+    <string name="team_a">Équipe A (Toi &amp; Partenaire)</string>
+    <string name="team_b">Équipe B (Adversaires)</string>
+    <string name="player_hint">Nom du Joueur</string>
+    <string name="same_lineup_btn">Même Équipe 🔄</string>
+    <string name="tone_label">Niveau de Vanne</string>
+    <string name="tone_casual">Tranquille</string>
+    <string name="tone_balanced">Équilibré</string>
+    <string name="tone_savage">Sauvage</string>
+    <string name="generate_btn">Générer la Vanne 🔥</string>
+    <string name="expand_details">Plus de Détails 🔽</string>
+    <string name="match_recap_title">Résumé du Match</string>
+    <string name="rematch_title">Provoc pour la Revanche</string>
+    <string name="history_empty">Aucun match enregistré. Allez leur donner la note !</string>
+    <string name="header_archives">Archives des Courts</string>
+    <string name="archives_subtitle">Suivez l\'historique de vos vannes, vos scores de sets et votre classement ELO local.</string>
+    <string name="history_tab">Historique des Matchs</string>
+    <string name="rankings_tab">Classement ELO des Joueurs</string>
+    <string name="reshare_card_btn">Re-partager la Carte</string>
+    <string name="trigger_label">Déclencheur : %1$s</string>
+    <string name="tone_prefix">Ton : %1$s</string>
+    <string name="leaderboard_rank_name">RANG &amp; NOM</string>
+    <string name="leaderboard_wl_rate">V/D (TAUX)</string>
+    <string name="leaderboard_elo">ELO</string>
+    <string name="win_rate_suffix">%1$d%% Victoires</string>
+    <string name="title_receipt">Reçu de la Vanne</string>
+    <string name="swipe_instruction">Glissez horizontalement pour voir d\'autres versions 🤖</string>
+    <string name="tactical_diagnostics_title">Diagnostic Tactique du Match</string>
+    <string name="expand_text">Plus de Détails</string>
+    <string name="collapse_text">Réduire</string>
+    <string name="comedic_recap">Résumé Comique du Match :</string>
+    <string name="clown_mvp">Le Clown MVP du Match :</string>
+    <string name="rematch_hype_title">Menaces &amp; Provocs Revanche :</string>
+    <string name="player_label">Joueur %1$d</string>
+    <string name="set_label_selector">Score du Set %1$d</string>
+    <string name="set_label_selector_optional">Score du Set 3 (Optionnel)</string>
+    <string name="team_a_score">Score Équipe A :</string>
+    <string name="team_b_score">Score Équipe B :</string>
+    <string name="share_btn_text">Drop le Reçu 🧾</string>
+    <string name="log_another_btn">Saisir un Autre Match</string>
+    <string name="generating_text">Analyse des pires coups… ⏳</string>
+    <string name="generating_sub">Préparation de vos vannes sur mesure et mise à jour de l\'ELO…</string>
+    <string name="tactical_match_diagnostics">Diagnostic Tactique du Match</string>
+    <string name="flavor_tags_title">Choisir les Tags de Style de Jeu</string>
+    <string name="tag_demolished">Démoli</string>
+    <string name="tag_choked">Raté (Choke)</string>
+    <string name="tag_lucky">Victoire Chanceuse</string>
+    <string name="tag_comeback">Remontada</string>
+    <string name="history_empty_title">ARCHIVE VIDE</string>
+    <string name="history_empty_desc">Enregistrez votre premier match de padel sous l\'onglet de saisie pour générer des vannes !</string>
+    <string name="leaderboard_empty_title">AUCUN CLASSEMENT ELO</string>
+    <string name="leaderboard_empty_desc">Les classements ELO sont calculés automatiquement à chaque enregistrement de match.</string>
+
+    <!-- Settings -->
+    <string name="settings_tab">Paramètres</string>
+    <string name="settings_title">PARAMÈTRES</string>
+    <string name="settings_language_title">Langue de l\'App</string>
+    <string name="settings_language_system">Par défaut du système</string>
+    <string name="settings_pro_title">PadelRoast Pro</string>
+    <string name="settings_current_plan">Plan actuel :</string>
+    <string name="settings_plan_free">GRATUIT</string>
+    <string name="settings_plan_pro">PRO</string>
+    <string name="settings_ai_remaining">Vannes IA restantes aujourd\'hui : %1$d/%2$d</string>
+    <string name="settings_ai_unlimited">Vannes IA illimitées</string>
+    <string name="settings_pro_benefit_unlimited">Vannes illimitées générées par IA</string>
+    <string name="settings_pro_benefit_savage">💀 Mode SAUVAGE!!</string>
+    <string name="settings_pro_benefit_model">Propulsé par GPT-4o</string>
+    <string name="settings_upgrade_btn">Passer à Pro ⚡</string>
+    <string name="settings_upgrade_coming_soon">Arrive bientôt !</string>
+    <string name="settings_about">À propos</string>
+    <string name="settings_version">Version %1$s</string>
+    <string name="settings_made_with">Fait avec 🔥 par PadelRoast</string>
+
+    <!-- Tone: SAVAGE!! -->
+    <string name="tone_savage_pro">SAUVAGE!!</string>
+    <string name="tone_savage_pro_locked">SAUVAGE!! utilise notre IA la plus puissante pour des vannes totalement déchaînées. Passez à Pro pour débloquer. 💀</string>
+
+    <!-- AI Quota -->
+    <string name="ai_quota_remaining">⚡ %1$d vannes IA restantes aujourd\'hui</string>
+    <string name="ai_quota_exhausted">Utilisation d\'un modèle — Passez à Pro pour des vannes IA illimitées ⚡</string>
+    <string name="ai_quota_pro">⚡ Vannes IA illimitées</string>
+    <string name="template_banner">Vanne modèle. Passez à Pro pour un contenu IA unique ⚡</string>
+    <string name="generate_template_btn">Générer la Vanne Modèle 📝</string>
+</resources>

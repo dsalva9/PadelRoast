@@ -1,0 +1,1181 @@
+{
+  "version": 1,
+  "templates": [
+    {
+      "id": "bagel_casual_01",
+      "trigger": "bagel",
+      "tone": "casual",
+      "game_type": "standard",
+      "strings": {
+        "en": {
+          "headline": "Bagel Sunday",
+          "body_text": "{winner1} and {winner2} won comfortably against {loser1} and {loser2} with a bagel score of {score}. Good practice session!",
+          "pre_filled_whatsapp": "🥯 Bagel Alert: {winner1} & {winner2} def. {loser1} & {loser2} ({score}). #PadelRoast",
+          "match_recap": "A clean set of padel where one side couldn't get on the board. All in good fun.",
+          "mvp_line": "MVP: {winner1} for maintaining focus.",
+          "rematch_hype": "Next time will be closer!"
+        },
+        "es": {
+          "headline": "Roscos del Domingo",
+          "body_text": "{winner1} y {winner2} ganaron cómodamente contra {loser1} y {loser2} con un rosco de {score}. ¡Buen entrenamiento!",
+          "pre_filled_whatsapp": "🥯 Alerta Rosco: {winner1} y {winner2} ganan a {loser1} y {loser2} ({score}). #PadelRoast",
+          "match_recap": "Un partido limpio donde un lado no pudo estrenar el marcador. ¡Buen rollo!",
+          "mvp_line": "MVP: {winner1} por mantener la concentración.",
+          "rematch_hype": "¡La próxima estará más reñida!"
+        },
+        "fr": {
+          "headline": "Dimanche Roue de Vélo",
+          "body_text": "{winner1} et {winner2} ont gagné facilement contre {loser1} et {loser2} avec une roue de vélo ({score}). Bon entraînement !",
+          "pre_filled_whatsapp": "🥯 Alerte Faux-Rosco : {winner1} & {winner2} battent {loser1} & {loser2} ({score}). #PadelRoast",
+          "match_recap": "Un match propre où une équipe n\\'a pas pu ouvrir son score. Tout dans la bonne humeur.",
+          "mvp_line": "MVP : {winner1} pour sa concentration.",
+          "rematch_hype": "La prochaine fois sera plus serrée !"
+        },
+        "it": {
+          "headline": "Domenica del Cappotto",
+          "body_text": "{winner1} e {winner2} hanno vinto comodamente contro {loser1} e {loser2} con un cappotto di {score}. Buon allenamento!",
+          "pre_filled_whatsapp": "🥯 Alerta Cappotto: {winner1} & {winner2} battono {loser1} & {loser2} ({score}). #PadelRoast",
+          "match_recap": "Una partita pulita in cui una squadra non è riuscita a fare un game. Sempre col sorriso.",
+          "mvp_line": "MVP: {winner1} per aver mantenuto la concentrazione.",
+          "rematch_hype": "La prossima volta andrà meglio!"
+        },
+        "nl": {
+          "headline": "Zondagse Bagel",
+          "body_text": "{winner1} en {winner2} wonnen gemakkelijk van {loser1} en {loser2} met een bagel score van {score}. Goede oefenpot!",
+          "pre_filled_whatsapp": "🥯 Bagel Alert: {winner1} & {winner2} winnen van {loser1} & {loser2} ({score}). #PadelRoast",
+          "match_recap": "Een schone pot padel waarin één team niet op het scorebord kwam. Alleen maar gezelligheid.",
+          "mvp_line": "MVP: {winner1} voor de scherpe focus.",
+          "rematch_hype": "Volgende keer wordt spannender!"
+        },
+        "sv": {
+          "headline": "Söndagsbageri",
+          "body_text": "{winner1} och {winner2} vann enkelt mot {loser1} och {loser2} med en nolla ({score}). Bra träningsmatch!",
+          "pre_filled_whatsapp": "🥯 Nollnings-larm: {winner1} & {winner2} besegrade {loser1} & {loser2} ({score}). #PadelRoast",
+          "match_recap": "Ett rent set padel där ena sidan blev utan gem. God stämning ändå.",
+          "mvp_line": "MVP: {winner1} för fokuserat spel.",
+          "rematch_hype": "Nästa gång blir det jämnare!"
+        }
+      }
+    },
+    {
+      "id": "bagel_balanced_01",
+      "trigger": "bagel",
+      "tone": "balanced",
+      "game_type": "standard",
+      "strings": {
+        "en": {
+          "headline": "BAKERY DIVISION IS OPEN",
+          "body_text": "{winner1} and {winner2} opened a bakery today, serving fresh bagels to {loser1} and {loser2} ({score}). Someone check on their defensive lobs.",
+          "pre_filled_whatsapp": "🥯 Bakery opened: {winner1} & {winner2} served bagels to {loser1} & {loser2} ({score}). #PadelRoast",
+          "match_recap": "{winner1} dominated the net. {loser1} struggled to find the court. Zero games is tough.",
+          "mvp_line": "MVP: {winner1} for serving fresh dough.",
+          "rematch_hype": "Rematch is needed, if only to score one game. 🎾"
+        },
+        "es": {
+          "headline": "PANADERÍA DE PÁDEL ABIERTA",
+          "body_text": "{winner1} y {winner2} abrieron una panadería hoy, sirviendo roscos frescos a {loser1} y {loser2} ({score}). Que alguien revise sus globos.",
+          "pre_filled_whatsapp": "🥯 Panadería abierta: {winner1} y {winner2} sirvieron roscos a {loser1} y {loser2} ({score}). #PadelRoast",
+          "match_recap": "{winner1} dominó la red. {loser1} no encontraba pista. Cero juegos duele.",
+          "mvp_line": "MVP: {winner1} por repartir harina.",
+          "rematch_hype": "Hace falta revancha, aunque sea para hacer un juego. 🎾"
+        },
+        "fr": {
+          "headline": "OUVERTURE DE LA BOULANGERIE",
+          "body_text": "{winner1} et {winner2} ont ouvert une boulangerie, offrant des roues de vélo à {loser1} et {loser2} ({score}). Quelqu\\'un peut vérifier leurs lobs ?",
+          "pre_filled_whatsapp": "🥯 Boulangerie ouverte : {winner1} & {winner2} offrent des bulles à {loser1} & {loser2} ({score}). #PadelRoast",
+          "match_recap": "{winner1} a dominé le filet. {loser1} a galéré sur la vitre. Zéro jeu, c\\'est dur.",
+          "mvp_line": "MVP : {winner1} pour la livraison de pain chaud.",
+          "rematch_hype": "Il faut une revanche, ne serait-ce que pour marquer un point. 🎾"
+        },
+        "it": {
+          "headline": "PANIFICIO PADEL APERTO",
+          "body_text": "{winner1} e {winner2} hanno aperto un panificio oggi, servendo cappotti freschi a {loser1} e {loser2} ({score}). Qualcuno controlli i loro pallonetti.",
+          "pre_filled_whatsapp": "🥯 Panificio aperto: {winner1} e {winner2} offrono cappotti a {loser1} e {loser2} ({score}). #PadelRoast",
+          "match_recap": "{winner1} ha dominato sotto rete. {loser1} non trovava le misure. Finire a zero è dura.",
+          "mvp_line": "MVP: {winner1} per la gestione del forno.",
+          "rematch_hype": "La rivincita serve, anche solo per sbloccarsi. 🎾"
+        },
+        "nl": {
+          "headline": "BAKKERIJ DE PADEL IS OPEN",
+          "body_text": "{winner1} en {winner2} hebben een bakkerij geopend en serveerden verse bagels aan {loser1} en {loser2} ({score}). Iemand moet hun lobs nakijken.",
+          "pre_filled_whatsapp": "🥯 Bakkerij open: {winner1} & {winner2} geven bagels aan {loser1} & {loser2} ({score}). #PadelRoast",
+          "match_recap": "{winner1} domineerde het net. {loser1} raakte de glazen wand vaker dan de baan. Nul games is pijnlijk.",
+          "mvp_line": "MVP: {winner1} voor het bakken van deeg.",
+          "rematch_hype": "Revanche is vereist, al is het maar om één game te winnen. 🎾"
+        },
+        "sv": {
+          "headline": "BAGERIET HAR ÖPPNAT",
+          "body_text": "{winner1} och {winner2} öppnade ett bageri idag och bjöd {loser1} och {loser2} på färska nollor ({score}). Någon borde kolla upp deras lobbar.",
+          "pre_filled_whatsapp": "🥯 Bageriet öppet: {winner1} & {winner2} bjöd {loser1} & {loser2} på nollor ({score}). #PadelRoast",
+          "match_recap": "{winner1} dominerade vid nätet. {loser1} hade svårt att hålla bollen på banan. Noll gem svider.",
+          "mvp_line": "MVP: {winner1} för nybakat spel.",
+          "rematch_hype": "Det krävs en returmatch, om så bara för att knipa ett gem. 🎾"
+        }
+      }
+    },
+    {
+      "id": "bagel_savage_01",
+      "trigger": "bagel",
+      "tone": "savage",
+      "game_type": "standard",
+      "strings": {
+        "en": {
+          "headline": "THE DOUBLE BAGEL EXPERIENCE",
+          "body_text": "{winner1} and {winner2} absolutely demolished {loser1} and {loser2} with a brutal {score}. That wasn't a padel match, it was a wellness check.",
+          "pre_filled_whatsapp": "🥯 DOUBLE BAGEL ALERT 🥯\n{winner1} & {winner2} vs {loser1} & {loser2}\n📊 {score}\n#PadelRoast",
+          "match_recap": "{winner1} brought championship intensity. {loser1} brought brunch energy. Net play was non-existent for the losers.",
+          "mvp_line": "🏆 Choke Star: {loser1} — zero games, zero impact.",
+          "rematch_hype": "Rematch? Only if the court has bumpers like a bowling alley. 🔥"
+        },
+        "es": {
+          "headline": "LA EXPERIENCIA DEL DOBLE ROSCO",
+          "body_text": "{winner1} y {winner2} demolieron absolutamente a {loser1} y {loser2} con un brutal {score}. Eso no fue un partido, fue un chequeo médico.",
+          "pre_filled_whatsapp": "🥯 ALERTA DOBLE ROSCO 🥯\n{winner1} y {winner2} vs {loser1} y {loser2}\n📊 {score}\n#PadelRoast",
+          "match_recap": "{winner1} trajo intensidad de campeón. {loser1} trajo energía de siesta. El juego en la red de los perdedores no existió.",
+          "mvp_line": "🏆 Estrella del Choke: {loser1} — cero juegos, cero impacto.",
+          "rematch_hype": "¿Revancha? Solo si la pista viene con vallas protectoras. 🔥"
+        },
+        "fr": {
+          "headline": "L'EXPÉRIENCE DE LA DOUBLE BULLE",
+          "body_text": "{winner1} et {winner2} ont totalement détruit {loser1} et {loser2} avec un score de {score}. Ce n\\'était pas un match, c\\'était une intervention d\\'urgence.",
+          "pre_filled_whatsapp": "🥯 ALERTE DOUBLE ROUE 🥯\n{winner1} & {winner2} vs {loser1} & {loser2}\n📊 {score}\n#PadelRoast",
+          "match_recap": "{winner1} a joué comme des pros. {loser1} a joué comme s\\'ils étaient en pyjama. Aucun jeu au filet pour les perdants.",
+          "mvp_line": "🏆 Choke Star : {loser1} — zéro jeu, zéro efficacité.",
+          "rematch_hype": "Une revanche ? Seulement s\\'il y a des barrières pour retenir les balles. 🔥"
+        },
+        "it": {
+          "headline": "L'ESPERIENZA DEL DOPPIO CAPPOTTO",
+          "body_text": "{winner1} e {winner2} hanno letteralmente demolito {loser1} e {loser2} con un brutale {score}. Non è stata una partita, è stato un TSO.",
+          "pre_filled_whatsapp": "🥯 ALLERTA DOPPIO CAPPOTTO 🥯\n{winner1} & {winner2} vs {loser1} & {loser2}\n📊 {score}\n#PadelRoast",
+          "match_recap": "{winner1} ha portato l\\'intensità delle finali. {loser1} l\\'energia di una grigliata. Gioco a rete inesistente per gli sconfitti.",
+          "mvp_line": "🏆 Choke Star: {loser1} — zero game, zero contributo.",
+          "rematch_hype": "Rivincita? Solo se installiamo le sponde come sulla pista da bowling. 🔥"
+        },
+        "nl": {
+          "headline": "DE DUBBELE BAGEL ERVARING",
+          "body_text": "{winner1} en {winner2} hebben {loser1} en {loser2} compleet vernederd met een brute {score}. Dit was geen padel, dit was een medische keuring.",
+          "pre_filled_whatsapp": "🥯 DUBBELE BAGEL ALERT 🥯\n{winner1} & {winner2} vs {loser1} & {loser2}\n📊 {score}\n#PadelRoast",
+          "match_recap": "{winner1} speelde met kampioensdrang. {loser1} speelde met een kater-energie. Het netspel van de verliezers was onzichtbaar.",
+          "mvp_line": "🏆 Choke Star: {loser1} — nul games, nul impact.",
+          "rematch_hype": "Revanche? Alleen als we hekken langs de baan zetten zoals bij kinderbowlen. 🔥"
+        },
+        "sv": {
+          "headline": "DEN DUBBLA NOLLNINGEN",
+          "body_text": "{winner1} och {winner2} fullkomligt krossade {loser1} och {loser2} med brutala {score}. Det där var inte padel, det var ett nödrop.",
+          "pre_filled_whatsapp": "🥯 DUBBEL NOLLA UTLÖST 🥯\n{winner1} & {winner2} vs {loser1} & {loser2}\n📊 {score}\n#PadelRoast",
+          "match_recap": "{winner1} spelade med finalintensitet. {loser1} spelade med söndagsenergi. Nätspel existerade inte hos förlorarna.",
+          "mvp_line": "🏆 Choke Star: {loser1} — noll gem, noll avtryck.",
+          "rematch_hype": "Returmatch? Endast om vi sätter upp staket runt banan. 🔥"
+        }
+      }
+    },
+    {
+      "id": "blowout_casual_01",
+      "trigger": "blowout",
+      "tone": "casual",
+      "game_type": "standard",
+      "strings": {
+        "en": {
+          "headline": "Solid Win",
+          "body_text": "{winner1} and {winner2} had a strong performance today, winning {score} against {loser1} and {loser2}.",
+          "pre_filled_whatsapp": "🎾 Solid Win: {winner1} & {winner2} won {score} against {loser1} & {loser2}. #PadelRoast",
+          "match_recap": "A one-sided match where the winning team dictated the tempo early on.",
+          "mvp_line": "MVP: {winner2} for consistent serve returns.",
+          "rematch_hype": "Let's regroup and play again soon."
+        },
+        "es": {
+          "headline": "Victoria Sólida",
+          "body_text": "{winner1} y {winner2} tuvieron una gran actuación hoy, ganando {score} contra {loser1} y {loser2}.",
+          "pre_filled_whatsapp": "🎾 Victoria Sólida: {winner1} y {winner2} ganan {score} contra {loser1} y {loser2}. #PadelRoast",
+          "match_recap": "Un partido desigual donde el equipo ganador dictó el ritmo desde el principio.",
+          "mvp_line": "MVP: {winner2} por restar saques de forma constante.",
+          "rematch_hype": "Vamos a reagruparnos y jugar otra vez pronto."
+        },
+        "fr": {
+          "headline": "Victoire Solide",
+          "body_text": "{winner1} et {winner2} ont fait une belle performance aujourd\\'hui, s\\'imposant {score} contre {loser1} et {loser2}.",
+          "pre_filled_whatsapp": "🎾 Victoire Solide : {winner1} & {winner2} l\\'emportent {score} contre {loser1} & {loser2}. #PadelRoast",
+          "match_recap": "Un match à sens unique où l\\'équipe gagnante a dicté le tempo dès le début.",
+          "mvp_line": "MVP : {winner2} pour des retours de service impeccables.",
+          "rematch_hype": "On se réorganise et on y retourne bientôt."
+        },
+        "it": {
+          "headline": "Vittoria Solida",
+          "body_text": "{winner1} e {winner2} hanno disputato un\\'ottima partita oggi, vincendo {score} contro {loser1} e {loser2}.",
+          "pre_filled_whatsapp": "🎾 Vittoria Solida: {winner1} & {winner2} battono {loser1} & {loser2} ({score}). #PadelRoast",
+          "match_recap": "Una partita a senso unico dove la squadra vincitrice ha impostato il ritmo da subito.",
+          "mvp_line": "MVP: {winner2} per la costanza in risposta.",
+          "rematch_hype": "Riorganizziamoci e rigiochiamo presto."
+        },
+        "nl": {
+          "headline": "Degelijke Winst",
+          "body_text": "{winner1} en {winner2} lieten vandaag een sterke indruk achter en wonnen met {score} van {loser1} en {loser2}.",
+          "pre_filled_whatsapp": "🎾 Degelijke Winst: {winner1} & {winner2} winnen met {score} van {loser1} & {loser2}. #PadelRoast",
+          "match_recap": "Een eenzijdige wedstrijd waarin de winnaars het tempo vanaf het begin bepaalden.",
+          "mvp_line": "MVP: {winner2} voor solide service returns.",
+          "rematch_hype": "Laten we snel weer afspreken."
+        },
+        "sv": {
+          "headline": "Stabil Vinst",
+          "body_text": "{winner1} och {winner2} stod för en stark insats idag och vann med {score} mot {loser1} och {loser2}.",
+          "pre_filled_whatsapp": "🎾 Stabil Vinst: {winner1} & {winner2} vann med {score} mot {loser1} & {loser2}. #PadelRoast",
+          "match_recap": "En ganska ensidig match där det vinnande laget styrde tempot från start.",
+          "mvp_line": "MVP: {winner2} för säkra returer.",
+          "rematch_hype": "Nya tag nästa gång, vi spelar snart igen."
+        }
+      }
+    },
+    {
+      "id": "blowout_balanced_01",
+      "trigger": "blowout",
+      "tone": "balanced",
+      "game_type": "standard",
+      "strings": {
+        "en": {
+          "headline": "ONE-WAY STREET",
+          "body_text": "{winner1} and {winner2} made short work of {loser1} and {loser2} ({score}). It looked like a training exercise.",
+          "pre_filled_whatsapp": "⚡ Easy Win: {winner1} & {winner2} speed through {loser1} & {loser2} ({score}). #PadelRoast",
+          "match_recap": "Team A had total court control. Team B was left chasing shadows. The scoreboard tells the whole story.",
+          "mvp_line": "MVP: {winner1} for relentless smashes.",
+          "rematch_hype": "Let's hope Team B brings some new tactics next time. 🧐"
+        },
+        "es": {
+          "headline": "DIRECCIÓN ÚNICA",
+          "body_text": "{winner1} y {winner2} despacharon rápido a {loser1} y {loser2} ({score}). Parecía un partido de entrenamiento.",
+          "pre_filled_whatsapp": "⚡ Victoria Fácil: {winner1} y {winner2} arrollan a {loser1} y {loser2} ({score}). #PadelRoast",
+          "match_recap": "El equipo A tuvo control total. El equipo B andaba persiguiendo sombras. El marcador lo dice todo.",
+          "mvp_line": "MVP: {winner1} por sus remates implacables.",
+          "rematch_hype": "Esperemos que el equipo B traiga tácticas nuevas la próxima vez. 🧐"
+        },
+        "fr": {
+          "headline": "SENS UNIQUE",
+          "body_text": "{winner1} et {winner2} n\\'ont fait qu\\'une bouchée de {loser1} et {loser2} ({score}). On aurait dit un match d\\'entraînement.",
+          "pre_filled_whatsapp": "⚡ Victoire Facile : {winner1} & {winner2} expédient {loser1} & {loser2} ({score}). #PadelRoast",
+          "match_recap": "L\\'équipe A avait le contrôle complet. L\\'équipe B a passé son temps à courir après la balle. Le score parle d\\'il-même.",
+          "mvp_line": "MVP : {winner1} pour ses smashs percutants.",
+          "rematch_hype": "Espérons que l\\'équipe B propose de nouvelles tactiques le coup d\\'après. 🧐"
+        },
+        "it": {
+          "headline": "SENSO UNICO",
+          "body_text": "{winner1} e {winner2} hanno sbrigato in fretta la pratica {loser1} e {loser2} ({score}). Sembrava un allenamento guidato.",
+          "pre_filled_whatsapp": "⚡ Pratica Archiviata: {winner1} & {winner2} liquidano {loser1} & {loser2} ({score}). #PadelRoast",
+          "match_recap": "Il Team A ha avuto il pieno controllo del campo. Il Team B rincorreva ombre. Il tabellone parla chiaro.",
+          "mvp_line": "MVP: {winner1} per smash sistematici.",
+          "rematch_hype": "Speriamo che il Team B prepari qualche nuova contromisura. 🧐"
+        },
+        "nl": {
+          "headline": "EENRICHTINGSVERKEER",
+          "body_text": "{winner1} en {winner2} maakten korte metten met {loser1} en {loser2} ({score}). Het leek wel een trainingspartijtje.",
+          "pre_filled_whatsapp": "⚡ Makkelijke Pot: {winner1} & {winner2} rollen over {loser1} & {loser2} ({score}). #PadelRoast",
+          "match_recap": "Team A controleerde de hele baan. Team B liep achter de feiten aan. De cijfers liegen niet.",
+          "mvp_line": "MVP: {winner1} voor zijn genadeloze smashes.",
+          "rematch_hype": "Laten we hopen dat Team B de volgende keer een plan B heeft. 🧐"
+        },
+        "sv": {
+          "headline": "ENKELRIKTAT",
+          "body_text": "{winner1} och {winner2} gjorde kort process med {loser1} och {loser2} ({score}). Det såg ut som en ren träningsövning.",
+          "pre_filled_whatsapp": "⚡ Snabb Match: {winner1} & {winner2} körde över {loser1} & {loser2} ({score}). #PadelRoast",
+          "match_recap": "Lag A styrde spelet helt på banan. Lag B fick mest jaga skuggor. Resultatet talar för sig självt.",
+          "mvp_line": "MVP: {winner1} för sina hårda smashar.",
+          "rematch_hype": "Vi får hoppas att lag B tar med sig lite nya idéer till nästa match. 🧐"
+        }
+      }
+    },
+    {
+      "id": "blowout_savage_01",
+      "trigger": "blowout",
+      "tone": "savage",
+      "game_type": "standard",
+      "strings": {
+        "en": {
+          "headline": "TOTAL DEMOLITION DERBY",
+          "body_text": "{winner1} and {winner2} absolutely shellacked {loser1} and {loser2} ({score}). It wasn't a contest, it was a clinic.",
+          "pre_filled_whatsapp": "💥 DEMOLISHED 💥\n{winner1} & {winner2} vs {loser1} & {loser2}\n📊 {score}\n#PadelRoast",
+          "match_recap": "{winner1} dominated the airspace at the net. {loser1} was busy hitting the back glass. Total tactical surrender.",
+          "mvp_line": "🏆 Clown MVP: {loser1} for outstanding court decoration.",
+          "rematch_hype": "Before a rematch, Team B needs to read the rules of padel. 🔥"
+        },
+        "es": {
+          "headline": "DEMOLICIÓN TOTAL EN PISTA",
+          "body_text": "{winner1} y {winner2} le dieron un baño absoluto a {loser1} y {loser2} ({score}). No fue un partido, fue una clase gratuita.",
+          "pre_filled_whatsapp": "💥 DESTROZO TOTAL 💥\n{winner1} y {winner2} vs {loser1} y {loser2}\n📊 {score}\n#PadelRoast",
+          "match_recap": "{winner1} dominó el espacio aéreo en la red. {loser1} se dedicó a limpiar el cristal de fondo. Rendición táctica completa.",
+          "mvp_line": "🏆 MVP Payaso: {loser1} por su excelente decoración en pista.",
+          "rematch_hype": "Antes de la revancha, el equipo B debería leerse las reglas del pádel. 🔥"
+        },
+        "fr": {
+          "headline": "DÉMOLITION TOTALE",
+          "body_text": "{winner1} et {winner2} ont infligé une véritable correction à {loser1} et {loser2} ({score}). Ce n\\'était pas un match, c\\'était une leçon gratuite.",
+          "pre_filled_whatsapp": "💥 CORRECTION INFLIGÉE 💥\n{winner1} & {winner2} vs {loser1} & {loser2}\n📊 {score}\n#PadelRoast",
+          "match_recap": "{winner1} a régné en maître au filet. {loser1} a passé son temps à nettoyer la vitre de fond. Capitulation tactique totale.",
+          "mvp_line": "🏆 Clown MVP : {loser1} pour sa présence passive sur le terrain.",
+          "rematch_hype": "Avant de demander une revanche, l\\'équipe B devrait acheter le manuel du joueur. 🔥"
+        },
+        "it": {
+          "headline": "DEMOLIZIONE COMPLETA",
+          "body_text": "{winner1} e {winner2} hanno travolto {loser1} e {loser2} ({score}). Non è stata una partita, è stata una lezione privata.",
+          "pre_filled_whatsapp": "💥 AS FALTATI 💥\n{winner1} & {winner2} vs {loser1} & {loser2}\n📊 {score}\n#PadelRoast",
+          "match_recap": "{winner1} ha controllato ogni pallone sopra la rete. {loser1} puliva i vetri con la schiena. Resa incondizionata.",
+          "mvp_line": "🏆 Clown MVP: {loser1} per aver arredato ottimamente la pista.",
+          "rematch_hype": "Prima di proporre una rivincita, il Team B farebbe bene a leggere il regolamento. 🔥"
+        },
+        "nl": {
+          "headline": "TOTAAL AFGESLACHTE POT",
+          "body_text": "{winner1} en {winner2} hebben {loser1} en {loser2} alle hoeken van de baan laten zien ({score}). Het leek wel een lesje clinics geven.",
+          "pre_filled_whatsapp": "💥 KANSLOOS AFGESLACHT 💥\n{winner1} & {winner2} vs {loser1} & {loser2}\n📊 {score}\n#PadelRoast",
+          "match_recap": "{winner1} domineerde het net alsof het hun huiskamer was. {loser1} had ruzie met het glas. Tactisch faillissement.",
+          "mvp_line": "🏆 Clown MVP: {loser1} voor uitstekende baanopvulling.",
+          "rematch_hype": "Voordat we een revanche plannen, moet Team B misschien eerst een lesje boeken. 🔥"
+        },
+        "sv": {
+          "headline": "TOTAL KROSS",
+          "body_text": "{winner1} och {winner2} körde fullkomligt över {loser1} och {loser2} ({score}). Det var ingen match, det var en lektion.",
+          "pre_filled_whatsapp": "💥 UTKLASSADE 💥\n{winner1} & {winner2} vs {loser1} & {loser2}\n📊 {score}\n#PadelRoast",
+          "match_recap": "{winner1} ägde luftrummet vid nät. {loser1} ägnade sig åt att testa hållbarheten på glaset. Taktisk kapitulation.",
+          "mvp_line": "🏆 Clown MVP: {loser1} för fin dekorativ närvaro på banan.",
+          "rematch_hype": "Innan en returmatch borde lag B nog ta och läsa på om padelreglerna. 🔥"
+        }
+      }
+    },
+    {
+      "id": "comeback_casual_01",
+      "trigger": "comeback",
+      "tone": "casual",
+      "game_type": "standard",
+      "strings": {
+        "en": {
+          "headline": "Great Comeback",
+          "body_text": "{winner1} and {winner2} turned the match around to win {score} after dropping the first set to {loser1} and {loser2}.",
+          "pre_filled_whatsapp": "🔄 Comeback: {winner1} & {winner2} pull back after set 1 to win {score} vs {loser1} & {loser2}. #PadelRoast",
+          "match_recap": "A slow start for the winners, but their stamina made the difference in sets 2 and 3.",
+          "mvp_line": "MVP: {winner1} for keeping the team's spirits up.",
+          "rematch_hype": "Looking forward to another 3-set battle!"
+        },
+        "es": {
+          "headline": "Gran Remontada",
+          "body_text": "{winner1} y {winner2} le dieron la vuelta al partido para ganar {score} tras perder el primer set contra {loser1} y {loser2}.",
+          "pre_filled_whatsapp": "🔄 Remontada: {winner1} y {winner2} ganan {score} tras perder el primer set vs {loser1} y {loser2}. #PadelRoast",
+          "match_recap": "Comienzo lento de los ganadores, pero su resistencia marcó la diferencia en los sets 2 y 3.",
+          "mvp_line": "MVP: {winner1} por mantener arriba el ánimo del equipo.",
+          "rematch_hype": "¡Esperando otra batalla de 3 sets!"
+        },
+        "fr": {
+          "headline": "Superbe Remontada",
+          "body_text": "{winner1} et {winner2} ont renversé la situation pour s\\'imposer {score} après avoir perdu le premier set face à {loser1} et {loser2}.",
+          "pre_filled_whatsapp": "🔄 Remontada : {winner1} & {winner2} s\\'imposent {score} après avoir concédé le premier set vs {loser1} & {loser2}. #PadelRoast",
+          "match_recap": "Début timide des vainqueurs, mais leur endurance a fait la différence dans les sets 2 et 3.",
+          "mvp_line": "MVP : {winner1} pour avoir gardé l\\'équipe motivée.",
+          "rematch_hype": "Vivement la prochaine bataille en 3 sets !"
+        },
+        "it": {
+          "headline": "Bella Rimonta",
+          "body_text": "{winner1} e {winner2} hanno ribaltato la partita vincendo {score} dopo aver perso il primo set contro {loser1} e {loser2}.",
+          "pre_filled_whatsapp": "🔄 Rimonta: {winner1} & {winner2} la ribaltano e vincono {score} contro {loser1} & {loser2}. #PadelRoast",
+          "match_recap": "Inizio a rilento per i vincitori, ma la loro freschezza atletica ha pagato nel secondo e terzo set.",
+          "mvp_line": "MVP: {winner1} per aver tenuto alto il morale del team.",
+          "rematch_hype": "Non vedo l\\'ora che arrivi un\\'altra battaglia al terzo!"
+        },
+        "nl": {
+          "headline": "Mooie Comeback",
+          "body_text": "{winner1} en {winner2} bogen de wedstrijd om naar een {score} overwinning, na de eerste set te hebben verloren van {loser1} en {loser2}.",
+          "pre_filled_whatsapp": "🔄 Comeback: {winner1} & {winner2} buigen achterstand om en winnen met {score} van {loser1} & {loser2}. #PadelRoast",
+          "match_recap": "Een stroeve start voor de winnaars, maar hun uithoudingsvermogen gaf de doorslag in set 2 en 3.",
+          "mvp_line": "MVP: {winner1} voor het positief houden van de teamgeest.",
+          "rematch_hype": "Kijk uit naar een volgende 3-setter!"
+        },
+        "sv": {
+          "headline": "Stark Vändning",
+          "body_text": "{winner1} och {winner2} vände matchen och vann med {score} efter att ha förlorat första set mot {loser1} och {loser2}.",
+          "pre_filled_whatsapp": "🔄 Vändning: {winner1} & {winner2} vänder efter första set och vinner med {score} mot {loser1} & {loser2}. #PadelRoast",
+          "match_recap": "En trög start för vinnarna, men deras uthållighet avgjorde i andra och tredje set.",
+          "mvp_line": "MVP: {winner1} för att ha hållit lagandan uppe.",
+          "rematch_hype": "Längtar efter ännu en tre-setare!"
+        }
+      }
+    },
+    {
+      "id": "comeback_balanced_01",
+      "trigger": "comeback",
+      "tone": "balanced",
+      "game_type": "standard",
+      "strings": {
+        "en": {
+          "headline": "THE ESCAPE ARTISTS",
+          "body_text": "{winner1} and {winner2} pulled off a great escape, recovering from a set down to defeat {loser1} and {loser2} ({score}). Someone got a bit too comfortable after set 1.",
+          "pre_filled_whatsapp": "⚡ Escape Artists: {winner1} & {winner2} mount comeback to defeat {loser1} & {loser2} ({score}). #PadelRoast",
+          "match_recap": "Team B had victory in their hands. Team A adjusted their defensive lob strategy and ran away with the decider.",
+          "mvp_line": "MVP: {winner2} for shifting gears in set 2.",
+          "rematch_hype": "Team B needs to learn how to close out matches. 🍿"
+        },
+        "es": {
+          "headline": "LOS ESCAPISTAS",
+          "body_text": "{winner1} y {winner2} lograron una gran escapada, recuperándose de un set abajo para derrotar a {loser1} y {loser2} ({score}). Alguien se confió tras el primer set.",
+          "pre_filled_whatsapp": "⚡ Escapistas: {winner1} y {winner2} remontan y derrotan a {loser1} y {loser2} ({score}). #PadelRoast",
+          "match_recap": "El equipo B tenía la victoria en sus manos. El equipo A ajustó los globos defensivos y se llevó el definitivo.",
+          "mvp_line": "MVP: {winner2} por cambiar de marcha en el segundo set.",
+          "rematch_hype": "El equipo B necesita aprender a cerrar los partidos. 🍿"
+        },
+        "fr": {
+          "headline": "LES ESCAPISTES",
+          "body_text": "{winner1} et {winner2} ont réussi une belle échappée, remontant d\\'un set pour vaincre {loser1} et {loser2} ({score}). Quelqu\\'un s\\'est relâché après le set 1.",
+          "pre_filled_whatsapp": "⚡ Les Échappés : {winner1} & {winner2} remontent le score pour battre {loser1} & {loser2} ({score}). #PadelRoast",
+          "match_recap": "L\\'équipe B avait le match en main. L\\'équipe A a resserré son jeu de lobs défensifs et s\\'est envolée dans le dernier set.",
+          "mvp_line": "MVP : {winner2} pour avoir passé la vitesse supérieure au set 2.",
+          "rematch_hype": "L\\'équipe B doit apprendre à tuer le match. 🍿"
+        },
+        "it": {
+          "headline": "GLI ESCAPISTI",
+          "body_text": "{winner1} e {winner2} hanno messo in atto una grande fuga, riprendendosi da un set di svantaggio per battere {loser1} e {loser2} ({score}). Qualcuno si è rilassato troppo presto.",
+          "pre_filled_whatsapp": "⚡ Grande fuga: {winner1} & {winner2} rimontano e battono {loser1} & {loser2} ({score}). #PadelRoast",
+          "match_recap": "Il Team B aveva la vittoria a portata di mano. Il Team A ha corretto i pallonetti tattici portando a casa il terzo set.",
+          "mvp_line": "MVP: {winner2} per aver cambiato marcia nel secondo set.",
+          "rematch_hype": "Il Team B deve imparare a chiudere i conti. 🍿"
+        },
+        "nl": {
+          "headline": "DE ONTSNAPPINGSKUNSTENAARS",
+          "body_text": "{winner1} en {winner2} ontsnapten aan de nederlaag en herstelden zich na een set achterstand om {loser1} en {loser2} te verslaan ({score}). Iemand dacht te vroeg dat het binnen was.",
+          "pre_filled_whatsapp": "⚡ Ontsnapt: {winner1} & {winner2} knokken zich terug en verslaan {loser1} & {loser2} ({score}). #PadelRoast",
+          "match_recap": "Team B had de winst voor het grijpen. Team A stelde zijn verdedigende lobs bij en domineerde de beslissende set.",
+          "mvp_line": "MVP: {winner2} voor het opschakelen in de tweede set.",
+          "rematch_hype": "Team B moet leren hoe ze een wedstrijd over de streep trekken. 🍿"
+        },
+        "sv": {
+          "headline": "UTBRYTARKUNGLARNA",
+          "body_text": "{winner1} och {winner2} lyckades med en riktig utbrytning, vände efter ett set underläge och slog {loser1} och {loser2} ({score}). Någon tog ut segern i förskott efter set 1.",
+          "pre_filled_whatsapp": "⚡ Utbrytare: {winner1} & {winner2} vänder och slår {loser1} & {loser2} ({score}). #PadelRoast",
+          "match_recap": "Lag B hade segern inom räckhåll. Lag A justerade sina lobbar och drog ifrån i det avgörande setet.",
+          "mvp_line": "MVP: {winner2} för att ha växlat upp i andra set.",
+          "rematch_hype": "Lag B behöver lära sig hur man stänger matcher. 🍿"
+        }
+      }
+    },
+    {
+      "id": "comeback_savage_01",
+      "trigger": "comeback",
+      "tone": "savage",
+      "game_type": "standard",
+      "strings": {
+        "en": {
+          "headline": "THE PREMATURE CELEBRATION DISASTER",
+          "body_text": "{loser1} and {loser2} won set 1, started posting on Instagram, and then forgot how to play padel. {winner1} and {winner2} gladly took the win ({score}).",
+          "pre_filled_whatsapp": "🤡 CHOKE OF THE DAY 🤡\n{loser1} & {loser2} blew set 1 to lose ({score}) against {winner1} & {winner2}.\n#PadelRoast",
+          "match_recap": "Team B played like champions for 20 minutes, then collapsed like card houses. Team A had a stroll in the third set.",
+          "mvp_line": "🏆 Choke Star: {loser2} for absolute mental collapse.",
+          "rematch_hype": "Rematch? Put down the phones and focus on the ball first. 🔥"
+        },
+        "es": {
+          "headline": "EL DESASTRE DE LA CELEBRACIÓN PREMATURA",
+          "body_text": "{loser1} y {loser2} ganaron el primer set, empezaron a subir historias a Instagram y luego se les olvidó cómo jugar. {winner1} y {winner2} se lo agradecieron ({score}).",
+          "pre_filled_whatsapp": "🤡 EL CHOKE DEL DÍA 🤡\n{loser1} y {loser2} tiraron el primer set para perder ({score}) ante {winner1} y {winner2}.\n#PadelRoast",
+          "match_recap": "El equipo B jugó como campeones durante 20 minutos, luego se cayeron como castillos de naipes. Paseo del equipo A en el tercero.",
+          "mvp_line": "🏆 Estrella del Choke: {loser2} por un colapso mental absoluto.",
+          "rematch_hype": "¿Revancha? Dejad los móviles y concentraos primero en la bola. 🔥"
+        },
+        "fr": {
+          "headline": "CATASTROPHE DE LA CÉLÉBRATION PRÉMATURÉE",
+          "body_text": "{loser1} et {loser2} ont gagné le premier set, ont commencé à poster sur Instagram, puis ont oublié les bases du padel. {winner1} et {winner2} ont dit merci ({score}).",
+          "pre_filled_whatsapp": "🤡 CHOKE DU JOUR 🤡\n{loser1} & {loser2} lâchent le match après le set 1 ({score}) face à {winner1} & {winner2}.\n#PadelRoast",
+          "match_recap": "L\\'équipe B a joué comme des dieux pendant 20 minutes, puis s\\'est effondrée lamentablement. Set 3 facile pour l\\'équipe A.",
+          "mvp_line": "🏆 Choke Star : {loser2} pour un effondrement mental complet.",
+          "rematch_hype": "Une revanche ? Lâchez les téléphones et visez la balle. 🔥"
+        },
+        "it": {
+          "headline": "IL DISASTRE DELLA FESTA PREMATURA",
+          "body_text": "{loser1} e {loser2} hanno vinto il primo set, iniziato a postare su Instagram, e poi dimenticato come si tiene la racchetta. {winner1} e {winner2} ringraziano e portano a casa ({score}).",
+          "pre_filled_whatsapp": "🤡 IL CHOKE DEL GIORNO 🤡\n{loser1} & {loser2} buttano il match dopo il set 1 ({score}) contro {winner1} & {winner2}.\n#PadelRoast",
+          "match_recap": "Il Team B ha fatto faville per 20 minuti, poi è evaporato. Terzo set in carrozza per il Team A.",
+          "mvp_line": "🏆 Choke Star: {loser2} per totale blackout mentale.",
+          "rematch_hype": "Rivincita? Posate lo smartphone e guardate la pallina. 🔥"
+        },
+        "nl": {
+          "headline": "HET TE VROEGE FEEST DISASTER",
+          "body_text": "{loser1} en {loser2} wonnen set 1, begonnen hun winst al te vieren op social media, en vergaten daarna hoe ze padel moesten spelen. {winner1} en {winner2} profiteerden gretig ({score}).",
+          "pre_filled_whatsapp": "🤡 CHOKE VAN DE DAG 🤡\n{loser1} & {loser2} gaven set 1 uit handen om te verliezen ({score}) van {winner1} & {winner2}.\n#PadelRoast",
+          "match_recap": "Team B speelde 20 minuten geweldig, en stortte daarna in als een kaartenhuis. Team A liep fluitend door de derde set.",
+          "mvp_line": "🏆 Choke Star: {loser2} voor een totale mentale instorting.",
+          "rematch_hype": "Revanche? Leg die telefoon weg en kijk naar de bal. 🔥"
+        },
+        "sv": {
+          "headline": "KATASROFEN EFTER DET TIDIGA FIRANDET",
+          "body_text": "{loser1} och {loser2} vann set 1, började posta på Instagram, och glömde sedan bort hur man spelar padel. {winner1} och {winner2} tackade och tog emot ({score}).",
+          "pre_filled_whatsapp": "🤡 DAGENS CHOKE 🤡\n{loser1} & {loser2} slarvade bort set 1 och förlorade ({score}) mot {winner1} & {winner2}.\n#PadelRoast",
+          "match_recap": "Lag B spelade som stjärnor i 20 minuter, sen kollapsade de totalt. Lag A promenerade hem tredje set.",
+          "mvp_line": "🏆 Choke Star: {loser2} för total mental kollaps.",
+          "rematch_hype": "Returmatch? Lägg ner telefonerna och titta på bollen först. 🔥"
+        }
+      }
+    },
+    {
+      "id": "choke_casual_01",
+      "trigger": "choke",
+      "tone": "casual",
+      "game_type": "standard",
+      "strings": {
+        "en": {
+          "headline": "Lead Slipped Away",
+          "body_text": "{winner1} and {winner2} managed to win {score} after {loser1} and {loser2} won the opening set.",
+          "pre_filled_whatsapp": "🎾 Match Turned: {winner1} & {winner2} def. {loser1} & {loser2} ({score}). #PadelRoast",
+          "match_recap": "The first set went to the opponents, but a shift in momentum saw the match reverse.",
+          "mvp_line": "MVP: {winner1} for key net interceptions.",
+          "rematch_hype": "Let's see if we can maintain the level next time."
+        },
+        "es": {
+          "headline": "La Ventaja se Escapó",
+          "body_text": "{winner1} y {winner2} lograron ganar {score} después de que {loser1} y {loser2} ganaran el set inicial.",
+          "pre_filled_whatsapp": "🎾 Giro de Partido: {winner1} y {winner2} ganan a {loser1} y {loser2} ({score}). #PadelRoast",
+          "match_recap": "El primer set fue para los oponentes, pero un cambio de ritmo revirtió el partido.",
+          "mvp_line": "MVP: {winner1} por intercepciones clave en la red.",
+          "rematch_hype": "Veremos si podemos mantener el nivel la próxima vez."
+        },
+        "fr": {
+          "headline": "L'Avantage s'est Envolé",
+          "body_text": "{winner1} et {winner2} ont réussi à s\\'imposer {score} après que {loser1} et {loser2} ont remporté le premier set.",
+          "pre_filled_whatsapp": "🎾 Retournement : {winner1} & {winner2} battent {loser1} & {loser2} ({score}). #PadelRoast",
+          "match_recap": "Le premier set a été remporté par les adversaires, mais un changement de dynamique a inversé la tendance.",
+          "mvp_line": "MVP : {winner1} pour des interceptions clés au filet.",
+          "rematch_hype": "Voyons si nous pouvons maintenir ce niveau la prochaine fois."
+        },
+        "it": {
+          "headline": "Il Vantaggio è Svanito",
+          "body_text": "{winner1} e {winner2} sono riusciti a spuntarla per {score} dopo che {loser1} e {loser2} avevano vinto il primo set.",
+          "pre_filled_whatsapp": "🎾 Ribaltata: {winner1} & {winner2} superano {loser1} & {loser2} ({score}). #PadelRoast",
+          "match_recap": "Il primo set è andato agli avversari, ma un cambio di intensità ha girato la partita.",
+          "mvp_line": "MVP: {winner1} per le parate decisive a rete.",
+          "rematch_hype": "Vediamo se riusciamo a tenere alta la concentrazione la prossima volta."
+        },
+        "nl": {
+          "headline": "Voorsprong Uit Handen",
+          "body_text": "{winner1} en {winner2} wonnen met {score} nadat {loser1} en {loser2} de eerste set hadden binnengehaald.",
+          "pre_filled_whatsapp": "🎾 Kantelpunt: {winner1} & {winner2} winnen van {loser1} & {loser2} ({score}). #PadelRoast",
+          "match_recap": "De eerste set ging naar de tegenstanders, maar een verandering in dynamiek draaide de boel om.",
+          "mvp_line": "MVP: {winner1} voor belangrijke netintercepties.",
+          "rematch_hype": "Laten we kijken of we dat niveau kunnen vasthouden."
+        },
+        "sv": {
+          "headline": "Segern Slank Ur Greppet",
+          "body_text": "{winner1} och {winner2} lyckades vinna med {score} efter att {loser1} och {loser2} knipit första set.",
+          "pre_filled_whatsapp": "🎾 Matchvändning: {winner1} & {winner2} slog {loser1} & {loser2} ({score}). #PadelRoast",
+          "match_recap": "Första set gick till motståndarna, men en scenförändring vände på steken.",
+          "mvp_line": "MVP: {winner1} för avgörande ingripanden vid nätet.",
+          "rematch_hype": "Får se om vi kan behålla skärpan nästa gång."
+        }
+      }
+    },
+    {
+      "id": "choke_balanced_01",
+      "trigger": "choke",
+      "tone": "balanced",
+      "game_type": "standard",
+      "strings": {
+        "en": {
+          "headline": "FADING AT THE FINISH",
+          "body_text": "{loser1} and {loser2} had it in their grasp, but allowed {winner1} and {winner2} to climb back and take the match ({score}). Tactical composure left the building.",
+          "pre_filled_whatsapp": "⚠️ Lead Blown: {loser1} & {loser2} lose momentum to {winner1} & {winner2} ({score}). #PadelRoast",
+          "match_recap": "A textbook choke. Team B had the momentum, then started making unforced errors. Team A stayed calm and finished.",
+          "mvp_line": "MVP: {winner1} for keeping the ball in play when it mattered.",
+          "rematch_hype": "Team B needs a lesson on mental strength before the next booking. 🧠"
+        },
+        "es": {
+          "headline": "DESVANECIDOS AL FINAL",
+          "body_text": "{loser1} y {loser2} lo tenían en la mano, pero permitieron que {winner1} y {winner2} remontaran y se llevaran el partido ({score}). La compostura táctica desapareció.",
+          "pre_filled_whatsapp": "⚠️ Ventaja Perdida: {loser1} y {loser2} ceden ante {winner1} y {winner2} ({score}). #PadelRoast",
+          "match_recap": "Un choke de manual. El equipo B tenía el ritmo, luego cometió errores no forzados. El equipo A mantuvo la calma.",
+          "mvp_line": "MVP: {winner1} por meter la bola cuando más importaba.",
+          "rematch_hype": "El equipo B necesita una lección de fuerza mental antes del próximo partido. 🧠"
+        },
+        "fr": {
+          "headline": "PANNE SÈCHE AU BOUT",
+          "body_text": "{loser1} et {loser2} avaient le match en main, mais ont laissé {winner1} et {winner2} remonter et l\\'emporter ({score}). La sérénité a quitté la piste.",
+          "pre_filled_whatsapp": "⚠️ Avantage Perdu : {loser1} & {loser2} s\\'effondrent face à {winner1} & {winner2} ({score}). #PadelRoast",
+          "match_recap": "Un raté d\\'école. L\\'équipe B avait le dessus, puis a multiplié les fautes directes. L\\'équipe A a joué propre.",
+          "mvp_line": "MVP : {winner1} pour avoir gardé la balle dans la piste aux moments clés.",
+          "rematch_hype": "L\\'équipe B a besoin d\\'un coach mental avant la prochaine réservation. 🧠"
+        },
+        "it": {
+          "headline": "SVENUTI SUL PIÙ BELLO",
+          "body_text": "{loser1} e {loser2} avevano la partita in pugno, ma hanno permesso a {winner1} e {winner2} di risalire e vincere ({score}). La lucidità ha abbandonato il campo.",
+          "pre_filled_whatsapp": "⚠️ Occasione Sprecata: {loser1} & {loser2} cedono il passo a {winner1} & {winner2} ({score}). #PadelRoast",
+          "match_recap": "Un choke da manuale. Il Team B controllava il gioco, poi ha iniziato a regalare errori. Il Team A è rimasto freddo.",
+          "mvp_line": "MVP: {winner1} per aver giocato sul sicuro nei punti decisivi.",
+          "rematch_hype": "Al Team B serve un corso accelerato di tenuta mentale. 🧠"
+        },
+        "nl": {
+          "headline": "ZWAKTE IN DE FINALE",
+          "body_text": "{loser1} en {loser2} hadden de touwtjes in handen, maar lieten {winner1} en {winner2} terugkomen en de wedstrijd pakken ({score}). De tactische rust was ver te zoeken.",
+          "pre_filled_whatsapp": "⚠️ Voorsprong Vergooid: {loser1} & {loser2} verliezen van {winner1} & {winner2} ({score}). #PadelRoast",
+          "match_recap": "Een typische choke. Team B had het voordeel, maar maakte toen te veel fouten. Team A bleef geduldig.",
+          "mvp_line": "MVP: {winner1} voor het simpel houden op de beslissende momenten.",
+          "rematch_hype": "Team B heeft mentaal huiswerk te doen voor de volgende boeking. 🧠"
+        },
+        "sv": {
+          "headline": "DARR PÅ RIBBAN I FINALEN",
+          "body_text": "{loser1} och {loser2} hade matchen, men tillät {winner1} och {winner2} att ta sig tillbaka och vinna ({score}). Det mentala spelet låste sig helt.",
+          "pre_filled_whatsapp": "⚠️ Slarvade Bort Ledningen: {loser1} & {loser2} tappar greppet till {winner1} & {winner2} ({score}). #PadelRoast",
+          "match_recap": "En klassisk choke. Lag B hade allt momentum, men började göra enkla misstag. Lag A behöll lugnet.",
+          "mvp_line": "MVP: {winner1} för stabilt spel när det gällde som mest.",
+          "rematch_hype": "Lag B behöver träna pannben innan nästa speltid bokas. 🧠"
+        }
+      }
+    },
+    {
+      "id": "choke_savage_01",
+      "trigger": "choke",
+      "tone": "savage",
+      "game_type": "standard",
+      "strings": {
+        "en": {
+          "headline": "THE EPIC CHOKING CHAMPIONSHIP",
+          "body_text": "{loser1} and {loser2} had a set lead, saw the finish line, and absolutely panicked. {winner1} and {winner2} gladly accepted the donation ({score}).",
+          "pre_filled_whatsapp": "🚨 CHOKE ALERT 🚨\n{loser1} & {loser2} collapsed after set 1 against {winner1} & {winner2} ({score}).\n#PadelRoast",
+          "match_recap": "Team B started misses that belong in a comedy club. Team A didn't play outstanding, they just stood there and watched the collapse.",
+          "mvp_line": "🏆 Clown MVP: {loser1} for serving pure panic.",
+          "rematch_hype": "Does Team B need GPS to find the court in set 3? 🔥"
+        },
+        "es": {
+          "headline": "EL CAMPEONATO ÉPICO DEL CHOKE",
+          "body_text": "{loser1} y {loser2} tenían un set de ventaja, vieron la línea de meta y entraron en pánico absoluto. {winner1} y {winner2} aceptaron la donación encantados ({score}).",
+          "pre_filled_whatsapp": "🚨 ALERTA DE CHOKE 🚨\n{loser1} y {loser2} colapsan tras el primer set ante {winner1} y {winner2} ({score}).\n#PadelRoast",
+          "match_recap": "El equipo B empezó a cometer fallos dignos de un club de comedia. El equipo A no jugó increíble, solo se sentó a ver el colapso.",
+          "mvp_line": "🏆 MVP Payaso: {loser1} por repartir pánico puro.",
+          "rematch_hype": "¿Necesita el equipo B un GPS para encontrar la pista en el tercer set? 🔥"
+        },
+        "fr": {
+          "headline": "LE CHAMPIONNAT DU MONDE DU CHOKE",
+          "body_text": "{loser1} et {loser2} menaient d\\'un set, ont aperçu la victoire, et ont totalement paniqué. {winner1} et {winner2} ont accepté l\\'offrande avec plaisir ({score}).",
+          "pre_filled_whatsapp": "🚨 ALERTE CHOKE HISTORIQUE 🚨\n{loser1} & {loser2} s\\'effondrent après le set 1 face à {winner1} & {winner2} ({score}).\n#PadelRoast",
+          "match_recap": "L\\'équipe B a enchaîné des loupés dignes d\\'un bêtisier. L\\'équipe A n\\'a pas eu à forcer, elle a juste regardé la chute.",
+          "mvp_line": "🏆 Clown MVP : {loser1} pour sa panique communicative.",
+          "rematch_hype": "L\\'équipe B a-t-elle besoin d\\'une boussole pour retrouver le terrain au set 3 ? 🔥"
+        },
+        "it": {
+          "headline": "IL CAMPIONATO MONDIALE DI CHOKE",
+          "body_text": "{loser1} e {loser2} erano avanti di un set, hanno visto il traguardo e sono andati in panico totale. {winner1} e {winner2} ringraziano per la donazione ({score}).",
+          "pre_filled_whatsapp": "🚨 ALLERTA CHOKE CLAMOROSO 🚨\n{loser1} & {loser2} crollano dopo il primo set contro {winner1} & {winner2} ({score}).\n#PadelRoast",
+          "match_recap": "Il Team B ha regalato errori comici dal secondo set in poi. Il Team A ha semplicemente guardato gli avversari auto-distruggersi.",
+          "mvp_line": "🏆 Clown MVP: {loser1} per aver servito ansia pura.",
+          "rematch_hype": "Al Team B serve uno psicologo dello sport prima del prossimo incontro. 🔥"
+        },
+        "nl": {
+          "headline": "HET EPISCHE VERSTIKKINGS-KAMPIOENSCHAP",
+          "body_text": "{loser1} en {loser2} stonden een set voor, zagen de finish in zicht, en raakten compleet in paniek. {winner1} en {winner2} accepteerden het cadeau dankbaar ({score}).",
+          "pre_filled_whatsapp": "🚨 CHOKE ALERT 🚨\n{loser1} & {loser2} storten volledig in na set 1 tegen {winner1} & {winner2} ({score}).\n#PadelRoast",
+          "match_recap": "Team B begon fouten te maken die op een lachfilm thuishoren. Team A hoefde niet eens goed te spelen, ze keken gewoon toe.",
+          "mvp_line": "🏆 Clown MVP: {loser1} voor het serveren van pure paniek.",
+          "rematch_hype": "Heeft Team B een navigatiesysteem nodig om de baan te vinden in de derde set? 🔥"
+        },
+        "sv": {
+          "headline": "MÄSTERSKAPET I CHOKNING",
+          "body_text": "{loser1} och {loser2} ledde med ett set, såg mållinjen och drabbades av total panik. {winner1} och {winner2} tackade för gåvan ({score}).",
+          "pre_filled_whatsapp": "🚨 CHOKE-VARNING UTLÖST 🚨\n{loser1} & {loser2} rasade ihop efter set 1 mot {winner1} & {winner2} ({score}).\n#PadelRoast",
+          "match_recap": "Lag B stod för missar som hör hemma på dolda kameran. Lag A spelade inte ens bra, de bara stod och tittade på raset.",
+          "mvp_line": "🏆 Clown MVP: {loser1} för panikartat spel.",
+          "rematch_hype": "Behöver lag B kompass för att hitta rätt i tredje set? 🔥"
+        }
+      }
+    },
+    {
+      "id": "close_casual_01",
+      "trigger": "close",
+      "tone": "casual",
+      "game_type": "standard",
+      "strings": {
+        "en": {
+          "headline": "Tight Battle",
+          "body_text": "Very close match today. {winner1} and {winner2} took the victory {score} against {loser1} and {loser2} in a match decided by tiny margins.",
+          "pre_filled_whatsapp": "🎾 Close Match: {winner1} & {winner2} edge {loser1} & {loser2} ({score}). #PadelRoast",
+          "match_recap": "Every set was a battle. Points were long and both teams played very well.",
+          "mvp_line": "MVP: {winner2} for staying cool under pressure.",
+          "rematch_hype": "We must play this matchup again!"
+        },
+        "es": {
+          "headline": "Batalla Ajustada",
+          "body_text": "Partido muy reñido hoy. {winner1} y {winner2} se llevaron la victoria {score} contra {loser1} y {loser2} en un partido decidido por mínimos detalles.",
+          "pre_filled_whatsapp": "🎾 Partido Ajustado: {winner1} y {winner2} vencen a {loser1} y {loser2} ({score}). #PadelRoast",
+          "match_recap": "Cada set fue una batalla. Los puntos fueron largos y ambos equipos jugaron muy bien.",
+          "mvp_line": "MVP: {winner2} por mantener la calma bajo presión.",
+          "rematch_hype": "¡Tenemos que repetir este partido!"
+        },
+        "fr": {
+          "headline": "Bataille Serrée",
+          "body_text": "Match très serré aujourd\\'hui. {winner1} et {winner2} l\\'emportent {score} contre {loser1} et {loser2} sur des détails infimes.",
+          "pre_filled_whatsapp": "🎾 Match Serré : {winner1} & {winner2} battent de justesse {loser1} & {loser2} ({score}). #PadelRoast",
+          "match_recap": "Chaque set a été un combat. Les échanges étaient longs et les deux équipes ont bien joué.",
+          "mvp_line": "MVP : {winner2} pour son calme sous la pression.",
+          "rematch_hype": "Il faut absolument refaire ce match !"
+        },
+        "it": {
+          "headline": "Battaglia Serrata",
+          "body_text": "Partita tiratissima oggi. {winner1} e {winner2} hanno strappato la vittoria per {score} contro {loser1} e {loser2} per pochissimi punti.",
+          "pre_filled_whatsapp": "🎾 Sul filo del rasoio: {winner1} & {winner2} la spuntano su {loser1} & {loser2} ({score}). #PadelRoast",
+          "match_recap": "Ogni set è stato combattuto. Scambi lunghi ed entrambe le coppie hanno giocato ad ottimo livello.",
+          "mvp_line": "MVP: {winner2} per la lucidità nei momenti decisivi.",
+          "rematch_hype": "Dobbiamo assolutamente rifarla!"
+        },
+        "nl": {
+          "headline": "Spannende Strijd",
+          "body_text": "Zeer spannende wedstrijd vandaag. {winner1} en {winner2} pakten de winst met {score} van {loser1} en {loser2} in een pot die op details werd beslist.",
+          "pre_filled_whatsapp": "🎾 Zinderende Pot: {winner1} & {winner2} winnen nipt van {loser1} & {loser2} ({score}). #PadelRoast",
+          "match_recap": "Elke set was een gevecht. De rally\\'s waren lang en beide teams speelden erg goed.",
+          "mvp_line": "MVP: {winner2} voor het koel blijven onder hoge druk.",
+          "rematch_hype": "Deze teams moeten snel weer tegen elkaar!"
+        },
+        "sv": {
+          "headline": "Tuff Batalj",
+          "body_text": "En riktigt jämn match idag. {winner1} och {winner2} knep segern med {score} mot {loser1} och {loser2} i en match som avgjordes på målsnöret.",
+          "pre_filled_whatsapp": "🎾 Jämn Match: {winner1} & {winner2} besegrade precis {loser1} & {loser2} ({score}). #PadelRoast",
+          "match_recap": "Varje set var en kamp. Bollen var i spel länge och båda lagen presterade på topp.",
+          "mvp_line": "MVP: {winner2} för att ha behållit lugnet i pressade lägen.",
+          "rematch_hype": "Vi måste köra denna match igen!"
+        }
+      }
+    },
+    {
+      "id": "close_balanced_01",
+      "trigger": "close",
+      "tone": "balanced",
+      "game_type": "standard",
+      "strings": {
+        "en": {
+          "headline": "BY THE SKIN OF THEIR TEETH",
+          "body_text": "{winner1} and {winner2} edged out {loser1} and {loser2} ({score}). A few different bounces and we'd be looking at a different result.",
+          "pre_filled_whatsapp": "⚖️ Nail Biter: {winner1} & {winner2} edge out {loser1} & {loser2} ({score}). #PadelRoast",
+          "match_recap": "A very tight contest. Both teams had set points but Team A executed slightly better on golden points.",
+          "mvp_line": "MVP: {winner2} for winning the crucial tiebreak points.",
+          "rematch_hype": "A rematch is practically mandatory here. 🍿"
+        },
+        "es": {
+          "headline": "POR LOS PELOS",
+          "body_text": "{winner1} y {winner2} superaron por la mínima a {loser1} y {loser2} ({score}). Un par de botes diferentes y el resultado habría sido otro.",
+          "pre_filled_whatsapp": "⚖️ Qué Tensión: {winner1} y {winner2} vencen al límite a {loser1} y {loser2} ({score}). #PadelRoast",
+          "match_recap": "Un partido muy igualado. Ambos equipos tuvieron puntos de set, pero el equipo A ejecutó mejor en los puntos de oro.",
+          "mvp_line": "MVP: {winner2} por ganar los puntos clave del tiebreak.",
+          "rematch_hype": "La revancha es prácticamente obligatoria. 🍿"
+        },
+        "fr": {
+          "headline": "UN PNEU D'ÉCART",
+          "body_text": "{winner1} et {winner2} l\\'ont emporté sur le fil face à {loser1} et {loser2} ({score}). À quelques rebonds près, le résultat aurait été différent.",
+          "pre_filled_whatsapp": "⚖️ Chaud Devant : {winner1} & {winner2} l\\'emportent de peu face à {loser1} & {loser2} ({score}). #PadelRoast",
+          "match_recap": "Un match extrêmement serré. Les deux équipes ont eu des balles de set, mais l\\'équipe A a mieux géré les points d\\'or.",
+          "mvp_line": "MVP : {winner2} pour avoir assuré dans les moments décisifs du tiebreak.",
+          "rematch_hype": "Une revanche est absolument obligatoire. 🍿"
+        },
+        "it": {
+          "headline": "PER IL ROTTO DELLA CUFFIA",
+          "body_text": "{winner1} e {winner2} hanno superato di un soffio {loser1} e {loser2} ({score}). Qualche deviazione fortunata in meno e staremmo parlando di un altro esito.",
+          "pre_filled_whatsapp": "⚖️ Che Tensione: {winner1} & {winner2} la spuntano su {loser1} & {loser2} ({score}). #PadelRoast",
+          "match_recap": "Partita estremamente equilibrata. Entrambe le coppie hanno avuto set point, ma il Team A è stato più concreto sui punti d\\'oro.",
+          "mvp_line": "MVP: {winner2} per aver giocato al meglio i punti caldi del tiebreak.",
+          "rematch_hype": "La rivincita è praticamente d\\'obbligo. 🍿"
+        },
+        "nl": {
+          "headline": "KRACHTMEETING OP DE VIERKANTE MILLIMETER",
+          "body_text": "{winner1} en {winner2} wonnen met het kleinste verschil van {loser1} en {loser2} ({score}). Een paar ballen anders en de uitslag was omgedraaid.",
+          "pre_filled_whatsapp": "⚖️ Billenknijper: {winner1} & {winner2} winnen nipt van {loser1} & {loser2} ({score}). #PadelRoast",
+          "match_recap": "Een zwaar bevochten pot. Beide teams kregen setpunten, maar Team A speelde de beslissende punten net wat scherper uit.",
+          "mvp_line": "MVP: {winner2} voor de beslissende ballen in de tiebreak.",
+          "rematch_hype": "Een revanche is na deze pot haast verplicht. 🍿"
+        },
+        "sv": {
+          "headline": "HÅRFINT I TOPPEN",
+          "body_text": "{winner1} och {winner2} drog det längsta strået mot {loser1} och {loser2} ({score}). Några få bollar åt andra hållet och det hade slagit över.",
+          "pre_filled_whatsapp": "⚖️ Rysare: {winner1} & {winner2} slog {loser1} & {loser2} med minsta marginal ({score}). #PadelRoast",
+          "match_recap": "En oerhört jämn historia. Båda lagen hade setbollar, men lag A var snäppet vassare på sudden death-poängen.",
+          "mvp_line": "MVP: {winner2} för sina viktiga bollar i tiebreaket.",
+          "rematch_hype": "Returmatch är mer eller mindre obligatoriskt efter detta. 🍿"
+        }
+      }
+    },
+    {
+      "id": "close_savage_01",
+      "trigger": "close",
+      "tone": "savage",
+      "game_type": "standard",
+      "strings": {
+        "en": {
+          "headline": "THE LUCK MERCHANTS PREVAIL",
+          "body_text": "{winner1} and {winner2} escaped with a win ({score}) against {loser1} and {loser2}. If nets and lines had feelings, they'd apologize to Team B.",
+          "pre_filled_whatsapp": "😤 LUCKIEST WIN EVER 😤\n{winner1} & {winner2} edge out {loser1} & {loser2} ({score}) via net cords.\n#PadelRoast",
+          "match_recap": "Team B hit cleaner shots, but Team A specialized in lucky frame hits and let cords. Padel can be cruel.",
+          "mvp_line": "🏆 Clown MVP: {winner1} for outstanding luck statistics.",
+          "rematch_hype": "Rematch? Yes, before Team A starts believing they are actually good. 🔥"
+        },
+        "es": {
+          "headline": "PREVALECEN LOS MERCADERES DE LA SUERTE",
+          "body_text": "{winner1} y {winner2} escaparon con una victoria ({score}) contra {loser1} y {loser2}. Si la red y las líneas tuvieran sentimientos, pedirían perdón al equipo B.",
+          "pre_filled_whatsapp": "😤 LA VICTORIA MÁS CHURRERA 😤\n{winner1} y {winner2} vencen a {loser1} y {loser2} ({score}) de pura potra.\n#PadelRoast",
+          "match_recap": "El equipo B pegó mejores golpes, pero el equipo A se especializó en cañas afortunadas y bolas de red. El pádel es cruel.",
+          "mvp_line": "🏆 MVP Payaso: {winner1} por sus estadísticas de suerte sobrehumanas.",
+          "rematch_hype": "¿Revancha? Sí, antes de que el equipo A se crea que de verdad juega bien. 🔥"
+        },
+        "fr": {
+          "headline": "TRIOMPHE DES VENDEURS DE CHANCE",
+          "body_text": "{winner1} et {winner2} s\\'en sortent par miracle ({score}) contre {loser1} et {loser2}. Si le filet et les lignes avaient une conscience, ils s\\'excuseraient auprès de l\\'équipe B.",
+          "pre_filled_whatsapp": "😤 LE PLUS GROS CHATTEUX DU SIÈCLE 😤\n{winner1} & {winner2} battent {loser1} & {loser2} ({score}) grâce au filet.\n#PadelRoast",
+          "match_recap": "L\\'équipe B a proposé du beau jeu, mais l\\'équipe A s\\'est spécialisée dans les bois chanceux et les touches de filet. Cruel.",
+          "mvp_line": "🏆 Clown MVP : {winner1} pour son taux d\\'insolence maximal.",
+          "rematch_hype": "Une revanche ? Oui, avant que l\\'équipe A ne commence à s\\'imaginer qu\\'elle sait jouer. 🔥"
+        },
+        "it": {
+          "headline": "IL TRIONFO DEI MIRACOLATI",
+          "body_text": "{winner1} e {winner2} sono scampati alla sconfitta ({score}) contro {loser1} e {loser2}. Se il nastro e le righe parlassero, chiederebbero scusa al Team B.",
+          "pre_filled_whatsapp": "😤 LA VITTORIA PIÙ CULOSA DI SEMPRE 😤\n{winner1} & {winner2} superano {loser1} & {loser2} ({score}) con tocchi di nastro.\n#PadelRoast",
+          "match_recap": "Il Team B ha giocato meglio, ma il Team A si è specializzato in colpi di telaio fortunati e deviazioni del nastro. Spietato.",
+          "mvp_line": "🏆 Clown MVP: {winner1} per statistiche di fortuna fuori scala.",
+          "rematch_hype": "Rivincita? Sì, prima che il Team A si autoconvinca di saper giocare a padel. 🔥"
+        },
+        "nl": {
+          "headline": "DE GELUKSZOEKERS WINNEN",
+          "body_text": "{winner1} en {winner2} ontsnapten met de winst ({score}) tegen {loser1} en {loser2}. Als het net en de lijnen konden praten, verontschuldigden ze zich nu bij Team B.",
+          "pre_filled_whatsapp": "😤 MAZZELAARS VAN HET JAAR 😤\n{winner1} & {winner2} winnen nipt van {loser1} & {loser2} ({score}) via netballen.\n#PadelRoast",
+          "match_recap": "Team B sloeg strakkere ballen, maar Team A blonk uit in frameslagen en netrollers. Padel is onbarmhartig.",
+          "mvp_line": "🏆 Clown MVP: {winner1} voor een buitengewoon hoog geluksgehalte.",
+          "rematch_hype": "Revanche? Zeker, voordat Team A echt gaat denken dat ze kunnen spelen. 🔥"
+        },
+        "sv": {
+          "headline": "RUTSCHKANEVINSTEN",
+          "body_text": "{winner1} och {winner2} kom undan med segern ({score}) mot {loser1} och {loser2}. Om nätet och linjerna hade känslor skulle de be lag B om ursäkt.",
+          "pre_filled_whatsapp": "😤 TURVINST UTAN DESS LIKE 😤\n{winner1} & {winner2} slår {loser1} & {loser2} ({score}) tack vare nätrullare.\n#PadelRoast",
+          "match_recap": "Lag B slog renare slag, men lag A specialiserade sig på ramträffar och tursamma nätstudsar. Padel kan vara grymt.",
+          "mvp_line": "🏆 Clown MVP: {winner1} för osannolik turstatistik.",
+          "rematch_hype": "Returmatch? Ja, innan lag A börjar intala sig själva att de faktiskt kan spela. 🔥"
+        }
+      }
+    },
+    {
+      "id": "dominant_casual_01",
+      "trigger": "dominant",
+      "tone": "casual",
+      "game_type": "standard",
+      "strings": {
+        "en": {
+          "headline": "Clear Victory",
+          "body_text": "{winner1} and {winner2} controlled the game from start to finish, winning {score} against {loser1} and {loser2}.",
+          "pre_filled_whatsapp": "🎾 Clear Win: {winner1} & {winner2} def. {loser1} & {loser2} ({score}). #PadelRoast",
+          "match_recap": "A very stable performance by the winners who did not give away many unforced errors.",
+          "mvp_line": "MVP: {winner1} for strong overheads.",
+          "rematch_hype": "Looking forward to another friendly game."
+        },
+        "es": {
+          "headline": "Victoria Clara",
+          "body_text": "{winner1} y {winner2} controlaron el juego de principio a fin, ganando {score} contra {loser1} y {loser2}.",
+          "pre_filled_whatsapp": "🎾 Victoria Clara: {winner1} y {winner2} ganan a {loser1} y {loser2} ({score}). #PadelRoast",
+          "match_recap": "Una actuación muy estable de los ganadores, que cometieron pocos errores no forzados.",
+          "mvp_line": "MVP: {winner1} por sus potentes golpes altos.",
+          "rematch_hype": "Esperando el próximo partido amistoso."
+        },
+        "fr": {
+          "headline": "Victoire Claire",
+          "body_text": "{winner1} et {winner2} ont contrôlé la partie de bout en bout, l\\'emportant {score} contre {loser1} et {loser2}.",
+          "pre_filled_whatsapp": "🎾 Victoire Nette : {winner1} & {winner2} battent {loser1} & {loser2} ({score}). #PadelRoast",
+          "match_recap": "Une performance très stable des vainqueurs qui ont fait peu de fautes directes.",
+          "mvp_line": "MVP : {winner1} pour de solides smashs.",
+          "rematch_hype": "Vivement la prochaine partie amicale."
+        },
+        "it": {
+          "headline": "Vittoria Netta",
+          "body_text": "{winner1} e {winner2} hanno controllato il match dall\\'inizio alla fine, imponendosi per {score} su {loser1} e {loser2}.",
+          "pre_filled_whatsapp": "🎾 Match Senza Storia: {winner1} & {winner2} superano {loser1} & {loser2} ({score}). #PadelRoast",
+          "match_recap": "Una prestazione molto lineare dei vincitori, con pochissimi errori gratuiti concessi.",
+          "mvp_line": "MVP: {winner1} per la gestione dei colpi aerei.",
+          "rematch_hype": "Ci vediamo presto per una nuova sfida amichevole."
+        },
+        "nl": {
+          "headline": "Duidelijke Overwinning",
+          "body_text": "{winner1} en {winner2} controleerden de wedstrijd van begin tot eind en wonnen met {score} van {loser1} en {loser2}.",
+          "pre_filled_whatsapp": "🎾 Duidelijke Overwinning: {winner1} & {winner2} winnen van {loser1} & {loser2} ({score}). #PadelRoast",
+          "match_recap": "Een solide en stabiele prestatie van de winnaars die weinig fouten weggaven.",
+          "mvp_line": "MVP: {winner1} voor scherpe bovenshandse slagen.",
+          "rematch_hype": "We zien elkaar snel weer op de baan."
+        },
+        "sv": {
+          "headline": "Tydlig Matchbild",
+          "body_text": "{winner1} och {winner2} kontrollerade matchen från början till slut och vann med {score} mot {loser1} och {loser2}.",
+          "pre_filled_whatsapp": "🎾 Klar Seger: {winner1} & {winner2} slog {loser1} & {loser2} ({score}). #PadelRoast",
+          "match_recap": "En väldigt stabil insats av vinnarna som bjöd på få enkla misstag.",
+          "mvp_line": "MVP: {winner1} för bra overhead-spel.",
+          "rematch_hype": "Ser fram emot nästa trevliga match."
+        }
+      }
+    },
+    {
+      "id": "dominant_balanced_01",
+      "trigger": "dominant",
+      "tone": "balanced",
+      "game_type": "standard",
+      "strings": {
+        "en": {
+          "headline": "NET PATROL IN FULL FORCE",
+          "body_text": "{winner1} and {winner2} dominated the kitchen today, winning {score} against {loser1} and {loser2}. Team B had no answers for the quick volleys.",
+          "pre_filled_whatsapp": "⚔️ Domination: {winner1} & {winner2} dominate {loser1} & {loser2} ({score}). #PadelRoast",
+          "match_recap": "A masterclass in transition play. Team A held the net and forced errors. Team B needs to work on lob depth.",
+          "mvp_line": "MVP: {winner1} for wall-like volleys.",
+          "rematch_hype": "Time for Team B to practice their defensive play. 🎾"
+        },
+        "es": {
+          "headline": "PATRULLA DE LA RED AL COMPLETO",
+          "body_text": "{winner1} y {winner2} dominaron la cocina hoy, ganando {score} contra {loser1} y {loser2}. El equipo B no tuvo respuestas ante las voleas rápidas.",
+          "pre_filled_whatsapp": "⚔️ Dominación: {winner1} y {winner2} dominan a {loser1} y {loser2} ({score}). #PadelRoast",
+          "match_recap": "Una clase magistral de transiciones. El equipo A dominó la red. El equipo B necesita ajustar la profundidad del globo.",
+          "mvp_line": "MVP: {winner1} por sus voleas de pared.",
+          "rematch_hype": "Es hora de que el equipo B practique su defensa en pista. 🎾"
+        },
+        "fr": {
+          "headline": "CONTRÔLE TOTAL DU FILET",
+          "body_text": "{winner1} et {winner2} ont régné sur la piste, s\\'imposant {score} contre {loser1} et {loser2}. L\\'équipe B n\\'a pas trouvé de parade face aux volées rapides.",
+          "pre_filled_whatsapp": "⚔️ Domination : {winner1} & {winner2} dominent {loser1} & {loser2} ({score}). #PadelRoast",
+          "match_recap": "Une masterclass en transition. L\\'équipe A a tenu le filet. L\\'équipe B doit retravailler la profondeur de ses lobs.",
+          "mvp_line": "MVP : {winner1} pour ses volées de béton.",
+          "rematch_hype": "L\\'équipe B a du pain sur la planche en défense. 🎾"
+        },
+        "it": {
+          "headline": "IL MURO SOTTO RETE",
+          "body_text": "{winner1} e {winner2} hanno dominato a rete oggi, imponendosi per {score} su {loser1} e {loser2}. Il Team B non ha retto il ritmo delle volée veloci.",
+          "pre_filled_whatsapp": "⚔️ Dominio: {winner1} & {winner2} controllano {loser1} & {loser2} ({score}). #PadelRoast",
+          "match_recap": "Una masterclass di transizione. Il Team A ha tenuto sempre la rete. Il Team B deve allungare la traiettoria dei pallonetti.",
+          "mvp_line": "MVP: {winner1} per volée impenetrabili.",
+          "rematch_hype": "È il momento per il Team B di studiare un gioco più difensivo. 🎾"
+        },
+        "nl": {
+          "headline": "NETPATROUILLE OP KRACHT",
+          "body_text": "{winner1} en {winner2} domineerden het net en wonnen met {score} van {loser1} en {loser2}. Team B had geen antwoord op de snelle volleys.",
+          "pre_filled_whatsapp": "⚔️ Overheersing: {winner1} & {winner2} de baas over {loser1} & {loser2} ({score}). #PadelRoast",
+          "match_recap": "Een lesje in omschakeling. Team A behield de controle aan het net. Team B moet werken aan de diepte van hun lobs.",
+          "mvp_line": "MVP: {winner1} voor zijn muur-achtige volleys.",
+          "rematch_hype": "Tijd voor Team B om verdedigend te trainen. 🎾"
+        },
+        "sv": {
+          "headline": "TOTAL KONTROLL VID NÄTET",
+          "body_text": "{winner1} och {winner2} dominerade banan helt idag, och vann med {score} mot {loser1} och {loser2}. Lag B hittade inget motmedel mot de snabba volleybollarna.",
+          "pre_filled_whatsapp": "⚔️ Dominans: {winner1} & {winner2} dominerade {loser1} & {loser2} ({score}). #PadelRoast",
+          "match_recap": "En ren lektion i nätövergångar. Lag A ägde nätet. Lag B behöver arbeta på djupet i sina lobbar.",
+          "mvp_line": "MVP: {winner1} för sina ogenomträngliga volleys.",
+          "rematch_hype": "Dags för lag B att träna på sitt försvarsspel. 🎾"
+        }
+      }
+    },
+    {
+      "id": "dominant_savage_01",
+      "trigger": "dominant",
+      "tone": "savage",
+      "game_type": "standard",
+      "strings": {
+        "en": {
+          "headline": "THE ABSOLUTE NO-SHOW AWARD",
+          "body_text": "{winner1} and {winner2} treated this match like a light warmup session ({score}). {loser1} and {loser2} looked like they were holding padel rackets for the first time.",
+          "pre_filled_whatsapp": "💀 EASY PRACTICE SESSION 💀\n{winner1} & {winner2} breeze past {loser1} & {loser2} ({score}).\n#PadelRoast",
+          "match_recap": "The winners didn't even break a sweat. Team B kept missing standard shots. A tragic display of sport.",
+          "mvp_line": "🏆 Clown MVP: {loser2} for outstanding ball dodging.",
+          "rematch_hype": "Team B should try playing with a bigger ball next time. 🔥"
+        },
+        "es": {
+          "headline": "PREMIO AL JUGADOR AUSENTE",
+          "body_text": "{winner1} y {winner2} se tomaron esto como un calentamiento suave ({score}). {loser1} y {loser2} parecía que cogían una pala de pádel por primera vez.",
+          "pre_filled_whatsapp": "💀 ENTRENAMIENTO FÁCIL 💀\n{winner1} y {winner2} pasean ante {loser1} y {loser2} ({score}).\n#PadelRoast",
+          "match_recap": "Los ganadores ni sudaron. El equipo B no paró de fallar golpes de iniciación. Una tragedia deportiva.",
+          "mvp_line": "🏆 MVP Payaso: {loser2} por esquivar bolas de forma espectacular.",
+          "rematch_hype": "El equipo B debería probar a jugar con una pelota más grande la próxima vez. 🔥"
+        },
+        "fr": {
+          "headline": "TROPHÉE DU SPECTATEUR PASSIF",
+          "body_text": "{winner1} et {winner2} ont pris ce match pour un échauffement léger ({score}). {loser1} et {loser2} avaient l\\'air de tenir une raquette pour la première fois.",
+          "pre_filled_whatsapp": "💀 ÉCHAUFFEMENT SANS SUEUR 💀\n{winner1} & {winner2} survolent face à {loser1} & {loser2} ({score}).\n#PadelRoast",
+          "match_recap": "Les vainqueurs n\\'ont même pas eu chaud. L\\'équipe B a raté tous les coups basiques. Un naufrage sportif.",
+          "mvp_line": "🏆 Clown MVP : {loser2} pour son talent d\\'évitement de balle.",
+          "rematch_hype": "L\\'équipe B devrait peut-être essayer avec une balle de basket. 🔥"
+        },
+        "it": {
+          "headline": "PREMIO ASSENZA INGIUSTIFICATA",
+          "body_text": "{winner1} e {winner2} hanno trattato questo match come un riscaldamento leggero ({score}). {loser1} e {loser2} sembravano impugnare una racchetta per la prima volta.",
+          "pre_filled_whatsapp": "💀 ALLENAMENTO SENZA SFORZO 💀\n{winner1} & {winner2} passeggiano su {loser1} & {loser2} ({score}).\n#PadelRoast",
+          "match_recap": "I vincitori non hanno nemmeno sudato. Il Team B regalava errori basilari a profusione. Tragedia greca in campo.",
+          "mvp_line": "🏆 Clown MVP: {loser2} per la straordinaria capacità di scansare i colpi.",
+          "rematch_hype": "Il Team B dovrebbe provare a giocare con un pallone da calcio. 🔥"
+        },
+        "nl": {
+          "headline": "DE PASSIEVE DEELNAME PRIJS",
+          "body_text": "{winner1} en {winner2} zagen dit match aan als een lichte warming-up ({score}). Het leek wel alsof {loser1} en {loser2} voor het eerst een padelracket vasthielden.",
+          "pre_filled_whatsapp": "💀 LICHTE WARMING-UP 💀\n{winner1} & {winner2} wandelen langs {loser1} & {loser2} ({score}).\n#PadelRoast",
+          "match_recap": "De winnaars hoefden niet eens te zweten. Team B sloeg ballen die nog op de parkeerplaats landden. Een sportief drama.",
+          "mvp_line": "🏆 Clown MVP: {loser2} voor uitstekend ballen ontwijken.",
+          "rematch_hype": "Team B moet volgende keer misschien proberen met een grotere bal te spelen. 🔥"
+        },
+        "sv": {
+          "headline": "KORPEN-VARNINGEN UTLÖST",
+          "body_text": "{winner1} och {winner2} tog den här matchen som ett lätt uppvärmningspass ({score}). {loser1} och {loser2} såg ut att hålla i ett racket för första gången.",
+          "pre_filled_whatsapp": "💀 ENKEL TRÄNING 💀\n{winner1} & {winner2} glödde förbi {loser1} & {loser2} ({score}).\n#PadelRoast",
+          "match_recap": "Vinnarna behövde inte ens anstränga sig. Lag B missade standardslag på löpande band. En sportslig tragedi.",
+          "mvp_line": "🏆 Clown MVP: {loser2} för fantastiskt undvikande av bollen.",
+          "rematch_hype": "Lag B kanske borde testa att spela med en fotboll nästa gång. 🔥"
+        }
+      }
+    },
+    {
+      "id": "upset_casual_01",
+      "trigger": "upset",
+      "tone": "casual",
+      "game_type": "standard",
+      "strings": {
+        "en": {
+          "headline": "Good Match",
+          "body_text": "{winner1} and {winner2} earned a hard-fought victory against {loser1} and {loser2} with a score of {score}.",
+          "pre_filled_whatsapp": "🎾 Match Result: {winner1} & {winner2} won {score} against {loser1} & {loser2}. #PadelRoast",
+          "match_recap": "A very competitive game with many intense points. Both sides had good runs of form.",
+          "mvp_line": "MVP: {winner1} for solid defensive play.",
+          "rematch_hype": "Looking forward to another run soon!"
+        },
+        "es": {
+          "headline": "Buen Partido",
+          "body_text": "{winner1} y {winner2} lograron una victoria muy trabajada contra {loser1} y {loser2} con un marcador de {score}.",
+          "pre_filled_whatsapp": "🎾 Marcador: {winner1} y {winner2} ganan {score} contra {loser1} y {loser2}. #PadelRoast",
+          "match_recap": "Un partido muy competitivo con muchos puntos intensos. Ambos lados mostraron buen nivel.",
+          "mvp_line": "MVP: {winner1} por su sólida defensa.",
+          "rematch_hype": "¡Esperando repetir pronto!"
+        },
+        "fr": {
+          "headline": "Bon Match",
+          "body_text": "{winner1} et {winner2} ont remporté une victoire disputée contre {loser1} et {loser2} avec un score de {score}.",
+          "pre_filled_whatsapp": "🎾 Résultat : {winner1} & {winner2} battent {loser1} & {loser2} ({score}). #PadelRoast",
+          "match_recap": "Un match très disputé avec de nombreux échanges intenses. Les deux équipes ont eu de bons passages.",
+          "mvp_line": "MVP : {winner1} pour son jeu défensif solide.",
+          "rematch_hype": "Vivement la prochaine partie !"
+        },
+        "it": {
+          "headline": "Bella Partita",
+          "body_text": "{winner1} e {winner2} si sono aggiudicati una vittoria sudata contro {loser1} e {loser2} con il punteggio di {score}.",
+          "pre_filled_whatsapp": "🎾 Risultato: {winner1} & {winner2} vincono per {score} contro {loser1} & {loser2}. #PadelRoast",
+          "match_recap": "Una partita molto viva con ottimi scambi. Entrambe le coppie hanno mostrato sprazzi di bel gioco.",
+          "mvp_line": "MVP: {winner1} per il gioco difensivo solido.",
+          "rematch_hype": "Pronti a rifarlo al più presto!"
+        },
+        "nl": {
+          "headline": "Leuke Pot",
+          "body_text": "{winner1} en {winner2} haalden een zwaarbevochten overwinning binnen tegen {loser1} en {loser2} met een score van {score}.",
+          "pre_filled_whatsapp": "🎾 Potje gespeeld: {winner1} & {winner2} winnen met {score} van {loser1} & {loser2}. #PadelRoast",
+          "match_recap": "Een sportieve en competitieve wedstrijd met lange rally\\'s. Beide kanten lieten goed spel zien.",
+          "mvp_line": "MVP: {winner1} voor degelijk verdedigingswerk.",
+          "rematch_hype": "Snel weer eens spelen!"
+        },
+        "sv": {
+          "headline": "Bra Match",
+          "body_text": "{winner1} och {winner2} knep en välförtjänt seger mot {loser1} och {loser2} med resultatet {score}.",
+          "pre_filled_whatsapp": "🎾 Resultat: {winner1} & {winner2} vann med {score} mot {loser1} & {loser2}. #PadelRoast",
+          "match_recap": "En mycket jämn och bra match med flera intensiva bollar. Båda paren spelade bitvis fantastiskt.",
+          "mvp_line": "MVP: {winner1} för starkt defensivt spel.",
+          "rematch_hype": "Ser fram emot nästa utmaning snart!"
+        }
+      }
+    },
+    {
+      "id": "upset_balanced_01",
+      "trigger": "upset",
+      "tone": "balanced",
+      "game_type": "standard",
+      "strings": {
+        "en": {
+          "headline": "TABLES HAVE TURNED",
+          "body_text": "{winner1} and {winner2} surprised everyone by defeating {loser1} and {loser2} ({score}). The favorites were left scratching their heads.",
+          "pre_filled_whatsapp": "⚔️ Upset Alert: {winner1} & {winner2} stun {loser1} & {loser2} ({score}). #PadelRoast",
+          "match_recap": "A surprising outcome. Team B entered with confidence but Team A played aggressive padel and capitalized on key breaks.",
+          "mvp_line": "MVP: {winner2} for decisive returns.",
+          "rematch_hype": "Team B will surely want to restore their reputation next time. 🧐"
+        },
+        "es": {
+          "headline": "TABLAS VOLTEADAS",
+          "body_text": "{winner1} y {winner2} sorprendieron a todos al derrotar a {loser1} y {loser2} ({score}). Los favoritos se quedaron rascándose la cabeza.",
+          "pre_filled_whatsapp": "⚔️ Sorpresa: {winner1} y {winner2} vencen inesperadamente a {loser1} y {loser2} ({score}). #PadelRoast",
+          "match_recap": "Resultado inesperado. El equipo B venía con confianza, pero el equipo A jugó muy agresivo y aprovechó los breaks clave.",
+          "mvp_line": "MVP: {winner2} por sus restos decisivos.",
+          "rematch_hype": "El equipo B querrá recuperar su reputación la próxima vez. 🧐"
+        },
+        "fr": {
+          "headline": "LES CARTES REDISTRIBUÉES",
+          "body_text": "{winner1} et {winner2} ont surpris tout le monde en battant {loser1} et {loser2} ({score}). Les favoris sont restés perplexes.",
+          "pre_filled_whatsapp": "⚔️ Alerte Surprise : {winner1} & {winner2} surprennent {loser1} & {loser2} ({score}). #PadelRoast",
+          "match_recap": "Un résultat inattendu. L\\'équipe B partait confiante, mais l\\'équipe A a joué crânement sa chance et fait le break.",
+          "mvp_line": "MVP : {winner2} pour des retours décisifs.",
+          "rematch_hype": "L\\'équipe B voudra laver son honneur la prochaine fois. 🧐"
+        },
+        "it": {
+          "headline": "TAVOLI RIBALTATI",
+          "body_text": "{winner1} e {winner2} hanno sorpreso tutti sconfiggendo {loser1} e {loser2} ({score}). I favoriti della vigilia masticano amaro.",
+          "pre_filled_whatsapp": "⚔️ Sorpresa: {winner1} & {winner2} sgambettano {loser1} & {loser2} ({score}). #PadelRoast",
+          "match_recap": "Esito a sorpresa. Il Team B è entrato in campo troppo sicuro, mentre il Team A ha giocato con rabbia aggredendo sui break.",
+          "mvp_line": "MVP: {winner2} per risposte chirurgiche.",
+          "rematch_hype": "Il Team B vorrà riscattare la reputazione al più presto. 🧐"
+        },
+        "nl": {
+          "headline": "DE ROLLEN OMDGEKRAAD",
+          "body_text": "{winner1} en {winner2} verrasten vriend en vijand door {loser1} en {loser2} te kloppen ({score}). De favorieten stonden erbij en keken ernaar.",
+          "pre_filled_whatsapp": "⚔️ Verrassing: {winner1} & {winner2} stunten tegen {loser1} & {loser2} ({score}). #PadelRoast",
+          "match_recap": "Verrassende uitslag. Team B begon met veel vertrouwen, maar Team A speelde aanvallend en sloeg toe op de breakpoints.",
+          "mvp_line": "MVP: {winner2} voor beslissende slagen.",
+          "rematch_hype": "Team B zal de eer de volgende keer zeker willen herstellen. 🧐"
+        },
+        "sv": {
+          "headline": "SKRÄLLEN ÄR ETT FAKTUM",
+          "body_text": "{winner1} och {winner2} överraskade alla genom att slå {loser1} och {loser2} ({score}). Favoriterna fick gå hem och tänka om.",
+          "pre_filled_whatsapp": "⚔️ Skräll-larm: {winner1} & {winner2} skrällde mot {loser1} & {loser2} ({score}). #PadelRoast",
+          "match_recap": "Ett oväntat slut. Lag B klev in med gott självförtroende men lag A visade prov på aggressivt spel och tog vara på lägena.",
+          "mvp_line": "MVP: {winner2} för sina tunga returer.",
+          "rematch_hype": "Lag B lär vilja återupprätta sin heder nästa match. 🧐"
+        }
+      }
+    },
+    {
+      "id": "upset_savage_01",
+      "trigger": "upset",
+      "tone": "savage",
+      "game_type": "standard",
+      "strings": {
+        "en": {
+          "headline": "THE EGO REFLATION SPECIAL",
+          "body_text": "{winner1} and {winner2} completely popped the ego bubble of {loser1} and {loser2} ({score}). Turns out talking trash doesn't win games.",
+          "pre_filled_whatsapp": "😭 THE EGO POPPER 😭\n{loser1} & {loser2} humiliated by {winner1} & {winner2} ({score}) after trash-talking.\n#PadelRoast",
+          "match_recap": "Team B talked a big game beforehand. Padel court doesn't care about talk, it care about shots. Aggressive Net control for the winners.",
+          "mvp_line": "🏆 Clown MVP: {loser1} for outstanding talking, poor playing.",
+          "rematch_hype": "Before asking for a rematch, Team B needs a new humility advisor. 🔥"
+        },
+        "es": {
+          "headline": "EL ESPECIAL DEL EGO DESINFLADO",
+          "body_text": "{winner1} y {winner2} pincharon por completo el globo del ego de {loser1} y {loser2} ({score}). Resulta que hablar de más no gana partidos.",
+          "pre_filled_whatsapp": "😭 EL DESINFLA-EGOS 😭\n{loser1} y {loser2} humillados por {winner1} y {winner2} ({score}) tras vacilar.\n#PadelRoast",
+          "match_recap": "El equipo B habló mucho antes del partido. A la pista no le importan las palabras, sino los golpes. Control agresivo de la red por los ganadores.",
+          "mvp_line": "🏆 MVP Payaso: {loser1} por hablar excelente y jugar pésimo.",
+          "rematch_hype": "Antes de pedir la revancha, el equipo B necesita un asesor de humildad. 🔥"
+        },
+        "fr": {
+          "headline": "SPÉCIAL DÉGONFLAGE D'EGO",
+          "body_text": "{winner1} et {winner2} ont complètement crevé le ballon de l\\'ego de {loser1} et {loser2} ({score}). Il s\\'avère que trop parler ne fait pas gagner.",
+          "pre_filled_whatsapp": "😭 LE DÉGONFL'EGO 😭\n{loser1} & {loser2} humiliés par {winner1} & {winner2} ({score}) après avoir trop bavardé.\n#PadelRoast",
+          "match_recap": "L\\'équipe B a beaucoup parlé avant de jouer. Le terrain s\\'en fout des paroles, il veut des actes. Domination totale des vainqueurs.",
+          "mvp_line": "🏆 Clown MVP : {loser1} pour ses grandes phrases et son petit jeu.",
+          "rematch_hype": "Avant de réclamer une revanche, l\\'équipe B devrait prendre des cours de modestie. 🔥"
+        },
+        "it": {
+          "headline": "LO SGONFIA-EGO DI GRUPPO",
+          "body_text": "{winner1} e {winner2} hanno completamente sgonfiato il palloncino dell\\'ego di {loser1} e {loser2} ({score}). Evidentemente parlare prima non fa vincere i punti.",
+          "pre_filled_whatsapp": "😭 LO SGONFIA-EGO 😭\n{loser1} & {loser2} umiliati da {winner1} & {winner2} ({score}) dopo aver parlato troppo.\n#PadelRoast",
+          "match_recap": "Il Team B ha parlato molto prima dell\\'ingresso in campo. Alla pista interessano i fatti, e il Team A ha risposto a rete.",
+          "mvp_line": "🏆 Clown MVP: {loser1} per aver parlato benissimo e giocato malissimo.",
+          "rematch_hype": "Prima di chiedere la rivincita, il Team B farebbe bene a meditare. 🔥"
+        },
+        "nl": {
+          "headline": "HET EGO DESILLUSIE FEEST",
+          "body_text": "{winner1} en {winner2} hebben de grote mond van {loser1} en {loser2} vakkundig gesnoerd ({score}). Praten op de parkeerplaats levert geen punten op.",
+          "pre_filled_whatsapp": "😭 EGO GEKROMPEN 😭\n{loser1} & {loser2} vernederd door {winner1} & {winner2} ({score}) na een grote mond.\n#PadelRoast",
+          "match_recap": "Team B dacht de overwinning al binnen te hebben. De padelbaan straft dat genadeloos af. Agressief spel van de winnaars.",
+          "mvp_line": "🏆 Clown MVP: {loser1} voor veel praatjes maar weinig daden.",
+          "rematch_hype": "Voordat Team B een revanche vraagt, moeten ze misschien wat stiller trainen. 🔥"
+        },
+        "sv": {
+          "headline": "PUNKTERING AV EGOT",
+          "body_text": "{winner1} och {winner2} punkterade fullkomligt egot på {loser1} och {loser2} ({score}). Det visar sig att kaxigt snack inte vinner gem.",
+          "pre_filled_whatsapp": "😭 EGOPUNKTERINGEN 😭\n{loser1} & {loser2} förnedrade av {winner1} & {winner2} ({score}) efter mycket snack.\n#PadelRoast",
+          "match_recap": "Lag B pratade stort innan match. Padelbanan bryr sig inte om snack, bara resultat. Aggressivt nätspel av vinnarna.",
+          "mvp_line": "🏆 Clown MVP: {loser1} för mycket snack och liten verkstad.",
+          "rematch_hype": "Innan lag B ber om returmatch borde de nog ta en lektion i ödmjukhet. 🔥"
+        }
+      }
+    }
+  ]
+}

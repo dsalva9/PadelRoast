@@ -1,0 +1,6 @@
+{
+  "name": "PadelRoast",
+  "description": "Viral, shareable, AI-generated padel match roast cards and performance tracking.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

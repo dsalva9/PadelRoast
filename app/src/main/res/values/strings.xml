@@ -1,0 +1,90 @@
+<resources>
+    <string name="app_name">PadelRoast</string>
+    <string name="app_description">Convert padel sweat and choking into viral AI sports cards</string>
+    <string name="nav_log_match">Log Match</string>
+    <string name="nav_history">History</string>
+    <string name="header_score">Enter Match Score</string>
+    <string name="set_label">Set %1$d</string>
+    <string name="team_a">Team A (You &amp; Partner)</string>
+    <string name="team_b">Team B (Opponents)</string>
+    <string name="player_hint">Player Name</string>
+    <string name="same_lineup_btn">Same Lineup 🔄</string>
+    <string name="tone_label">Banter Tone</string>
+    <string name="tone_casual">Casual</string>
+    <string name="tone_balanced">Balanced</string>
+    <string name="tone_savage">Savage</string>
+    <string name="generate_btn">Generate Roast 🔥</string>
+    <string name="expand_details">Expand Details 🔽</string>
+    <string name="match_recap_title">Match Recap</string>
+    <string name="rematch_title">Rematch Trash-Talk</string>
+    <string name="history_empty">No matches logged yet. Go drop some receipts!</string>
+    <string name="header_archives">Court Archives</string>
+    <string name="archives_subtitle">Track your historical roasts, set scores, and local ELO rankings.</string>
+    <string name="history_tab">Match History</string>
+    <string name="rankings_tab">Player ELO Rankings</string>
+    <string name="reshare_card_btn">Re-share Card</string>
+    <string name="trigger_label">Trigger: %1$s</string>
+    <string name="tone_prefix">Tone: %1$s</string>
+    <string name="leaderboard_rank_name">RANK &amp; NAME</string>
+    <string name="leaderboard_wl_rate">W/L (RATE)</string>
+    <string name="leaderboard_elo">ELO</string>
+    <string name="win_rate_suffix">%1$d%% Win</string>
+    <string name="title_receipt">Roast Receipt</string>
+    <string name="swipe_instruction">Horizontal Swipe for Alternative Batches 🤖</string>
+    <string name="tactical_diagnostics_title">Tactical Match Diagnostics</string>
+    <string name="expand_text">Expand Details</string>
+    <string name="collapse_text">Collapse</string>
+    <string name="comedic_recap">Comedic Sports Recap:</string>
+    <string name="clown_mvp">The Clown MVP Highlight:</string>
+    <string name="rematch_hype_title">Rematch Threats &amp; Hype:</string>
+    <string name="player_label">Player %1$d</string>
+    <string name="set_label_selector">Set %1$d Score</string>
+    <string name="set_label_selector_optional">Set 3 Score (Optional)</string>
+    <string name="team_a_score">Team A score:</string>
+    <string name="team_b_score">Team B score:</string>
+    <string name="share_btn_text">Drop the Receipt 🧾</string>
+    <string name="log_another_btn">Log Another Match</string>
+    <string name="generating_text">Analyzing choking statistics… ⏳</string>
+    <string name="generating_sub">Preparing custom player roasts &amp; ELO logs…</string>
+    <string name="tactical_match_diagnostics">Tactical Match Diagnostics</string>
+    <string name="flavor_tags_title">Choose Sport Flavor Tags</string>
+    <string name="tag_demolished">Demolished</string>
+    <string name="tag_choked">Choked</string>
+    <string name="tag_lucky">Lucky Win</string>
+    <string name="tag_comeback">Comeback</string>
+    <string name="history_empty_title">ARCHIVE IS EMPTY</string>
+    <string name="history_empty_desc">Log your first padel game under the Banter Deck to produce viral roasts!</string>
+    <string name="leaderboard_empty_title">NO ELO RANKINGS</string>
+    <string name="leaderboard_empty_desc">Elo ratings are calculated automatically upon logging matches.</string>
+
+    <!-- Settings -->
+    <string name="settings_tab">Settings</string>
+    <string name="settings_title">SETTINGS</string>
+    <string name="settings_language_title">App Language</string>
+    <string name="settings_language_system">System Default</string>
+    <string name="settings_pro_title">PadelRoast Pro</string>
+    <string name="settings_current_plan">Current plan:</string>
+    <string name="settings_plan_free">FREE</string>
+    <string name="settings_plan_pro">PRO</string>
+    <string name="settings_ai_remaining">AI roasts left today: %1$d/%2$d</string>
+    <string name="settings_ai_unlimited">Unlimited AI roasts</string>
+    <string name="settings_pro_benefit_unlimited">Unlimited AI-generated roasts</string>
+    <string name="settings_pro_benefit_savage">💀 SAVAGE!! mode</string>
+    <string name="settings_pro_benefit_model">Powered by GPT-4o</string>
+    <string name="settings_upgrade_btn">Upgrade to Pro ⚡</string>
+    <string name="settings_upgrade_coming_soon">Coming soon!</string>
+    <string name="settings_about">About</string>
+    <string name="settings_version">Version %1$s</string>
+    <string name="settings_made_with">Made with 🔥 by PadelRoast</string>
+
+    <!-- Tone: SAVAGE!! -->
+    <string name="tone_savage_pro">SAVAGE!!</string>
+    <string name="tone_savage_pro_locked">SAVAGE!! uses our most powerful AI for absolutely unhinged roasts. Upgrade to Pro to unlock. 💀</string>
+
+    <!-- AI Quota -->
+    <string name="ai_quota_remaining">⚡ %1$d AI roasts left today</string>
+    <string name="ai_quota_exhausted">Using template — Go Pro for unlimited AI roasts ⚡</string>
+    <string name="ai_quota_pro">⚡ Unlimited AI roasts</string>
+    <string name="template_banner">Template roast. Go Pro for unique AI-generated content ⚡</string>
+    <string name="generate_template_btn">Generate Template Roast 📝</string>
+</resources>
