@@ -82,7 +82,7 @@
     <string name="tone_savage_pro_locked">SAVAGE!! uses our most powerful AI for absolutely unhinged roasts. Upgrade to Pro to unlock. 💀</string>
 
     <!-- AI Quota -->
-    <string name="ai_quota_remaining">⚡ %1$d AI roasts left today</string>
+    <string name="ai_quota_remaining">⚡ %1$d AI roasts left this month</string>
     <string name="ai_quota_exhausted">Using template — Go Pro for unlimited AI roasts ⚡</string>
     <string name="ai_quota_pro">⚡ Unlimited AI roasts</string>
     <string name="template_banner">Template roast. Go Pro for unique AI-generated content ⚡</string>

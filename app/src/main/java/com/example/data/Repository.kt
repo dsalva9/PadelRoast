@@ -33,7 +33,9 @@ class PadelRepository(private val database: AppDatabase) {
         set3A: Int, set3B: Int,
         tone: String,
         trigger: String,
-        responseText: String
+        responseText: String,
+        isTemplate: Boolean = false,
+        customContext: String? = null
     ): Long = withContext(Dispatchers.IO) {
         
         // 1. Save match record
@@ -48,7 +50,9 @@ class PadelRepository(private val database: AppDatabase) {
             player4 = player4.trim(),
             tone = tone,
             trigger_detected = trigger,
-            gemini_response_json = responseText
+            gemini_response_json = responseText,
+            isTemplate = isTemplate,
+            customContext = customContext
         )
         val matchId = matchDao.insertMatch(match)
 

@@ -23,7 +23,8 @@ data class RoastRequest(
     val history_context: String,
     val tier: String,
     val locale: String,
-    val game_type: String = "standard"
+    val game_type: String = "standard",
+    val custom_context: String? = null
 )
 
 // --- Response models (kept from original, unchanged) ---

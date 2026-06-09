@@ -34,9 +34,10 @@ interface RoastRequest {
   trigger: string;
   tags?: string[];
   history_context?: string;
-  tier: "free" | "pro";
+  tier: "free" | "pro_premium" | "pro_eco";
   locale?: string;
   game_type?: string;
+  custom_context?: string;
 }
 
 function buildSystemPrompt(tone: string, locale: string): string {
@@ -72,11 +73,16 @@ function buildUserPrompt(req: RoastRequest): string {
     req.tags && req.tags.length > 0
       ? `Flavor tags: ${req.tags.join(", ")}`
       : "";
-  const historyLine = req.history_context
-    ? `ANTI-REPETITION CONTEXT (avoid reusing these phrases/angles):\n${req.history_context}`
-    : "";
   const gameTypeLine = req.game_type
     ? `Game type: ${req.game_type}`
+    : "";
+
+  const customContextLine = req.custom_context
+    ? `CUSTOM MATCH CONTEXT (integrate these specific details/funny moments into the roasts):\n"${req.custom_context}"`
+    : "";
+
+  const historyLine = req.history_context
+    ? `PREVIOUS ENCOUNTERS & ROAST HISTORY (reference this history/rivalry to make it feel like a continuous saga. Avoid repeating these exact angles/jokes, but reference past results/roasts where appropriate):\n${req.history_context}`
     : "";
 
   return `Generate a padel match roast for this match. You must return EXACTLY 3 alternative roast cards in the "roast_cards" array, each presenting a different funny angle or comedic perspective of the match so the user can swipe between them.
@@ -87,6 +93,7 @@ Scores: ${scoresFormatted}
 Detected trigger: ${req.trigger}
 ${tagsLine}
 ${gameTypeLine}
+${customContextLine}
 ${historyLine}
 
 Return ONLY a JSON object with this exact structure:
@@ -187,8 +194,8 @@ Deno.serve(async (req: Request) => {
     );
   }
 
-  // Determine model based on tier
-  const model = body.tier === "pro" ? "gpt-4o" : "gpt-4o-mini";
+  // Determine model based on tier (free & pro_premium get gpt-4o, pro_eco gets throttled to gpt-4o-mini)
+  const model = (body.tier === "pro_premium" || body.tier === "free") ? "gpt-4o" : "gpt-4o-mini";
 
   // Determine temperature based on tone
   const temperature = body.tone === "savage!!" ? 1.2 : 1.0;

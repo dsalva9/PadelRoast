@@ -45,6 +45,7 @@ class BanterViewModel(
 
     val selectedTone = MutableStateFlow("Balanced") // Casual / Balanced / Savage / SAVAGE!!
     val selectedTags = MutableStateFlow<Set<String>>(emptySet()) // Demolished, Choked, Lucky Win, Comeback
+    val customContext = MutableStateFlow("")
 
     // Auto-suggest suggestions for each of the 4 text fields
     val suggestionsP1 = MutableStateFlow<List<String>>(emptyList())
@@ -63,6 +64,9 @@ class BanterViewModel(
 
     private val _isProUser = MutableStateFlow(userTier.isProUser)
     val isProUser: StateFlow<Boolean> = _isProUser.asStateFlow()
+
+    private val _monthlyAiCount = MutableStateFlow(userTier.getMonthlyAiCount())
+    val monthlyAiCount: StateFlow<Int> = _monthlyAiCount.asStateFlow()
 
     private val _appLocale = MutableStateFlow(appSettings.appLocale)
     val appLocale: StateFlow<String> = _appLocale.asStateFlow()
@@ -143,12 +147,13 @@ class BanterViewModel(
         set3A.value = match.set3_teamA.toString()
         set3B.value = match.set3_teamB.toString()
         selectedTone.value = match.tone
+        customContext.value = match.customContext ?: ""
         
         try {
             val adapter = RetrofitClient.moshiParser.adapter(RoastResponseSchema::class.java)
             val roastObj = adapter.fromJson(match.gemini_response_json)
             if (roastObj != null) {
-                generationState.value = GenerationState.Success(roastObj, match.id.toLong(), isTemplate = false)
+                generationState.value = GenerationState.Success(roastObj, match.id.toLong(), isTemplate = match.isTemplate)
                 currentRoastIndex.value = 0
                 isDetailsExpanded.value = false
                 onNavigateToDeck()
@@ -159,6 +164,36 @@ class BanterViewModel(
         } catch (e: Exception) {
             generationState.value = GenerationState.Error("Parsing error: ${e.localizedMessage}")
             onNavigateToDeck()
+        }
+    }
+
+    /**
+     * Filters match history to find previous encounters involving the exact same 4 players,
+     * serializing their dates, scores, and prior roast details.
+     */
+    fun getRivalryHistoryContext(p1: String, p2: String, p3: String, p4: String): String {
+        val currentSet = setOf(p1.trim().lowercase(), p2.trim().lowercase(), p3.trim().lowercase(), p4.trim().lowercase())
+        val encounters = matchHistory.value.filter { m ->
+            val matchSet = setOf(m.player1.lowercase(), m.player2.lowercase(), m.player3.lowercase(), m.player4.lowercase())
+            matchSet == currentSet
+        }.take(5) // Limit to 5 encounters to stay within prompt token limits
+
+        if (encounters.isEmpty()) return ""
+
+        return encounters.joinToString("\n") { m ->
+            val dateStr = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(Date(m.date))
+            val previousRoastsText = try {
+                val adapter = RetrofitClient.moshiParser.adapter(RoastResponseSchema::class.java)
+                val response = adapter.fromJson(m.gemini_response_json)
+                response?.roast_cards?.joinToString("; ") { card ->
+                    "\"${card.headline}: ${card.body_text}\""
+                } ?: ""
+            } catch (e: Exception) { "" }
+
+            "Match on $dateStr: ${m.player1} & ${m.player2} vs ${m.player3} & ${m.player4} " +
+            "(Scores: Set1: ${m.set1_teamA}-${m.set1_teamB}, Set2: ${m.set2_teamA}-${m.set2_teamB}" +
+            (if (m.set3_teamA > 0 || m.set3_teamB > 0) ", Set3: ${m.set3_teamA}-${m.set3_teamB}" else "") + ") " +
+            "Previous Roasts: $previousRoastsText"
         }
     }
 
@@ -187,6 +222,7 @@ class BanterViewModel(
         val scoresLists = listOf(listOf(s1A, s1B), listOf(s2A, s2B), listOf(s3A, s3B))
         val trigger = TriggerDetector.detect(scoresPairs)
         val tone = selectedTone.value
+        val customCtxText = customContext.value.trim().ifBlank { null }
 
         generationState.value = GenerationState.Loading
         currentRoastIndex.value = 0
@@ -202,14 +238,8 @@ class BanterViewModel(
             try {
                 // 2. Online AI path (if quota matches)
                 if (userTier.canUseAi()) {
-                    // Abbreviate history context for last 10 matches to save tokens
-                    val history = matchHistory.value.take(10).joinToString("\n") { m ->
-                        val headline = try {
-                            val adapter = RetrofitClient.moshiParser.adapter(RoastResponseSchema::class.java)
-                            adapter.fromJson(m.gemini_response_json)?.roast_cards?.firstOrNull()?.headline ?: ""
-                        } catch (e: Exception) { "" }
-                        "Match: ${m.player1}/${m.player2} vs ${m.player3}/${m.player4}, Trigger: ${m.trigger_detected}, Headline: $headline"
-                    }
+                    // Extract match rivalry history
+                    val history = getRivalryHistoryContext(p1, p2, p3, p4)
 
                     val response = RetrofitClient.service.generateRoast(
                         authHeader = "Bearer ${BuildConfig.SUPABASE_ANON_KEY}",
@@ -221,8 +251,9 @@ class BanterViewModel(
                             trigger = trigger,
                             tags = selectedTags.value.toList(),
                             history_context = history,
-                            tier = if (userTier.isProUser) "pro" else "free",
-                            locale = appSettings.getEffectiveLocale()
+                            tier = userTier.getClientTier(),
+                            locale = appSettings.getEffectiveLocale(),
+                            custom_context = customCtxText
                         )
                     )
 
@@ -238,13 +269,15 @@ class BanterViewModel(
                         set1A = s1A, set1B = s1B, set2A = s2A, set2B = s2B, set3A = s3A, set3B = s3B,
                         tone = tone,
                         trigger = trigger,
-                        responseText = responseJson
+                        responseText = responseJson,
+                        isTemplate = false,
+                        customContext = customCtxText
                     )
 
                     generationState.value = GenerationState.Success(response, matchId, isTemplate = false)
                 } else {
                     // 3. Offline template fallback (quota exhausted)
-                    val effectiveTone = if (tone == "SAVAGE!!") "savage" else tone.lowercase()
+                    val effectiveTone = if (tone == "SAVAGE!!" && !userTier.isProUser) "savage" else tone.lowercase()
                     val templateResponse = templateEngine.generate(
                         trigger = trigger,
                         tone = effectiveTone,
@@ -261,7 +294,9 @@ class BanterViewModel(
                         set1A = s1A, set1B = s1B, set2A = s2A, set2B = s2B, set3A = s3A, set3B = s3B,
                         tone = tone,
                         trigger = trigger,
-                        responseText = responseJson
+                        responseText = responseJson,
+                        isTemplate = true,
+                        customContext = customCtxText
                     )
 
                     generationState.value = GenerationState.Success(templateResponse, matchId, isTemplate = true)
@@ -269,7 +304,7 @@ class BanterViewModel(
             } catch (e: Exception) {
                 // Online failure fallback to Template Engine
                 try {
-                    val effectiveTone = if (tone == "SAVAGE!!") "savage" else tone.lowercase()
+                    val effectiveTone = if (tone == "SAVAGE!!" && !userTier.isProUser) "savage" else tone.lowercase()
                     val templateResponse = templateEngine.generate(
                         trigger = trigger,
                         tone = effectiveTone,
@@ -286,7 +321,9 @@ class BanterViewModel(
                             set1A = s1A, set1B = s1B, set2A = s2A, set2B = s2B, set3A = s3A, set3B = s3B,
                             tone = tone,
                             trigger = trigger,
-                            responseText = responseJson
+                            responseText = responseJson,
+                            isTemplate = true,
+                            customContext = customCtxText
                         )
                         generationState.value = GenerationState.Success(templateResponse, matchId, isTemplate = true)
                     } else {
@@ -312,6 +349,7 @@ class BanterViewModel(
     fun refreshTierState() {
         _isProUser.value = userTier.isProUser
         _remainingAiCalls.value = userTier.getRemainingAiCalls()
+        _monthlyAiCount.value = userTier.getMonthlyAiCount()
     }
 
     fun clearState() {

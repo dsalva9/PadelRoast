@@ -114,6 +114,7 @@ fun InputFormView(viewModel: BanterViewModel) {
 
     val isProUser by viewModel.isProUser.collectAsState()
     val remainingAiCalls by viewModel.remainingAiCalls.collectAsState()
+    val monthlyAiCount by viewModel.monthlyAiCount.collectAsState()
     var showSavageProDialog by remember { mutableStateOf(false) }
 
     val scope = rememberCoroutineScope()
@@ -598,6 +599,68 @@ fun InputFormView(viewModel: BanterViewModel) {
             }
         }
 
+        // Tailored match details card
+        item {
+            val customContextVal by viewModel.customContext.collectAsState()
+            
+            Column(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .clip(RoundedCornerShape(16.dp))
+                    .border(1.dp, SlateSurfaceVariant, RoundedCornerShape(16.dp))
+                    .background(SlateSurface)
+                    .padding(16.dp),
+                verticalArrangement = Arrangement.spacedBy(12.dp)
+            ) {
+                Text(
+                    text = "Tailored Match Details (Optional)",
+                    style = MaterialTheme.typography.titleSmall,
+                    fontWeight = FontWeight.Bold,
+                    color = TextLight
+                )
+                
+                OutlinedTextField(
+                    value = customContextVal,
+                    onValueChange = { viewModel.customContext.value = it },
+                    placeholder = {
+                        Text(
+                            text = "e.g., Juan missed every bandeja, Carlos hit the fence twice.",
+                            color = TextMuted,
+                            fontSize = 13.sp
+                        )
+                    },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(110.dp)
+                        .testTag("custom_context_input"),
+                    colors = OutlinedTextFieldDefaults.colors(
+                        focusedTextColor = TextLight,
+                        unfocusedTextColor = TextLight,
+                        focusedBorderColor = PadelLime,
+                        unfocusedBorderColor = SlateSurfaceVariant,
+                        focusedContainerColor = SlateSurfaceVariant,
+                        unfocusedContainerColor = SlateSurfaceVariant
+                    ),
+                    maxLines = 4,
+                    trailingIcon = {
+                        Icon(
+                            imageVector = Icons.Default.Info,
+                            contentDescription = "Dictation context",
+                            tint = PadelLime.copy(alpha = 0.7f)
+                        )
+                    }
+                )
+                
+                Text(
+                    text = "💡 Tap your keyboard mic to dictate the match story!",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = ElectricCyan,
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 11.sp
+                )
+            }
+        }
+
         // Generate button
         item {
             Column(
@@ -636,7 +699,11 @@ fun InputFormView(viewModel: BanterViewModel) {
 
                 Text(
                     text = if (isProUser) {
-                        stringResource(com.example.R.string.ai_quota_pro)
+                        if (monthlyAiCount < 25) {
+                            "⚡ Pro Unlimited (Ultra Mode: ${25 - monthlyAiCount} flagship roasts left)"
+                        } else {
+                            "⚡ Pro Unlimited (Eco Mode: $monthlyAiCount roasts logged)"
+                        }
                     } else if (remainingAiCalls > 0) {
                         stringResource(com.example.R.string.ai_quota_remaining, remainingAiCalls)
                     } else {
@@ -1029,41 +1096,61 @@ fun RoastCardSuccessView(
                 )
                 Spacer(modifier = Modifier.weight(1f))
 
-                // Brand Badge representing detected trigger
-                Box(
-                    modifier = Modifier
-                        .clip(RoundedCornerShape(8.dp))
-                        .background(
-                            when (roast.narrative_trigger_detected) {
-                                "Choke" -> ActiveCoral.copy(alpha = 0.25f)
-                                "Dominant" -> PadelLime.copy(alpha = 0.25f)
-                                "Upset" -> ElectricCyan.copy(alpha = 0.25f)
-                                else -> SlateSurfaceVariant
-                            }
+                Row(
+                    horizontalArrangement = Arrangement.spacedBy(6.dp),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Box(
+                        modifier = Modifier
+                            .clip(RoundedCornerShape(8.dp))
+                            .background(if (isTemplate) SlateSurfaceVariant else PadelLime.copy(alpha = 0.15f))
+                            .border(1.dp, if (isTemplate) SlateSurfaceVariant else PadelLime.copy(alpha = 0.5f), RoundedCornerShape(8.dp))
+                            .padding(horizontal = 10.dp, vertical = 4.dp)
+                    ) {
+                        Text(
+                            text = if (isTemplate) "Library 📚" else "AI Generated ✨",
+                            fontSize = 11.sp,
+                            color = if (isTemplate) TextMuted else PadelLime,
+                            fontWeight = FontWeight.Black
                         )
-                        .border(
-                            width = 1.dp,
+                    }
+
+                    // Brand Badge representing detected trigger
+                    Box(
+                        modifier = Modifier
+                            .clip(RoundedCornerShape(8.dp))
+                            .background(
+                                when (roast.narrative_trigger_detected) {
+                                    "Choke" -> ActiveCoral.copy(alpha = 0.25f)
+                                    "Dominant" -> PadelLime.copy(alpha = 0.25f)
+                                    "Upset" -> ElectricCyan.copy(alpha = 0.25f)
+                                    else -> SlateSurfaceVariant
+                                }
+                            )
+                            .border(
+                                width = 1.dp,
+                                color = when (roast.narrative_trigger_detected) {
+                                    "Choke" -> ActiveCoral
+                                    "Dominant" -> PadelLime
+                                    "Upset" -> ElectricCyan
+                                    else -> TextMuted
+                                },
+                                shape = RoundedCornerShape(8.dp)
+                            )
+                            .padding(horizontal = 12.dp, vertical = 4.dp)
+                    ) {
+                        Text(
+                            text = roast.narrative_trigger_detected,
+                            fontSize = 11.sp,
+                            fontWeight = FontWeight.Black,
                             color = when (roast.narrative_trigger_detected) {
                                 "Choke" -> ActiveCoral
                                 "Dominant" -> PadelLime
                                 "Upset" -> ElectricCyan
-                                else -> TextMuted
-                            },
-                            shape = RoundedCornerShape(8.dp)
+                                else -> TextLight
+                            }
                         )
-                        .padding(horizontal = 12.dp, vertical = 4.dp)
-                ) {
-                    Text(
-                        text = roast.narrative_trigger_detected,
-                        fontSize = 11.sp,
-                        fontWeight = FontWeight.Black,
-                        color = when (roast.narrative_trigger_detected) {
-                            "Choke" -> ActiveCoral
-                            "Dominant" -> PadelLime
-                            "Upset" -> ElectricCyan
-                            else -> TextLight
-                        }
-                    )
+                    }
                 }
             }
         }

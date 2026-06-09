@@ -6,8 +6,7 @@ import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onRoot
 import androidx.room.Room
 import androidx.test.core.app.ApplicationProvider
-import com.example.data.AppDatabase
-import com.example.data.PadelRepository
+import com.example.data.*
 import com.example.ui.BanterViewModel
 import com.example.ui.screens.MainScreen
 import com.example.ui.theme.MyApplicationTheme
@@ -36,7 +35,10 @@ class GreetingScreenshotTest {
         .build()
     val repo = PadelRepository(db)
     val app = context.applicationContext as Application
-    val viewModel = BanterViewModel(app, repo)
+    val userTier = UserTier(context)
+    val appSettings = AppSettings(context)
+    val templateEngine = TemplateEngine(context)
+    val viewModel = BanterViewModel(app, repo, userTier, appSettings, templateEngine)
 
     composeTestRule.setContent {
       MyApplicationTheme {
@@ -55,7 +57,10 @@ class GreetingScreenshotTest {
         .build()
     val repo = PadelRepository(db)
     val app = context.applicationContext as Application
-    val viewModel = BanterViewModel(app, repo)
+    val userTier = UserTier(context)
+    val appSettings = AppSettings(context)
+    val templateEngine = TemplateEngine(context)
+    val viewModel = BanterViewModel(app, repo, userTier, appSettings, templateEngine)
 
     // Log a sample match to verify DB integration, Moshi JSON parsing, and list layouts
     repo.logMatchAndProcessElo(

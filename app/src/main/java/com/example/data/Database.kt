@@ -20,7 +20,9 @@ data class MatchEntity(
     val player4: String, // Team B Player 2
     val tone: String,
     val trigger_detected: String,
-    val gemini_response_json: String // Strict JSON format of generated roast details
+    val gemini_response_json: String, // Strict JSON format of generated roast details
+    val isTemplate: Boolean = false,
+    val customContext: String? = null
 )
 
 @Entity(

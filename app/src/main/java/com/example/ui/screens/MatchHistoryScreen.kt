@@ -172,7 +172,7 @@ fun MatchHistoryCard(
             .padding(16.dp)
     ) {
         Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
-            // Header Row: Date & Tone
+            // Header Row: Date & Tone & Source
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween,
@@ -193,18 +193,38 @@ fun MatchHistoryCard(
                     )
                 }
 
-                Box(
-                    modifier = Modifier
-                        .clip(RoundedCornerShape(8.dp))
-                        .background(SlateSurfaceVariant)
-                        .padding(horizontal = 10.dp, vertical = 4.dp)
+                Row(
+                    horizontalArrangement = Arrangement.spacedBy(6.dp),
+                    verticalAlignment = Alignment.CenterVertically
                 ) {
-                    Text(
-                        text = androidx.compose.ui.res.stringResource(com.example.R.string.tone_prefix, match.tone),
-                        fontSize = 10.sp,
-                        color = TextLight,
-                        fontWeight = FontWeight.Black
-                    )
+                    Box(
+                        modifier = Modifier
+                            .clip(RoundedCornerShape(8.dp))
+                            .background(if (match.isTemplate) SlateSurfaceVariant else PadelLime.copy(alpha = 0.15f))
+                            .border(1.dp, if (match.isTemplate) SlateSurfaceVariant else PadelLime.copy(alpha = 0.5f), RoundedCornerShape(8.dp))
+                            .padding(horizontal = 8.dp, vertical = 4.dp)
+                    ) {
+                        Text(
+                            text = if (match.isTemplate) "Library 📚" else "AI Generated ✨",
+                            fontSize = 9.sp,
+                            color = if (match.isTemplate) TextMuted else PadelLime,
+                            fontWeight = FontWeight.Bold
+                        )
+                    }
+
+                    Box(
+                        modifier = Modifier
+                            .clip(RoundedCornerShape(8.dp))
+                            .background(SlateSurfaceVariant)
+                            .padding(horizontal = 10.dp, vertical = 4.dp)
+                    ) {
+                        Text(
+                            text = androidx.compose.ui.res.stringResource(com.example.R.string.tone_prefix, match.tone),
+                            fontSize = 10.sp,
+                            color = TextLight,
+                            fontWeight = FontWeight.Black
+                        )
+                    }
                 }
             }
 
