@@ -70,7 +70,7 @@
     <string name="settings_ai_unlimited">Vannes IA illimitées</string>
     <string name="settings_pro_benefit_unlimited">Vannes illimitées générées par IA</string>
     <string name="settings_pro_benefit_savage">💀 Mode SAUVAGE!!</string>
-    <string name="settings_pro_benefit_model">Propulsé par GPT-4o</string>
+    <string name="settings_pro_benefit_model">Survitaminé par GPT-5.4-mini</string>
     <string name="settings_upgrade_btn">Passer à Pro ⚡</string>
     <string name="settings_upgrade_coming_soon">Arrive bientôt !</string>
     <string name="settings_about">À propos</string>
@@ -87,4 +87,27 @@
     <string name="ai_quota_pro">⚡ Vannes IA illimitées</string>
     <string name="template_banner">Vanne modèle. Passez à Pro pour un contenu IA unique ⚡</string>
     <string name="generate_template_btn">Générer la Vanne Modèle 📝</string>
+
+    <!-- Ad and Pro Dialogs -->
+    <string name="watching_ad_title">Visionnage de la pub...</string>
+    <string name="watching_ad_subtitle">Déblocage d\'un crédit vanne IA... 📺</string>
+    <string name="processing_sub_title">Traitement de l\'abonnement...</string>
+    <string name="ad_dialog_title">Plus de crédits vanne IA</string>
+    <string name="ad_dialog_message">Vous n\'avez plus de crédits vanne IA mensuels. Regardez une courte vidéo publicitaire pour en débloquer un de plus, ou passez à Pro pour des vannes illimitées !</string>
+    <string name="ad_dialog_limit_message">Vous n\'avez plus de crédits vanne IA et avez atteint la limite de vidéos publicitaires. Passez à Pro pour des vannes IA illimitées ou utilisez une vanne modèle.</string>
+    <string name="ad_dialog_btn_watch">Regarder la pub (Débloquer 1 vanne) 📺</string>
+    <string name="ad_dialog_btn_pro">Passer à Pro ⚡</string>
+    <string name="ad_dialog_btn_template">Générer une vanne modèle locale</string>
+    <string name="ad_toast_success">Pub visionnée ! 1 crédit vanne IA ajouté.</string>
+    <string name="pro_dialog_title">Passer à PadelRoast Pro</string>
+    <string name="pro_dialog_subtitle">Profitez de vannes IA illimitées, du mode SAUVAGE!! complètement déchaîné, de thèmes Pro exclusifs et affichez votre statut !</string>
+    <string name="pro_dialog_monthly_title">Accès Mensuel</string>
+    <string name="pro_dialog_monthly_price">3,99 $ / mois</string>
+    <string name="pro_dialog_annual_title">Accès Annuel</string>
+    <string name="pro_dialog_annual_price">29,99 $ / an - Économisez 37%</string>
+    <string name="pro_dialog_subscribe_btn">S\'abonner maintenant</string>
+    <string name="pro_toast_success">Bienvenue sur PadelRoast Pro ! ⚡ Votre statut est mis à jour.</string>
+    <string name="permission_mic_denied">L\'autorisation d\'accès au micro est requise pour la dictée vocale.</string>
+    <string name="mic_tap_instruction">💡 Appuyez sur le micro pour dicter l\'histoire du match !</string>
 </resources>
+

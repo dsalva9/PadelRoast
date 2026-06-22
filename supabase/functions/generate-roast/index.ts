@@ -194,8 +194,8 @@ Deno.serve(async (req: Request) => {
     );
   }
 
-  // Determine model based on tier (free & pro_premium get gpt-4o, pro_eco gets throttled to gpt-4o-mini)
-  const model = (body.tier === "pro_premium" || body.tier === "free") ? "gpt-4o" : "gpt-4o-mini";
+  // Determine model based on tier (free & pro_premium get gpt-5.4-mini, pro_eco gets throttled to gpt-4o-mini)
+  const model = (body.tier === "pro_premium" || body.tier === "free") ? "gpt-5.4-mini" : "gpt-4o-mini";
 
   // Determine temperature based on tone
   const temperature = body.tone === "savage!!" ? 1.2 : 1.0;

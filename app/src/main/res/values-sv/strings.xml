@@ -70,7 +70,7 @@
     <string name="settings_ai_unlimited">Obegränsat med AI-pikar</string>
     <string name="settings_pro_benefit_unlimited">Obegränsat antal AI-genererade pikar</string>
     <string name="settings_pro_benefit_savage">💀 OMEDGÖRLIG!! läge</string>
-    <string name="settings_pro_benefit_model">Drivs av GPT-4o</string>
+    <string name="settings_pro_benefit_model">Superladdad av GPT-5.4-mini</string>
     <string name="settings_upgrade_btn">Uppgradera till Pro ⚡</string>
     <string name="settings_upgrade_coming_soon">Kommer snart!</string>
     <string name="settings_about">Om oss</string>
@@ -87,4 +87,27 @@
     <string name="ai_quota_pro">⚡ Obegränsade AI-pikar</string>
     <string name="template_banner">Mallpik. Gå Pro för unikt AI-genererat innehåll ⚡</string>
     <string name="generate_template_btn">Generera Mallpik 📝</string>
+
+    <!-- Ad and Pro Dialogs -->
+    <string name="watching_ad_title">Visar sponsrad annons...</string>
+    <string name="watching_ad_subtitle">Låser upp en AI-roastkredit... 📺</string>
+    <string name="processing_sub_title">Behandlar prenumeration...</string>
+    <string name="ad_dialog_title">Slut på AI-roastkrediter</string>
+    <string name="ad_dialog_message">Du har slut på dina månatliga AI-roastkrediter. Se en kort sponsrad annons för att låsa upp en till, eller uppgradera till Pro för obegränsade roasts!</string>
+    <string name="ad_dialog_limit_message">Du har slut på månatliga AI-roastkrediter och nått gränsen för belönade annonser. Uppgradera till Pro för obegränsade AI-roasts eller använd en mallroast.</string>
+    <string name="ad_dialog_btn_watch">Titta på annons (Lås upp 1 Roast) 📺</string>
+    <string name="ad_dialog_btn_pro">Uppgradera till Pro ⚡</string>
+    <string name="ad_dialog_btn_template">Generera lokal mallroast</string>
+    <string name="ad_toast_success">Annons sedd! 1 AI-roastkredit tillagd.</string>
+    <string name="pro_dialog_title">Uppgradera till PadelRoast Pro</string>
+    <string name="pro_dialog_subtitle">Få obegränsade AI-roasts, det helt galna OMEDGÖRLIG!!-läget, exklusiva Pro-temastilar och visa upp din status!</string>
+    <string name="pro_dialog_monthly_title">Månadsabonnemang</string>
+    <string name="pro_dialog_monthly_price">3,99 $ / månad</string>
+    <string name="pro_dialog_annual_title">Årsabonnemang</string>
+    <string name="pro_dialog_annual_price">29,99 $ / år - Spara 37%</string>
+    <string name="pro_dialog_subscribe_btn">Prenumerera nu</string>
+    <string name="pro_toast_success">Välkommen till PadelRoast Pro! ⚡ Din status har uppgraderats.</string>
+    <string name="permission_mic_denied">Mikrofonbehörighet krävs för röstinmatning.</string>
+    <string name="mic_tap_instruction">💡 Tryck på mikrofonen för att berätta matchen!</string>
 </resources>
+

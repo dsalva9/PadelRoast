@@ -70,7 +70,7 @@
     <string name="settings_ai_unlimited">Sfottò IA illimitati</string>
     <string name="settings_pro_benefit_unlimited">Sfottò illimitati generati dall\'IA</string>
     <string name="settings_pro_benefit_savage">💀 Modalità SPIETATA!!</string>
-    <string name="settings_pro_benefit_model">Alimentato da GPT-4o</string>
+    <string name="settings_pro_benefit_model">Superpotenziato da GPT-5.4-mini</string>
     <string name="settings_upgrade_btn">Migliora a Pro ⚡</string>
     <string name="settings_upgrade_coming_soon">Prossimamente!</string>
     <string name="settings_about">Info</string>
@@ -87,4 +87,27 @@
     <string name="ai_quota_pro">⚡ Sfottò IA illimitati</string>
     <string name="template_banner">Sfottò da modello. Passa a Pro per contenuti IA unici ⚡</string>
     <string name="generate_template_btn">Genera Sfottò Modello 📝</string>
+
+    <!-- Ad and Pro Dialogs -->
+    <string name="watching_ad_title">Visualizzazione annuncio...</string>
+    <string name="watching_ad_subtitle">Sblocco di un credito sfottò IA... 📺</string>
+    <string name="processing_sub_title">Elaborazione abbonamento...</string>
+    <string name="ad_dialog_title">Crediti sfottò IA esauriti</string>
+    <string name="ad_dialog_message">Hai esaurito i tuoi crediti sfottò IA mensili. Guarda un breve annuncio sponsorizzato per sbloccarne un altro, oppure passa a Pro per sfottò illimitati!</string>
+    <string name="ad_dialog_limit_message">Hai esaurito i crediti sfottò IA mensili e raggiunto il limite per gli annunci con premi. Passa a Pro per sfottò IA illimitati o usa uno sfottò da modello.</string>
+    <string name="ad_dialog_btn_watch">Guarda annuncio (Sblocca 1 sfottò) 📺</string>
+    <string name="ad_dialog_btn_pro">Passa a Pro ⚡</string>
+    <string name="ad_dialog_btn_template">Genera sfottò modello locale</string>
+    <string name="ad_toast_success">Annuncio visto! Aggiunto 1 credito sfottò IA.</string>
+    <string name="pro_dialog_title">Passa a PadelRoast Pro</string>
+    <string name="pro_dialog_subtitle">Ottieni sfottò IA illimitati, la folle modalità SPIETATA!!, stili esclusivi per il tema Pro e sfoggia il tuo status!</string>
+    <string name="pro_dialog_monthly_title">Accesso Mensual</string>
+    <string name="pro_dialog_monthly_price">3,99 $ / mese</string>
+    <string name="pro_dialog_annual_title">Accesso Annuale</string>
+    <string name="pro_dialog_annual_price">29,99 $ / anno - Risparmia il 37%</string>
+    <string name="pro_dialog_subscribe_btn">Abbonati Ora</string>
+    <string name="pro_toast_success">Benvenuto in PadelRoast Pro! ⚡ Il tuo status è stato aggiornato.</string>
+    <string name="permission_mic_denied">È necessaria l\'autorizzazione al microfono per la dettatura vocale.</string>
+    <string name="mic_tap_instruction">💡 Tocca il microfono per dettare la storia della partita!</string>
 </resources>
+

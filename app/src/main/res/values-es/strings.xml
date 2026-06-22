@@ -70,7 +70,7 @@
     <string name="settings_ai_unlimited">Vaciles de IA ilimitados</string>
     <string name="settings_pro_benefit_unlimited">Vaciles ilimitados generados por IA</string>
     <string name="settings_pro_benefit_savage">💀 Modo ¡¡SALVAJE!!</string>
-    <string name="settings_pro_benefit_model">Con tecnología GPT-4o</string>
+    <string name="settings_pro_benefit_model">Supercargado con GPT-5.4-mini</string>
     <string name="settings_upgrade_btn">Mejorar a Pro ⚡</string>
     <string name="settings_upgrade_coming_soon">¡Próximamente!</string>
     <string name="settings_about">Acerca de</string>
@@ -87,4 +87,27 @@
     <string name="ai_quota_pro">⚡ Vaciles de IA ilimitados</string>
     <string name="template_banner">Vacile de plantilla. Pásate a Pro para contenido de IA único ⚡</string>
     <string name="generate_template_btn">Generar Vacile de Plantilla 📝</string>
+
+    <!-- Ad and Pro Dialogs -->
+    <string name="watching_ad_title">Viendo anuncio patrocinado...</string>
+    <string name="watching_ad_subtitle">Desbloqueando un crédito de vacile de IA... 📺</string>
+    <string name="processing_sub_title">Procesando suscripción...</string>
+    <string name="ad_dialog_title">Sin créditos de vaciles de IA</string>
+    <string name="ad_dialog_message">Te has quedado sin tus créditos mensuales de vaciles de IA. ¡Mira un anuncio corto patrocinado para desbloquear otro, o pásate a Pro para vaciles ilimitados!</string>
+    <string name="ad_dialog_limit_message">Te has quedado sin créditos mensuales de vaciles de IA y has alcanzado el límite de anuncios recompensados. Pásate a Pro para vaciles ilimitados o usa un vacile de plantilla.</string>
+    <string name="ad_dialog_btn_watch">Ver anuncio (Desbloquear 1 vacile) 📺</string>
+    <string name="ad_dialog_btn_pro">Mejorar a Pro ⚡</string>
+    <string name="ad_dialog_btn_template">Generar vacile de plantilla local</string>
+    <string name="ad_toast_success">¡Anuncio visto! Se ha añadido 1 crédito de vacile de IA.</string>
+    <string name="pro_dialog_title">Mejorar a PadelRoast Pro</string>
+    <string name="pro_dialog_subtitle">¡Consigue vaciles de IA ilimitados, el desquiciado modo ¡¡SALVAJE!!, estilos exclusivos de temas Pro, y presume de tu estatus!</string>
+    <string name="pro_dialog_monthly_title">Acceso Mensual</string>
+    <string name="pro_dialog_monthly_price">3,99 $ / mes</string>
+    <string name="pro_dialog_annual_title">Acceso Anual</string>
+    <string name="pro_dialog_annual_price">29,99 $ / año - Ahorra 37%</string>
+    <string name="pro_dialog_subscribe_btn">Suscribirse ahora</string>
+    <string name="pro_toast_success">¡Bienvenido a PadelRoast Pro! ⚡ Tu cuenta ha sido mejorada.</string>
+    <string name="permission_mic_denied">Se requiere permiso de micrófono para la función de voz.</string>
+    <string name="mic_tap_instruction">💡 ¡Toca el micrófono para dictar el partido!</string>
 </resources>
+

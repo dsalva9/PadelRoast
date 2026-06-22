@@ -35,16 +35,25 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
+import android.Manifest
+import android.widget.Toast
 import com.example.api.RoastResponseSchema
 import com.example.ui.BanterViewModel
 import com.example.ui.GenerationState
 import com.example.ui.theme.*
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.delay
 import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.Paint
 import android.net.Uri
 import androidx.core.content.FileProvider
+import androidx.compose.foundation.layout.FlowRow
+import androidx.core.content.ContextCompat
+import android.content.pm.PackageManager
+import androidx.compose.animation.core.*
 import java.io.File
 import java.io.FileOutputStream
 
@@ -57,6 +66,12 @@ fun BanterDeckScreen(
     val genState by viewModel.generationState.collectAsState()
     val context = LocalContext.current
 
+    var showAdUnlockDialog by remember { mutableStateOf(false) }
+    val showProUpgradeDialog by viewModel.showProUpgradeDialog.collectAsState()
+    var isWatchingAd by remember { mutableStateOf(false) }
+    var isProcessingSubscription by remember { mutableStateOf(false) }
+    val scope = rememberCoroutineScope()
+
     Box(
         modifier = modifier
             .fillMaxSize()
@@ -64,7 +79,10 @@ fun BanterDeckScreen(
     ) {
         when (val state = genState) {
             is GenerationState.Idle -> {
-                InputFormView(viewModel)
+                InputFormView(
+                    viewModel = viewModel,
+                    onShowAdUnlock = { showAdUnlockDialog = true }
+                )
             }
             is GenerationState.Loading -> {
                 LoadingSportsView()
@@ -86,12 +104,283 @@ fun BanterDeckScreen(
                 )
             }
         }
+
+        // --- Ad Watch Simulated Overlay ---
+        if (isWatchingAd) {
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .background(Color.Black.copy(alpha = 0.9f))
+                    .clickable(enabled = false) {},
+                contentAlignment = Alignment.Center
+            ) {
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.Center
+                ) {
+                    CircularProgressIndicator(color = ActiveCoral, strokeWidth = 6.dp, modifier = Modifier.size(80.dp))
+                    Spacer(modifier = Modifier.height(24.dp))
+                    Text(
+                        text = stringResource(com.example.R.string.watching_ad_title),
+                        style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Black),
+                        color = Color.White
+                    )
+                    Spacer(modifier = Modifier.height(8.dp))
+                    Text(
+                        text = stringResource(com.example.R.string.watching_ad_subtitle),
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = TextMuted
+                    )
+                }
+            }
+        }
+
+        // --- Subscription Processing Simulated Overlay ---
+        if (isProcessingSubscription) {
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .background(Color.Black.copy(alpha = 0.85f))
+                    .clickable(enabled = false) {},
+                contentAlignment = Alignment.Center
+            ) {
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.Center
+                ) {
+                    CircularProgressIndicator(color = ElectricCyan, strokeWidth = 6.dp, modifier = Modifier.size(80.dp))
+                    Spacer(modifier = Modifier.height(24.dp))
+                    Text(
+                        text = stringResource(com.example.R.string.processing_sub_title),
+                        style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Black),
+                        color = Color.White
+                    )
+                }
+            }
+        }
+
+        // --- Dialogs ---
+        if (showAdUnlockDialog) {
+            val canWatchAdVal by viewModel.canWatchAd.collectAsState()
+            AlertDialog(
+                onDismissRequest = { showAdUnlockDialog = false },
+                title = {
+                    Text(
+                        text = stringResource(com.example.R.string.ad_dialog_title),
+                        fontWeight = FontWeight.Black,
+                        color = TextLight
+                    )
+                },
+                text = {
+                    Text(
+                        text = if (canWatchAdVal) {
+                            stringResource(com.example.R.string.ad_dialog_message)
+                        } else {
+                            stringResource(com.example.R.string.ad_dialog_limit_message)
+                        },
+                        color = TextMuted,
+                        fontSize = 14.sp
+                    )
+                },
+                confirmButton = {
+                    Column(
+                        modifier = Modifier.fillMaxWidth(),
+                        verticalArrangement = Arrangement.spacedBy(8.dp)
+                    ) {
+                        if (canWatchAdVal) {
+                            Button(
+                                onClick = {
+                                    showAdUnlockDialog = false
+                                    isWatchingAd = true
+                                    viewModel.watchRewardedAd {
+                                        isWatchingAd = false
+                                        Toast.makeText(context, context.getString(com.example.R.string.ad_toast_success), Toast.LENGTH_LONG).show()
+                                        viewModel.generateRoast()
+                                    }
+                                },
+                                colors = ButtonDefaults.buttonColors(containerColor = PadelLime),
+                                modifier = Modifier.fillMaxWidth(),
+                                shape = RoundedCornerShape(12.dp)
+                            ) {
+                                Text(stringResource(com.example.R.string.ad_dialog_btn_watch), fontWeight = FontWeight.Bold, color = Color.Black)
+                            }
+                        }
+                        Button(
+                            onClick = {
+                                showAdUnlockDialog = false
+                                viewModel.showProUpgradeDialog.value = true
+                            },
+                            colors = ButtonDefaults.buttonColors(containerColor = ElectricCyan),
+                            modifier = Modifier.fillMaxWidth(),
+                            shape = RoundedCornerShape(12.dp)
+                        ) {
+                            Text(stringResource(com.example.R.string.ad_dialog_btn_pro), fontWeight = FontWeight.Bold, color = Color.Black)
+                        }
+                        TextButton(
+                            onClick = {
+                                showAdUnlockDialog = false
+                                viewModel.generateRoast(forceTemplate = true)
+                            },
+                            modifier = Modifier.fillMaxWidth()
+                        ) {
+                            Text(stringResource(com.example.R.string.ad_dialog_btn_template), color = TextMuted, fontWeight = FontWeight.Bold, textAlign = TextAlign.Center, modifier = Modifier.fillMaxWidth())
+                        }
+                    }
+                },
+                shape = RoundedCornerShape(24.dp),
+                containerColor = SlateSurface
+            )
+        }
+
+        if (showProUpgradeDialog) {
+            var selectedPlanIndex by remember { mutableStateOf(1) } // 0 = monthly, 1 = annual
+            AlertDialog(
+                onDismissRequest = { viewModel.showProUpgradeDialog.value = false },
+                title = {
+                    Text(
+                        text = stringResource(com.example.R.string.pro_dialog_title),
+                        fontWeight = FontWeight.Black,
+                        color = TextLight,
+                        textAlign = TextAlign.Center,
+                        modifier = Modifier.fillMaxWidth()
+                    )
+                },
+                text = {
+                    Column(verticalArrangement = Arrangement.spacedBy(16.dp)) {
+                        Text(
+                            text = stringResource(com.example.R.string.pro_dialog_subtitle),
+                            color = TextMuted,
+                            fontSize = 13.sp,
+                            textAlign = TextAlign.Center,
+                            modifier = Modifier.fillMaxWidth()
+                        )
+
+                        // Monthly option
+                        Card(
+                            onClick = { selectedPlanIndex = 0 },
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .border(
+                                    width = if (selectedPlanIndex == 0) 2.dp else 1.dp,
+                                    color = if (selectedPlanIndex == 0) ElectricCyan else SlateSurfaceVariant,
+                                    shape = RoundedCornerShape(14.dp)
+                                ),
+                            shape = RoundedCornerShape(14.dp),
+                            colors = CardDefaults.cardColors(
+                                containerColor = if (selectedPlanIndex == 0) SlateSurfaceVariant else SlateSurface
+                            )
+                        ) {
+                            Row(
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .padding(16.dp),
+                                horizontalArrangement = Arrangement.SpaceBetween,
+                                verticalAlignment = Alignment.CenterVertically
+                            ) {
+                                Column {
+                                    Text(stringResource(com.example.R.string.pro_dialog_monthly_title), fontWeight = FontWeight.Bold, color = TextLight)
+                                    Text(stringResource(com.example.R.string.pro_dialog_monthly_price), color = TextMuted, fontSize = 12.sp)
+                                }
+                                RadioButton(
+                                    selected = selectedPlanIndex == 0,
+                                    onClick = { selectedPlanIndex = 0 },
+                                    colors = RadioButtonDefaults.colors(selectedColor = ElectricCyan)
+                                )
+                            }
+                        }
+
+                        // Annual option
+                        Card(
+                            onClick = { selectedPlanIndex = 1 },
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .border(
+                                    width = if (selectedPlanIndex == 1) 2.dp else 1.dp,
+                                    color = if (selectedPlanIndex == 1) PadelLime else SlateSurfaceVariant,
+                                    shape = RoundedCornerShape(14.dp)
+                                ),
+                            shape = RoundedCornerShape(14.dp),
+                            colors = CardDefaults.cardColors(
+                                containerColor = if (selectedPlanIndex == 1) SlateSurfaceVariant else SlateSurface
+                            )
+                        ) {
+                            Row(
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .padding(16.dp),
+                                horizontalArrangement = Arrangement.SpaceBetween,
+                                verticalAlignment = Alignment.CenterVertically
+                            ) {
+                                Column {
+                                    Row(verticalAlignment = Alignment.CenterVertically) {
+                                        Text(stringResource(com.example.R.string.pro_dialog_annual_title), fontWeight = FontWeight.Black, color = TextLight)
+                                        Spacer(modifier = Modifier.width(8.dp))
+                                        Box(
+                                            modifier = Modifier
+                                                .clip(RoundedCornerShape(4.dp))
+                                                .background(PadelLime)
+                                                .padding(horizontal = 6.dp, vertical = 2.dp)
+                                        ) {
+                                            Text("SAVE 37%", fontSize = 9.sp, fontWeight = FontWeight.Black, color = Color.Black)
+                                        }
+                                    }
+                                    Text(stringResource(com.example.R.string.pro_dialog_annual_price), color = TextMuted, fontSize = 12.sp)
+                                }
+                                RadioButton(
+                                    selected = selectedPlanIndex == 1,
+                                    onClick = { selectedPlanIndex = 1 },
+                                    colors = RadioButtonDefaults.colors(selectedColor = PadelLime)
+                                )
+                            }
+                        }
+                    }
+                },
+                confirmButton = {
+                    Column(
+                        modifier = Modifier.fillMaxWidth(),
+                        verticalArrangement = Arrangement.spacedBy(8.dp)
+                    ) {
+                        Button(
+                            onClick = {
+                                viewModel.showProUpgradeDialog.value = false
+                                isProcessingSubscription = true
+                                scope.launch {
+                                    delay(1500)
+                                    isProcessingSubscription = false
+                                    viewModel.upgradeToPro()
+                                    Toast.makeText(context, context.getString(com.example.R.string.pro_toast_success), Toast.LENGTH_LONG).show()
+                                }
+                            },
+                            colors = ButtonDefaults.buttonColors(
+                                containerColor = if (selectedPlanIndex == 1) PadelLime else ElectricCyan,
+                                contentColor = Color.Black
+                            ),
+                            modifier = Modifier.fillMaxWidth(),
+                            shape = RoundedCornerShape(16.dp)
+                        ) {
+                            Text(stringResource(com.example.R.string.pro_dialog_subscribe_btn), fontWeight = FontWeight.Black)
+                        }
+                        TextButton(
+                            onClick = { viewModel.showProUpgradeDialog.value = false },
+                            modifier = Modifier.fillMaxWidth()
+                        ) {
+                            Text("Cancel", color = TextMuted, fontWeight = FontWeight.Bold, textAlign = TextAlign.Center, modifier = Modifier.fillMaxWidth())
+                        }
+                    }
+                },
+                shape = RoundedCornerShape(28.dp),
+                containerColor = SlateSurface
+            )
+        }
     }
 }
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
-fun InputFormView(viewModel: BanterViewModel) {
+fun InputFormView(
+    viewModel: BanterViewModel,
+    onShowAdUnlock: () -> Unit
+) {
     val p1 by viewModel.player1.collectAsState()
     val p2 by viewModel.player2.collectAsState()
     val p3 by viewModel.player3.collectAsState()
@@ -116,6 +405,20 @@ fun InputFormView(viewModel: BanterViewModel) {
     val remainingAiCalls by viewModel.remainingAiCalls.collectAsState()
     val monthlyAiCount by viewModel.monthlyAiCount.collectAsState()
     var showSavageProDialog by remember { mutableStateOf(false) }
+
+    val isRecording by viewModel.isRecording.collectAsState()
+    val isTranscribing by viewModel.isTranscribing.collectAsState()
+    val context = LocalContext.current
+
+    val permissionLauncher = rememberLauncherForActivityResult(
+        contract = ActivityResultContracts.RequestPermission()
+    ) { isGranted ->
+        if (isGranted) {
+            viewModel.startRecording()
+        } else {
+            Toast.makeText(context, context.getString(com.example.R.string.permission_mic_denied), Toast.LENGTH_SHORT).show()
+        }
+    }
 
     val scope = rememberCoroutineScope()
 
@@ -643,21 +946,85 @@ fun InputFormView(viewModel: BanterViewModel) {
                     ),
                     maxLines = 4,
                     trailingIcon = {
-                        Icon(
-                            imageVector = Icons.Default.Info,
-                            contentDescription = "Dictation context",
-                            tint = PadelLime.copy(alpha = 0.7f)
-                        )
+                        if (isTranscribing) {
+                            CircularProgressIndicator(
+                                color = ElectricCyan,
+                                modifier = Modifier.size(20.dp),
+                                strokeWidth = 2.dp
+                            )
+                        } else {
+                            val infiniteTransition = rememberInfiniteTransition(label = "micPulse")
+                            val micAlpha by infiniteTransition.animateFloat(
+                                initialValue = 0.4f,
+                                targetValue = 1f,
+                                animationSpec = infiniteRepeatable(
+                                    animation = tween(1000, easing = LinearEasing),
+                                    repeatMode = RepeatMode.Reverse
+                                ),
+                                label = "micAlpha"
+                            )
+                            val micColor = if (isRecording) Color.Red.copy(alpha = micAlpha) else PadelLime.copy(alpha = 0.7f)
+                            IconButton(
+                                onClick = {
+                                    if (isRecording) {
+                                        viewModel.stopAndTranscribe()
+                                    } else {
+                                        val permissionCheck = ContextCompat.checkSelfPermission(
+                                            context,
+                                            Manifest.permission.RECORD_AUDIO
+                                        )
+                                        if (permissionCheck == PackageManager.PERMISSION_GRANTED) {
+                                            viewModel.startRecording()
+                                        } else {
+                                            permissionLauncher.launch(Manifest.permission.RECORD_AUDIO)
+                                        }
+                                    }
+                                }
+                            ) {
+                                Icon(
+                                    imageVector = if (isRecording) Icons.Default.Close else Icons.Default.Mic,
+                                    contentDescription = if (isRecording) "Stop dictation" else "Start dictation",
+                                    tint = micColor
+                                )
+                            }
+                        }
                     }
                 )
                 
-                Text(
-                    text = "💡 Tap your keyboard mic to dictate the match story!",
-                    style = MaterialTheme.typography.bodySmall,
-                    color = ElectricCyan,
-                    fontWeight = FontWeight.Bold,
-                    fontSize = 11.sp
-                )
+                if (isRecording) {
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.spacedBy(6.dp)
+                    ) {
+                        Box(
+                            modifier = Modifier
+                                .size(8.dp)
+                                .clip(CircleShape)
+                                .background(Color.Red)
+                        )
+                        Text(
+                            text = "Recording match details... Talk now!",
+                            color = Color.Red,
+                            fontSize = 11.sp,
+                            fontWeight = FontWeight.Bold
+                        )
+                    }
+                } else if (isTranscribing) {
+                    Text(
+                        text = "Transcribing audio... 🤖 Please wait",
+                        color = ElectricCyan,
+                        fontSize = 11.sp,
+                        fontWeight = FontWeight.Bold
+                    )
+                } else {
+                    Text(
+                        text = stringResource(com.example.R.string.mic_tap_instruction),
+                        style = MaterialTheme.typography.bodySmall,
+                        color = ElectricCyan,
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 11.sp
+                    )
+                }
             }
         }
 
@@ -669,7 +1036,13 @@ fun InputFormView(viewModel: BanterViewModel) {
                 verticalArrangement = Arrangement.spacedBy(8.dp)
             ) {
                 Button(
-                    onClick = { viewModel.generateRoast() },
+                    onClick = {
+                        if (!isProUser && remainingAiCalls == 0) {
+                            onShowAdUnlock()
+                        } else {
+                            viewModel.generateRoast()
+                        }
+                    },
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(56.dp)
@@ -1023,6 +1396,8 @@ fun RoastCardSuccessView(
     viewModel: BanterViewModel,
     onReset: () -> Unit
 ) {
+    val isProUser by viewModel.isProUser.collectAsState()
+
     val p1 by viewModel.player1.collectAsState()
     val p2 by viewModel.player2.collectAsState()
     val p3 by viewModel.player3.collectAsState()
@@ -1232,7 +1607,8 @@ fun RoastCardSuccessView(
                                 // Scroll to index 3 (Secondary Content Drawer Collapsible Panel)
                                 lazyListState.animateScrollToItem(3)
                             }
-                        }
+                        },
+                        isPro = isProUser && !isTemplate
                     )
                 }
             }
@@ -1357,7 +1733,8 @@ fun RoastCardSuccessView(
                             mvp = roast.mvp_line,
                             titles = roast.player_titles_assigned,
                             recap = if (!activeCard.match_recap.isNullOrBlank()) activeCard.match_recap!! else roast.match_recap,
-                            rematch = if (!activeCard.rematch_hype.isNullOrBlank()) activeCard.rematch_hype!! else roast.rematch_hype
+                            rematch = if (!activeCard.rematch_hype.isNullOrBlank()) activeCard.rematch_hype!! else roast.rematch_hype,
+                            isPro = isProUser && !isTemplate
                         )
                     }
                 },
@@ -1408,28 +1785,54 @@ fun RoastPerformanceDisplayCard(
     s3A: String, s3B: String,
     assignedTitles: com.example.api.PlayerTitles,
     tone: String,
-    onBodyClick: () -> Unit = {}
+    onBodyClick: () -> Unit = {},
+    isPro: Boolean = false
 ) {
     Box(
         modifier = Modifier
             .fillMaxSize()
             .clip(RoundedCornerShape(32.dp))
-            .background(
-                Brush.verticalGradient(
-                    colors = listOf(
-                        HeroCardBg,
-                        Color(0xFF020617) // Sleek rich dark athletic black
-                    )
-                )
-            )
-            .border(
-                width = 4.dp,
-                color = when (tone) {
-                    "Savage" -> ActiveCoral
-                    "Casual" -> ElectricCyan
-                    else -> PadelLime
-                },
-                shape = RoundedCornerShape(32.dp)
+            .then(
+                if (isPro) {
+                    Modifier
+                        .background(
+                            Brush.verticalGradient(
+                                colors = listOf(
+                                    Color(0xFF2E1065), // Premium deep purple/platinum gradient
+                                    Color(0xFF0F0728),
+                                    Color(0xFF020617)
+                                )
+                            )
+                        )
+                        .border(
+                            BorderStroke(
+                                4.dp,
+                                Brush.linearGradient(
+                                    colors = listOf(ElectricCyan, PadelLime, ActiveCoral)
+                                )
+                            ),
+                            shape = RoundedCornerShape(32.dp)
+                        )
+                } else {
+                    Modifier
+                        .background(
+                            Brush.verticalGradient(
+                                colors = listOf(
+                                    HeroCardBg,
+                                    Color(0xFF020617) // Sleek rich dark athletic black
+                                )
+                            )
+                        )
+                        .border(
+                            width = 4.dp,
+                            color = when (tone) {
+                                "Savage" -> ActiveCoral
+                                "Casual" -> ElectricCyan
+                                else -> PadelLime
+                            },
+                            shape = RoundedCornerShape(32.dp)
+                        )
+                }
             )
             .padding(20.dp)
     ) {
@@ -1457,11 +1860,31 @@ fun RoastPerformanceDisplayCard(
                             color = Color.Black
                         )
                     }
-                    Text(
-                        text = "#ROAST-RECEIPT",
-                        style = MaterialTheme.typography.labelSmall,
-                        color = HeroTextMuted
-                    )
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.spacedBy(6.dp)
+                    ) {
+                        if (isPro) {
+                            Box(
+                                modifier = Modifier
+                                    .clip(RoundedCornerShape(4.dp))
+                                    .background(Brush.horizontalGradient(listOf(ActiveCoral, Color.Red)))
+                                    .padding(horizontal = 6.dp, vertical = 2.dp)
+                            ) {
+                                Text(
+                                    text = "PRO ⚡",
+                                    fontSize = 9.sp,
+                                    fontWeight = FontWeight.Black,
+                                    color = Color.White
+                                )
+                            }
+                        }
+                        Text(
+                            text = "#ROAST-RECEIPT",
+                            style = MaterialTheme.typography.labelSmall,
+                            color = HeroTextMuted
+                        )
+                    }
                 }
 
                 Spacer(modifier = Modifier.height(10.dp))
@@ -1666,7 +2089,8 @@ fun createReceiptBitmap(
     headline: String?,
     body: String?,
     mvp: String?,
-    titles: com.example.api.PlayerTitles?
+    titles: com.example.api.PlayerTitles?,
+    isPro: Boolean = false
 ): Uri? {
     try {
         val width = 720
@@ -1697,7 +2121,40 @@ fun createReceiptBitmap(
             style = Paint.Style.STROKE
             strokeWidth = 14f
         }
+        
+        if (isPro) {
+            val shader = android.graphics.LinearGradient(
+                0f, 0f, width.toFloat(), height.toFloat(),
+                intArrayOf(
+                    android.graphics.Color.parseColor("#22D3EE"), // ElectricCyan
+                    android.graphics.Color.parseColor("#BEF264"), // PadelLime
+                    android.graphics.Color.parseColor("#F43F5E"), // ActiveCoral
+                    android.graphics.Color.parseColor("#22D3EE")  // Loop back
+                ),
+                null,
+                android.graphics.Shader.TileMode.CLAMP
+            )
+            borderPaint.shader = shader
+        }
+        
         canvas.drawRoundRect(14f, 14f, width - 14f, height - 14f, 32f, 32f, borderPaint)
+
+        if (isPro) {
+            val badgeBgPaint = Paint().apply {
+                color = android.graphics.Color.parseColor("#F43F5E") // ActiveCoral
+                style = Paint.Style.FILL
+            }
+            // Draw a rounded rectangle for the PRO badge
+            canvas.drawRoundRect(width - 160f, 40f, width - 40f, 85f, 10f, 10f, badgeBgPaint)
+
+            val badgeTextPaint = Paint().apply {
+                color = android.graphics.Color.WHITE
+                textSize = 22f
+                isFakeBoldText = true
+                textAlign = Paint.Align.CENTER
+            }
+            canvas.drawText("PRO ⚡", width - 100f, 72f, badgeTextPaint)
+        }
 
         // Title Block with dual lightning bolts
         val titlePaint = Paint().apply {
@@ -1864,7 +2321,8 @@ fun triggerReceiptShare(
     mvp: String?,
     titles: com.example.api.PlayerTitles?,
     recap: String?,
-    rematch: String?
+    rematch: String?,
+    isPro: Boolean = false
 ) {
     val playStoreUrl = "https://play.google.com/store/apps/details?id=${context.packageName}"
     val safeWhatsapp = whatsappTxt ?: ""
@@ -1900,7 +2358,8 @@ fun triggerReceiptShare(
             headline = headline,
             body = body,
             mvp = mvp,
-            titles = titles
+            titles = titles,
+            isPro = isPro
         )
 
         val sendIntent = Intent().apply {

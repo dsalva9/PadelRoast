@@ -9,9 +9,13 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.Body
 import retrofit2.http.Header
 import retrofit2.http.POST
+import okhttp3.MultipartBody
+import retrofit2.http.Multipart
+import retrofit2.http.Part
 import java.util.concurrent.TimeUnit
 
 // --- Request model for Supabase Edge Function ---
+
 
 @JsonClass(generateAdapter = true)
 data class RoastRequest(
@@ -57,6 +61,11 @@ data class RoastResponseSchema(
     val rematch_hype: String
 )
 
+@JsonClass(generateAdapter = true)
+data class TranscriptionResponse(
+    val text: String
+)
+
 // --- Retrofit service for Supabase Edge Function ---
 
 interface RoastApiService {
@@ -66,6 +75,14 @@ interface RoastApiService {
         @Header("apikey") apiKey: String,
         @Body request: RoastRequest
     ): RoastResponseSchema
+
+    @Multipart
+    @POST("functions/v1/transcribe-speech")
+    suspend fun transcribeSpeech(
+        @Header("Authorization") authHeader: String,
+        @Header("apikey") apiKey: String,
+        @Part file: MultipartBody.Part
+    ): TranscriptionResponse
 }
 
 object RetrofitClient {

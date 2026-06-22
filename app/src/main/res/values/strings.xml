@@ -70,7 +70,7 @@
     <string name="settings_ai_unlimited">Unlimited AI roasts</string>
     <string name="settings_pro_benefit_unlimited">Unlimited AI-generated roasts</string>
     <string name="settings_pro_benefit_savage">💀 SAVAGE!! mode</string>
-    <string name="settings_pro_benefit_model">Powered by GPT-4o</string>
+    <string name="settings_pro_benefit_model">Supercharged by GPT-5.4-mini</string>
     <string name="settings_upgrade_btn">Upgrade to Pro ⚡</string>
     <string name="settings_upgrade_coming_soon">Coming soon!</string>
     <string name="settings_about">About</string>
@@ -87,4 +87,27 @@
     <string name="ai_quota_pro">⚡ Unlimited AI roasts</string>
     <string name="template_banner">Template roast. Go Pro for unique AI-generated content ⚡</string>
     <string name="generate_template_btn">Generate Template Roast 📝</string>
+
+    <!-- Ad and Pro Dialogs -->
+    <string name="watching_ad_title">Watching Sponsored Ad...</string>
+    <string name="watching_ad_subtitle">Unlocking one AI Roast credit... 📺</string>
+    <string name="processing_sub_title">Processing Subscription...</string>
+    <string name="ad_dialog_title">Out of AI Roast Credits</string>
+    <string name="ad_dialog_message">You have run out of your monthly AI Roast credits. Watch a short sponsored ad to unlock another one, or upgrade to Pro for unlimited roasts!</string>
+    <string name="ad_dialog_limit_message">You have run out of monthly AI Roast credits and reached the limit for rewarded ads. Upgrade to Pro for unlimited AI roasts or use a template roast.</string>
+    <string name="ad_dialog_btn_watch">Watch Ad (Unlock 1 Roast) 📺</string>
+    <string name="ad_dialog_btn_pro">Upgrade to Pro ⚡</string>
+    <string name="ad_dialog_btn_template">Generate Local Template Roast</string>
+    <string name="ad_toast_success">Ad watched! 1 AI Roast credit added.</string>
+    <string name="pro_dialog_title">Upgrade to PadelRoast Pro</string>
+    <string name="pro_dialog_subtitle">Get unlimited AI roasts, the unhinged SAVAGE!! mode, exclusive Pro theme styles, and show off your status!</string>
+    <string name="pro_dialog_monthly_title">Monthly Access</string>
+    <string name="pro_dialog_monthly_price">$3.99 / month</string>
+    <string name="pro_dialog_annual_title">Annual Access</string>
+    <string name="pro_dialog_annual_price">$29.99 / year - Save 37%</string>
+    <string name="pro_dialog_subscribe_btn">Subscribe Now</string>
+    <string name="pro_toast_success">Welcome to PadelRoast Pro! ⚡ Your status is upgraded.</string>
+    <string name="permission_mic_denied">Microphone permission is required for voice dictation.</string>
+    <string name="mic_tap_instruction">💡 Tap the mic to dictate the match story!</string>
 </resources>
+

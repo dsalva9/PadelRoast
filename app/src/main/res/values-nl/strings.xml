@@ -70,7 +70,7 @@
     <string name="settings_ai_unlimited">Onbeperkt AI roasts</string>
     <string name="settings_pro_benefit_unlimited">Onbeperkt AI-gegenereerde roasts</string>
     <string name="settings_pro_benefit_savage">💀 MEEDOGENLOOS!! modus</string>
-    <string name="settings_pro_benefit_model">Aangedreven door GPT-4o</string>
+    <string name="settings_pro_benefit_model">Supercharged door GPT-5.4-mini</string>
     <string name="settings_upgrade_btn">Upgraden naar Pro ⚡</string>
     <string name="settings_upgrade_coming_soon">Binnenkort beschikbaar!</string>
     <string name="settings_about">Over</string>
@@ -87,4 +87,26 @@
     <string name="ai_quota_pro">⚡ Onbeperkt AI roasts</string>
     <string name="template_banner">Sjabloon roast. Ga Pro voor unieke AI-gegenereerde inhoud ⚡</string>
     <string name="generate_template_btn">Genereer Sjabloon Roast 📝</string>
+
+    <!-- Ad and Pro Dialogs -->
+    <string name="watching_ad_title">Gesponsorde advertentie bekijken...</string>
+    <string name="watching_ad_subtitle">Een AI Roast credit ontgrendelen... 📺</string>
+    <string name="processing_sub_title">Abonnement verwerken...</string>
+    <string name="ad_dialog_title">Geen AI Roast credits meer</string>
+    <string name="ad_dialog_message">Je maandelijkse AI Roast credits zijn op. Bekijk een korte gesponsorde advertentie om er nog een te ontgrendelen, of upgrade naar Pro voor onbeperkte roasts!</string>
+    <string name="ad_dialog_limit_message">Je maandelijkse AI Roast credits zijn op en je hebt de limiet voor advertenties bereikt. Upgrade naar Pro voor onbeperkte AI roasts of gebruik een sjabloon roast.</string>
+    <string name="ad_dialog_btn_watch">Bekijk advertentie (Ontgrendel 1 Roast) 📺</string>
+    <string name="ad_dialog_btn_pro">Upgraden naar Pro ⚡</string>
+    <string name="ad_dialog_btn_template">Genereer lokale sjabloon roast</string>
+    <string name="ad_toast_success">Advertentie bekeken! 1 AI Roast credit toegevoegd.</string>
+    <string name="pro_dialog_title">Upgrade naar PadelRoast Pro</string>
+    <string name="pro_dialog_subtitle">Krijg onbeperkte AI roasts, de losgeslagen MEEDOGENLOOS!! modus, exclusieve Pro thema-stijlen, en laat je status zien!</string>
+    <string name="pro_dialog_monthly_title">Maandelijkse Toegang</string>
+    <string name="pro_dialog_monthly_price">3,99 $ / maand</string>
+    <string name="pro_dialog_annual_title">Jaarlijkse Toegang</string>
+    <string name="pro_dialog_annual_price">29,99 $ / jaar - Bespaar 37%</string>
+    <string name="pro_dialog_subscribe_btn">Nu Abonneren</string>
+    <string name="pro_toast_success">Welkom bij PadelRoast Pro! ⚡ Je status is geüpgraded.</string>
+    <string name="permission_mic_denied">Microfoontoegang is vereist voor spraakdicteren.</string>
+    <string name="mic_tap_instruction">💡 Tik op de microfoon om het wedstrijdverhaal in te spreken!</string>
 </resources>

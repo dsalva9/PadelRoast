@@ -145,7 +145,8 @@ fun MainScreen(
                         isProUser = isProUser,
                         remainingAiCalls = remainingAiCalls,
                         onUpgradeClicked = {
-                            viewModel.upgradeToPro()
+                            selectedTab = 0
+                            viewModel.showProUpgradeDialog.value = true
                         }
                     )
                 }

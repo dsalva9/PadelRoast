@@ -11,6 +11,11 @@ import com.example.data.*
 import com.squareup.moshi.Moshi
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.delay
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import okhttp3.MultipartBody
+import okhttp3.RequestBody.Companion.asRequestBody
+import java.io.File
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
@@ -58,6 +63,11 @@ class BanterViewModel(
     val currentRoastIndex = MutableStateFlow(0)
     val isDetailsExpanded = MutableStateFlow(false)
 
+    // --- Voice Dictation State ---
+    private val audioRecorder = AudioRecorder(application)
+    val isRecording = MutableStateFlow(false)
+    val isTranscribing = MutableStateFlow(false)
+
     // --- Tier & settings state ---
     private val _remainingAiCalls = MutableStateFlow(userTier.getRemainingAiCalls())
     val remainingAiCalls: StateFlow<Int> = _remainingAiCalls.asStateFlow()
@@ -68,8 +78,16 @@ class BanterViewModel(
     private val _monthlyAiCount = MutableStateFlow(userTier.getMonthlyAiCount())
     val monthlyAiCount: StateFlow<Int> = _monthlyAiCount.asStateFlow()
 
+    private val _adUnlockedCount = MutableStateFlow(userTier.getAdUnlockedCount())
+    val adUnlockedCount: StateFlow<Int> = _adUnlockedCount.asStateFlow()
+
+    private val _canWatchAd = MutableStateFlow(userTier.canWatchAdForExtraRoast())
+    val canWatchAd: StateFlow<Boolean> = _canWatchAd.asStateFlow()
+
     private val _appLocale = MutableStateFlow(appSettings.appLocale)
     val appLocale: StateFlow<String> = _appLocale.asStateFlow()
+
+    val showProUpgradeDialog = MutableStateFlow(false)
 
     // Historical streams
     val matchHistory: StateFlow<List<MatchEntity>> = repository.allItemsFlowIfAny()
@@ -200,7 +218,10 @@ class BanterViewModel(
     /**
      * Generates a match roast using the secure 3-tier content flow.
      */
-    fun generateRoast() {
+    /**
+     * Generates a match roast using the secure 3-tier content flow.
+     */
+    fun generateRoast(forceTemplate: Boolean = false) {
         if (player1.value.isBlank() || player2.value.isBlank() || player3.value.isBlank() || player4.value.isBlank()) {
             generationState.value = GenerationState.Error("All 4 player fields must be filled!")
             return
@@ -236,8 +257,8 @@ class BanterViewModel(
 
         viewModelScope.launch {
             try {
-                // 2. Online AI path (if quota matches)
-                if (userTier.canUseAi()) {
+                // 2. Online AI path (if quota matches and template is not forced)
+                if (userTier.canUseAi() && !forceTemplate) {
                     // Extract match rivalry history
                     val history = getRivalryHistoryContext(p1, p2, p3, p4)
 
@@ -276,7 +297,7 @@ class BanterViewModel(
 
                     generationState.value = GenerationState.Success(response, matchId, isTemplate = false)
                 } else {
-                    // 3. Offline template fallback (quota exhausted)
+                    // 3. Offline template fallback (quota exhausted or forced)
                     val effectiveTone = if (tone == "SAVAGE!!" && !userTier.isProUser) "savage" else tone.lowercase()
                     val templateResponse = templateEngine.generate(
                         trigger = trigger,
@@ -336,6 +357,67 @@ class BanterViewModel(
         }
     }
 
+    /**
+     * Simulates watching a rewarded ad. Delays for 2 seconds, increments local ad unlocks, and runs the callback.
+     */
+    fun watchRewardedAd(onAdCompleted: () -> Unit) {
+        viewModelScope.launch {
+            delay(2000)
+            userTier.incrementAdUnlockedCount()
+            refreshTierState()
+            onAdCompleted()
+        }
+    }
+
+    /**
+     * Starts dictation audio capture.
+     */
+    fun startRecording() {
+        if (isRecording.value) return
+        val file = audioRecorder.startRecording()
+        if (file != null) {
+            isRecording.value = true
+        }
+    }
+
+    /**
+     * Stops dictation, uploads the local audio file to Supabase Edge Function transcribe-speech,
+     * and appends or sets the returned text in customContext.
+     */
+    fun stopAndTranscribe() {
+        if (!isRecording.value) return
+        isRecording.value = false
+        val file = audioRecorder.stopRecording() ?: return
+
+        isTranscribing.value = true
+        viewModelScope.launch {
+            try {
+                val requestFile = file.asRequestBody("audio/mpeg".toMediaTypeOrNull())
+                val bodyPart = MultipartBody.Part.createFormData("file", file.name, requestFile)
+
+                val response = RetrofitClient.service.transcribeSpeech(
+                    authHeader = "Bearer ${BuildConfig.SUPABASE_ANON_KEY}",
+                    apiKey = BuildConfig.SUPABASE_ANON_KEY,
+                    file = bodyPart
+                )
+
+                if (response.text.isNotBlank()) {
+                    val currentText = customContext.value.trim()
+                    if (currentText.isBlank()) {
+                        customContext.value = response.text
+                    } else {
+                        customContext.value = "$currentText\n${response.text}"
+                    }
+                }
+            } catch (e: Exception) {
+                e.printStackTrace()
+            } finally {
+                isTranscribing.value = false
+                audioRecorder.cleanUp()
+            }
+        }
+    }
+
     fun updateLocale(locale: String) {
         appSettings.appLocale = locale
         _appLocale.value = locale
@@ -350,6 +432,8 @@ class BanterViewModel(
         _isProUser.value = userTier.isProUser
         _remainingAiCalls.value = userTier.getRemainingAiCalls()
         _monthlyAiCount.value = userTier.getMonthlyAiCount()
+        _adUnlockedCount.value = userTier.getAdUnlockedCount()
+        _canWatchAd.value = userTier.canWatchAdForExtraRoast()
     }
 
     fun clearState() {
