@@ -1,10 +1,11 @@
 "use client";
 
 import React, { useState } from "react";
-import Image from "next/image";
-import { Download, Sparkles, ShieldCheck, CheckCircle2, Flame, Smartphone } from "lucide-react";
+import { Download, ShieldCheck, CheckCircle2, Flame, Smartphone } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function DownloadCTA() {
+  const { t } = useLanguage();
   const [downloadStarted, setDownloadStarted] = useState(false);
 
   const handleApkDownload = () => {
@@ -29,15 +30,15 @@ export default function DownloadCTA() {
           
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#CCFF00]/15 border border-[#CCFF00]/40 text-[#CCFF00] text-xs font-black uppercase tracking-wider mb-6">
             <Flame className="w-4 h-4 fill-[#CCFF00]" />
-            <span>Match Day Ready</span>
+            <span>{t.downloadSection.badge}</span>
           </div>
 
           <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight max-w-2xl mx-auto uppercase leading-tight">
-            Stop sending boring score screenshots.
+            {t.downloadSection.title}
           </h2>
 
           <p className="mt-4 text-base sm:text-lg text-slate-300 max-w-xl mx-auto font-medium">
-            Turn your next padel game into pure group chat gold. Download the Android beta directly right now.
+            {t.downloadSection.subtitle}
           </p>
 
           {/* Download Buttons Group */}
@@ -51,9 +52,9 @@ export default function DownloadCTA() {
               <Download className="w-5 h-5 stroke-[2.5]" />
               <div className="text-left leading-tight">
                 <span className="block text-[10px] font-bold uppercase tracking-wider text-black/70">
-                  Android Beta (v1.2)
+                  {t.downloadSection.btnApkTitle}
                 </span>
-                <span>Download APK (.apk)</span>
+                <span>{t.downloadSection.btnApkSub}</span>
               </div>
             </button>
 
@@ -67,9 +68,11 @@ export default function DownloadCTA() {
               </svg>
               <div className="text-left leading-tight">
                 <span className="block text-[9px] font-semibold text-slate-400 uppercase tracking-wider">
-                  Google Play Store
+                  {t.downloadSection.btnStoreTitle}
                 </span>
-                <span className="text-xs font-black text-slate-300">Publishing Soon</span>
+                <span className="text-xs font-black text-slate-300">
+                  {t.downloadSection.btnStoreSub}
+                </span>
               </div>
             </div>
 
@@ -78,7 +81,7 @@ export default function DownloadCTA() {
           {/* Download Notification banner if clicked */}
           {downloadStarted && (
             <div className="mt-5 p-3.5 bg-emerald-950/90 border border-emerald-500/50 rounded-xl text-xs text-emerald-300 max-w-md mx-auto animate-in fade-in">
-              ✓ Downloading <strong>padelroast-beta.apk</strong>! Open the downloaded file on your phone and tap <em>Install</em>.
+              {t.downloadSection.downloadSuccess}
             </div>
           )}
 
@@ -86,15 +89,15 @@ export default function DownloadCTA() {
           <div className="mt-12 pt-8 border-t border-slate-800/80 grid grid-cols-1 sm:grid-cols-3 gap-6 text-xs text-slate-400 text-left">
             <div className="flex items-start gap-3">
               <CheckCircle2 className="w-5 h-5 text-[#CCFF00] shrink-0 mt-0.5" />
-              <span><strong>100% Free to Use:</strong> No credit cards, no subscriptions required to start roasting.</span>
+              <span><strong>{t.downloadSection.tip1.title}</strong> {t.downloadSection.tip1.desc}</span>
             </div>
             <div className="flex items-start gap-3">
               <ShieldCheck className="w-5 h-5 text-[#00E5FF] shrink-0 mt-0.5" />
-              <span><strong>Signed Android APK:</strong> Verified safe package directly from the development team.</span>
+              <span><strong>{t.downloadSection.tip2.title}</strong> {t.downloadSection.tip2.desc}</span>
             </div>
             <div className="flex items-start gap-3">
               <Smartphone className="w-5 h-5 text-slate-300 shrink-0 mt-0.5" />
-              <span><strong>iOS Version Coming:</strong> TestFlight and App Store releases launching soon.</span>
+              <span><strong>{t.downloadSection.tip3.title}</strong> {t.downloadSection.tip3.desc}</span>
             </div>
           </div>
 

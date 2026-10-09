@@ -1,9 +1,12 @@
 "use client";
 
 import React from "react";
-import { MessageSquare, Share2, CheckCheck, Smile, Flame } from "lucide-react";
+import { MessageSquare, CheckCheck } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function WhatsAppPreview() {
+  const { t } = useLanguage();
+
   return (
     <section className="py-20 bg-[#0B0F19] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -13,13 +16,13 @@ export default function WhatsAppPreview() {
           <div className="text-center max-w-xl mx-auto mb-8">
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold uppercase tracking-wider mb-2">
               <MessageSquare className="w-3.5 h-3.5" />
-              <span>1-Tap WhatsApp Integration</span>
+              <span>{t.whatsappSection.badge}</span>
             </div>
             <h3 className="text-2xl sm:text-3xl font-black text-white">
-              Instant Group Chat Fireworks
+              {t.whatsappSection.title}
             </h3>
             <p className="text-sm text-slate-300 mt-2">
-              No manual typing. One tap formats the score, players, AI narrative, and card graphic ready to send.
+              {t.whatsappSection.subtitle}
             </p>
           </div>
 
@@ -34,15 +37,15 @@ export default function WhatsAppPreview() {
                 </div>
                 <div>
                   <h4 className="text-xs font-bold text-white leading-tight">
-                    Padel & Cervezas 🍺
+                    {t.whatsappSection.chatTitle}
                   </h4>
                   <p className="text-[10px] text-slate-400">
-                    Carlos, David, Alex, Marcos
+                    {t.whatsappSection.chatMembers}
                   </p>
                 </div>
               </div>
               <div className="text-emerald-400 text-xs font-bold px-2 py-0.5 rounded bg-emerald-950 border border-emerald-800">
-                Online
+                {t.whatsappSection.online}
               </div>
             </div>
 
@@ -52,8 +55,10 @@ export default function WhatsAppPreview() {
               {/* Other User Message */}
               <div className="flex items-end gap-2">
                 <div className="bg-[#202c33] text-slate-200 text-xs px-3 py-2 rounded-2xl rounded-bl-xs max-w-[80%] shadow-sm">
-                  <span className="text-[10px] font-bold text-emerald-400 block mb-0.5">David</span>
-                  Great match today guys! That 2nd set was super close right?
+                  <span className="text-[10px] font-bold text-emerald-400 block mb-0.5">
+                    {t.whatsappSection.friendMessageName}
+                  </span>
+                  {t.whatsappSection.friendMessageText}
                   <div className="text-[8px] text-slate-400 text-right mt-1">19:41</div>
                 </div>
               </div>
@@ -71,7 +76,7 @@ export default function WhatsAppPreview() {
                         className="object-cover w-full h-full"
                       />
                       <div className="absolute top-2 left-2 bg-black/80 px-2 py-0.5 rounded text-[9px] font-black text-[#CCFF00]">
-                        🔥 PADELROAST REPORT
+                        {t.whatsappSection.reportHeader}
                       </div>
                       <div className="absolute top-2 right-2 bg-black/80 px-2 py-0.5 rounded font-mono text-[9px] font-bold text-[#00E5FF]">
                         6-1, 6-0
@@ -79,16 +84,16 @@ export default function WhatsAppPreview() {
                     </div>
                     <div className="p-2.5">
                       <p className="text-[11px] font-black text-white leading-tight">
-                        &ldquo;A Formal Investigation Launched on Court 3&rdquo;
+                        {t.whatsappSection.cardTitle}
                       </p>
                       <p className="text-[9px] text-slate-300 mt-1 leading-snug">
-                        David & Alex suffered an unprecedented technical collapse. David&apos;s €340 carbon racket has filed for emotional emancipation.
+                        {t.whatsappSection.cardDesc}
                       </p>
                     </div>
                   </div>
 
                   <p className="text-xs leading-snug">
-                    🚨 Official result from Court 3: Carlos & Marcos take the victory 6-1 6-0! Rest in peace boys, post-match round of beers is on you 🍻💀
+                    {t.whatsappSection.officialMsg}
                   </p>
 
                   <div className="flex items-center justify-end gap-1 text-[8px] text-emerald-200 mt-1.5">
@@ -108,8 +113,10 @@ export default function WhatsAppPreview() {
               {/* Alex Reaction */}
               <div className="flex items-end gap-2 pt-1">
                 <div className="bg-[#202c33] text-slate-200 text-xs px-3 py-2 rounded-2xl rounded-bl-xs max-w-[80%] shadow-sm">
-                  <span className="text-[10px] font-bold text-rose-400 block mb-0.5">Alex</span>
-                  I hate this app so much 😭😭 Rematch next Tuesday, we are NOT ending like this!!
+                  <span className="text-[10px] font-bold text-rose-400 block mb-0.5">
+                    {t.whatsappSection.alexName}
+                  </span>
+                  {t.whatsappSection.alexMsg}
                   <div className="text-[8px] text-slate-400 text-right mt-1">19:43</div>
                 </div>
               </div>

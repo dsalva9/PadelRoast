@@ -2,10 +2,13 @@
 
 import React from "react";
 import Image from "next/image";
-import { Download, Flame, Zap, ShieldCheck, Skull, Trophy } from "lucide-react";
+import { Download, Flame, Zap, ShieldCheck, Skull } from "lucide-react";
 import PhoneMockup from "./PhoneMockup";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Hero() {
+  const { t } = useLanguage();
+
   return (
     <section id="demo" className="relative pt-10 pb-20 md:pt-16 md:pb-28 overflow-hidden bg-grid-pattern">
       {/* Ambient Court Lights */}
@@ -14,22 +17,19 @@ export default function Hero() {
       {/* Floating Streetwear Stickers (Desktop) */}
       <div className="hidden xl:block absolute top-28 left-6 rotate-[-6deg] z-20 pointer-events-none hover:rotate-0 transition-transform">
         <div className="bg-[#CCFF00] text-black font-black text-[11px] uppercase tracking-wider px-3.5 py-1.5 rounded-md shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] border-2 border-black flex items-center gap-1.5">
-          <span>🥯</span>
-          <span>CERTIFIED BAGEL VICTIM</span>
+          <span>{t.hero.stickers.bagelVictim}</span>
         </div>
       </div>
 
       <div className="hidden xl:block absolute top-96 left-12 rotate-[4deg] z-20 pointer-events-none">
         <div className="bg-[#FF3366] text-white font-black text-[11px] uppercase tracking-wider px-3.5 py-1.5 rounded-md shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] border-2 border-black flex items-center gap-1.5">
-          <Flame className="w-3.5 h-3.5 fill-white" />
-          <span>€380 RACKET • 0 ACES</span>
+          <span>{t.hero.stickers.expensiveRacket}</span>
         </div>
       </div>
 
       <div className="hidden xl:block absolute top-36 right-8 rotate-[5deg] z-20 pointer-events-none">
         <div className="bg-[#00E5FF] text-black font-black text-[11px] uppercase tracking-wider px-3 py-1.5 rounded-md shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] border-2 border-black flex items-center gap-1.5">
-          <Skull className="w-3.5 h-3.5" />
-          <span>WHATSAPP CHAT DESTROYER</span>
+          <span>{t.hero.stickers.chatDestroyer}</span>
         </div>
       </div>
 
@@ -46,39 +46,39 @@ export default function Hero() {
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-[#CCFF00]"></span>
               </span>
               <span className="text-xs font-black uppercase tracking-wider">
-                Amateur Padel Roast Engine
+                {t.hero.badgeEngine}
               </span>
               <span className="text-[10px] text-black font-black bg-[#CCFF00] px-1.5 py-0.5 rounded uppercase">
-                v1.2 Beta
+                {t.hero.badgeBeta}
               </span>
             </div>
 
             {/* Main Headline: Punchy, unapologetic */}
             <h1 className="text-4xl sm:text-6xl font-black tracking-tight text-white uppercase leading-[1.02]">
-              You played like crap.{" "}
+              {t.hero.headlineMain}{" "}
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#CCFF00] via-[#85ff4a] to-[#00E5FF]">
-                Your group chat deserves to know.
+                {t.hero.headlineHighlight}
               </span>
             </h1>
 
             {/* Subhead with real human padel attitude */}
             <p className="text-base sm:text-lg text-slate-300 max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium">
-              Log match scores in 10 seconds. Generate brutal AI roast cards that target €300 carbon rackets, fake calf injuries, and tragic missed bandejas. Drop them straight into WhatsApp before the beers arrive.
+              {t.hero.subhead}
             </p>
 
             {/* Feature Pills */}
             <div className="flex flex-wrap justify-center lg:justify-start gap-2.5 pt-1 text-xs font-extrabold">
               <div className="flex items-center gap-1.5 bg-slate-900 border border-slate-700/80 px-3 py-1.5 rounded-xl text-slate-200">
                 <Zap className="w-3.5 h-3.5 text-[#CCFF00]" />
-                <span>10-Second Post-Match Flow</span>
+                <span>{t.hero.pill1}</span>
               </div>
               <div className="flex items-center gap-1.5 bg-slate-900 border border-slate-700/80 px-3 py-1.5 rounded-xl text-slate-200">
                 <ShieldCheck className="w-3.5 h-3.5 text-[#00E5FF]" />
-                <span>Only 1 person needs the app</span>
+                <span>{t.hero.pill2}</span>
               </div>
               <div className="flex items-center gap-1.5 bg-slate-900 border border-slate-700/80 px-3 py-1.5 rounded-xl text-slate-200">
                 <Flame className="w-3.5 h-3.5 text-[#FF3366]" />
-                <span>Casual to Savage!! tones</span>
+                <span>{t.hero.pill3}</span>
               </div>
             </div>
 
@@ -89,21 +89,21 @@ export default function Hero() {
                 {/* Direct Download APK CTA */}
                 <a
                   href="#download"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#CCFF00] hover:bg-[#b5e000] text-black font-black text-base px-8 h-14 rounded-2xl shadow-[0_0_30px_rgba(204,255,0,0.35)] transition-all hover:-translate-y-0.5 active:translate-y-0"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#CCFF00] hover:bg-[#b5e000] text-black font-black text-base px-8 h-14 rounded-2xl shadow-[0_0_30px_rgba(204,255,0,0.35)] transition-all hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
                 >
                   <Download className="w-5 h-5 stroke-[2.5]" />
                   <div className="text-left leading-tight">
                     <span className="block text-[10px] font-bold uppercase tracking-wider text-black/75">
-                      Direct Android Beta
+                      {t.hero.ctaApkTitle}
                     </span>
-                    <span>Download APK (.apk)</span>
+                    <span>{t.hero.ctaApkSub}</span>
                   </div>
                 </a>
 
                 {/* Google Play Button */}
                 <a
                   href="#download"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-slate-900 hover:bg-slate-800 text-white font-bold text-base px-6 h-14 rounded-2xl border border-slate-700/80 shadow-md transition-all hover:-translate-y-0.5"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-slate-900 hover:bg-slate-800 text-white font-bold text-base px-6 h-14 rounded-2xl border border-slate-700/80 shadow-md transition-all hover:-translate-y-0.5 cursor-pointer"
                 >
                   <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none">
                     <path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92z" fill="#4285F4"/>
@@ -113,9 +113,9 @@ export default function Hero() {
                   </svg>
                   <div className="text-left leading-tight">
                     <span className="block text-[9px] font-semibold text-slate-400 uppercase tracking-wider">
-                      Google Play
+                      {t.hero.ctaPlayTitle}
                     </span>
-                    <span className="text-xs font-black text-white">Publishing Soon</span>
+                    <span className="text-xs font-black text-white">{t.hero.ctaPlaySub}</span>
                   </div>
                 </a>
               </div>
@@ -123,22 +123,22 @@ export default function Hero() {
               {/* iOS Notice */}
               <div className="flex items-center justify-center lg:justify-start gap-2 text-xs text-slate-400 font-medium">
                 <span className="text-sm">🍎</span>
-                <span>iOS version preparing for TestFlight & App Store.</span>
+                <span>{t.hero.iosNotice}</span>
               </div>
             </div>
 
             {/* Quick Proof Strip */}
             <div className="pt-4 border-t border-slate-800/80 flex items-center justify-center lg:justify-start gap-6 text-xs text-slate-400 font-medium">
               <div>
-                <strong className="text-white">100% Free</strong> to roast matches
+                <strong className="text-white">{t.hero.proofFree}</strong>
               </div>
               <div className="h-3 w-px bg-slate-800" />
               <div>
-                <strong className="text-[#CCFF00]">Ghost Profiles</strong> included
+                <strong className="text-[#CCFF00]">{t.hero.proofGhost}</strong>
               </div>
               <div className="h-3 w-px bg-slate-800" />
               <div>
-                <strong className="text-[#00E5FF]">1-Tap WhatsApp</strong> ready
+                <strong className="text-[#00E5FF]">{t.hero.proofWhatsApp}</strong>
               </div>
             </div>
 
@@ -159,11 +159,11 @@ export default function Hero() {
                 />
               </div>
               <div className="text-left">
-                <div className="text-[10px] font-black uppercase text-[#CCFF00] tracking-wide">
-                  Real AI Match Burns
+                <div className="text-[10px] font-black uppercase text-[#CCFF00]">
+                  {t.hero.teaserBadge}
                 </div>
-                <div className="text-[11px] text-slate-300 font-semibold leading-tight">
-                  Generates custom jokes based on actual set scores.
+                <div className="text-xs font-bold text-white leading-tight">
+                  {t.hero.teaserTitle}
                 </div>
               </div>
             </div>

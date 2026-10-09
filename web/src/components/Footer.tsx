@@ -2,9 +2,12 @@
 
 import React from "react";
 import { activeSport } from "@/config/sportConfig";
-import { Flame } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
+import LanguageSelector from "./LanguageSelector";
 
 export default function Footer() {
+  const { t } = useLanguage();
+
   return (
     <footer className="bg-slate-950 border-t border-slate-800/80 py-14 text-slate-400 text-xs">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
@@ -22,17 +25,23 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-xs text-slate-400">
-              Turn every match into content worth sharing.
+              {t.footerSection.tagline}
             </p>
           </div>
 
           {/* Quick jump */}
-          <div className="flex flex-wrap gap-6 text-xs font-semibold text-slate-300">
-            <a href="#demo" className="hover:text-[#CCFF00] transition-colors">Interactive Demo</a>
-            <a href="#tones" className="hover:text-[#CCFF00] transition-colors">Roast Levels</a>
-            <a href="#ghost-profiles" className="hover:text-[#CCFF00] transition-colors">Ghost Profiles</a>
-            <a href="#download" className="hover:text-[#CCFF00] transition-colors">Download APK</a>
-            <a href="#faq" className="hover:text-[#CCFF00] transition-colors">FAQ</a>
+          <div className="flex flex-wrap items-center gap-6 text-xs font-semibold text-slate-300">
+            <a href="#demo" className="hover:text-[#CCFF00] transition-colors">{t.nav.demo}</a>
+            <a href="#tones" className="hover:text-[#CCFF00] transition-colors">{t.nav.tones}</a>
+            <a href="#ghost-profiles" className="hover:text-[#CCFF00] transition-colors">{t.nav.howItWorks}</a>
+            <a href="#cards" className="hover:text-[#CCFF00] transition-colors">{t.nav.roastDeck}</a>
+            <a href="#download" className="hover:text-[#CCFF00] transition-colors">{t.nav.downloadApk}</a>
+            <a href="#faq" className="hover:text-[#CCFF00] transition-colors">{t.nav.faq}</a>
+            
+            {/* Language Selector in Footer */}
+            <div className="pt-1 md:pt-0">
+              <LanguageSelector />
+            </div>
           </div>
 
         </div>
@@ -40,7 +49,7 @@ export default function Footer() {
         {/* Sports Franchise Network Banner */}
         <div className="space-y-3">
           <div className="text-[11px] uppercase font-bold tracking-wider text-slate-400">
-            The Sports Banter Network
+            {t.footerSection.networkTitle}
           </div>
 
           <div className="flex flex-wrap gap-2.5">
@@ -65,8 +74,8 @@ export default function Footer() {
 
         {/* Bottom copyright & legal */}
         <div className="pt-6 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-400 text-[11px]">
-          <p>© 2026 PadelRoast. All rights reserved. Built for amateur padel lovers.</p>
-          <p className="italic">PadelRoast is designed for good-natured comedy & post-match group chat entertainment.</p>
+          <p>{t.footerSection.copyright}</p>
+          <p className="italic">{t.footerSection.disclaimer}</p>
         </div>
 
       </div>

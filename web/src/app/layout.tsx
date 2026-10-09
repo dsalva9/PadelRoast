@@ -72,6 +72,8 @@ const jsonLd = {
   ],
 };
 
+import { LanguageProvider } from "@/context/LanguageContext";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -86,7 +88,9 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased selection:bg-[#CCFF00] selection:text-black min-h-screen flex flex-col bg-[#0B0F19]">
-        {children}
+        <LanguageProvider>
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   );

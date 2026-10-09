@@ -2,10 +2,11 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { activeSport } from "@/config/sportConfig";
-import { Flame, Copy, Check, Sparkles, Skull, Trophy, AlertTriangle } from "lucide-react";
+import { Copy, Check, Sparkles } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function RoastCardDeck() {
+  const { t } = useLanguage();
   const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
 
   const handleCopy = (text: string, index: number) => {
@@ -14,44 +15,7 @@ export default function RoastCardDeck() {
     setTimeout(() => setCopiedIndex(null), 2500);
   };
 
-  const visualCards = [
-    {
-      title: "The All-Kit No-Hit Phenomenon",
-      subtitle: "Player of the Match (Victim Edition)",
-      badge: "BAGEL VICTIM 🥯",
-      badgeColor: "bg-[#FF3366] text-white",
-      image: "/images/padel-player-shock.jpg",
-      score: "6-0, 6-1",
-      quote: "Alex arrived with pro shoes, matching wristbands, and a €380 carbon racket, only to produce 38 unforced errors and 0 winners.",
-      whatsapp: "🚨 Court 3 Tragedy: Alex spent €380 on Bullpadel gear just to donate 38 balls to the side fence. Rest in peace brother 😂💀",
-      awardLabel: "Special Citation",
-      awardText: "Most Expensive Donation of Padel Balls",
-    },
-    {
-      title: "The Fried Egg Trophy",
-      subtitle: "Official Roast Deck MVP",
-      badge: "GOLDEN BAGEL 🏆",
-      badgeColor: "bg-[#CCFF00] text-black",
-      image: "/images/bagel-trophy.jpg",
-      score: "6-1, 6-0",
-      quote: "Awarded to David & Marcos for scoring exactly zero points on return and spending the third set arguing whether the glass was dirty.",
-      whatsapp: "🏆 Award Ceremony: David & Marcos take home the Golden Bagel! Beers on you guys tonight 🍻🍳",
-      awardLabel: "Official Award",
-      awardText: "The Lifetime Achievement in Net Shanking",
-    },
-    {
-      title: "Court 3 Crime Scene Report",
-      subtitle: "Confiscated Equipment",
-      badge: "FENCE SMASHER 🔥",
-      badgeColor: "bg-[#00E5FF] text-black",
-      image: "/images/padel-racket-fire.jpg",
-      score: "7-5, 6-1",
-      quote: "Police called to court 3 after Carlos hit the glass so violently the neighboring tennis club filed an earthquake tremor report.",
-      whatsapp: "Carlos's smash just passed low earth orbit 🚀 Neighbors thought it was thunder. Good win boys! 🎾⚡",
-      awardLabel: "Ballistic Analysis",
-      awardText: "14 Direct Hits on the Metal Enclosure",
-    },
-  ];
+  const visualCards = t.cardsSection.cards;
 
   return (
     <section id="cards" className="py-24 bg-slate-950 border-t border-slate-800/80 relative overflow-hidden">
@@ -65,16 +29,16 @@ export default function RoastCardDeck() {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#CCFF00]/15 border border-[#CCFF00]/40 text-[#CCFF00] text-xs font-black uppercase tracking-wider mb-3">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>The Hero Output</span>
+            <span>{t.cardsSection.badge}</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight uppercase">
-            Cards worth bragging{" "}
+            {t.cardsSection.titleMain}{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#CCFF00] via-amber-300 to-[#FF3366]">
-              (or crying) about.
+              {t.cardsSection.titleHighlight}
             </span>
           </h2>
           <p className="mt-4 text-base sm:text-lg text-slate-300 font-medium">
-            Every match generates high-resolution collectible cards customized with your friends&apos; names and actual mistakes.
+            {t.cardsSection.subtitle}
           </p>
         </div>
 
@@ -145,12 +109,12 @@ export default function RoastCardDeck() {
                   {copiedIndex === idx ? (
                     <>
                       <Check className="w-4 h-4 text-black" />
-                      <span className="text-black font-extrabold">Copied to Clipboard!</span>
+                      <span className="text-black font-extrabold">{t.cardsSection.copiedBtn}</span>
                     </>
                   ) : (
                     <>
                       <Copy className="w-4 h-4" />
-                      <span>Copy WhatsApp Banter</span>
+                      <span>{t.cardsSection.copyBtn}</span>
                     </>
                   )}
                 </button>

@@ -1,11 +1,13 @@
 "use client";
 
 import React, { useState } from "react";
-import { Flame, Download, ExternalLink, Menu, X, Smartphone } from "lucide-react";
-import { activeSport } from "@/config/sportConfig";
+import { Flame, Download, Menu, X } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
+import LanguageSelector from "./LanguageSelector";
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { t } = useLanguage();
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-slate-800/80 bg-[#0B0F19]/85 backdrop-blur-xl transition-all">
@@ -34,103 +36,110 @@ export default function Navbar() {
         </a>
 
         {/* Desktop Nav Links */}
-        <nav className="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-300">
+        <nav className="hidden md:flex items-center gap-7 text-sm font-semibold text-slate-300">
           <a href="#demo" className="hover:text-[#CCFF00] transition-colors">
-            Interactive Demo
+            {t.nav.demo}
           </a>
           <a href="#tones" className="hover:text-[#CCFF00] transition-colors">
-            Roast Levels
+            {t.nav.tones}
           </a>
           <a href="#ghost-profiles" className="hover:text-[#CCFF00] transition-colors">
-            How It Works
+            {t.nav.howItWorks}
           </a>
           <a href="#cards" className="hover:text-[#CCFF00] transition-colors">
-            Roast Deck
+            {t.nav.roastDeck}
           </a>
           <a href="#faq" className="hover:text-[#CCFF00] transition-colors">
-            FAQ
+            {t.nav.faq}
           </a>
         </nav>
 
-        {/* CTA Buttons */}
+        {/* Right Action Controls */}
         <div className="hidden lg:flex items-center gap-3">
+          {/* Language Selector Dropdown */}
+          <LanguageSelector />
+
           {/* iOS Coming Soon Pill */}
           <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900/80 border border-slate-800 text-[11px] font-semibold text-slate-400">
             <span className="text-sm">🍎</span>
-            <span>iOS Coming Soon</span>
+            <span>{t.nav.iosComingSoon}</span>
           </div>
 
           {/* Download APK Button */}
           <a
             href="#download"
-            className="flex items-center gap-2 bg-[#CCFF00] hover:bg-[#bceb00] text-black font-black text-xs px-4 py-2.5 rounded-xl shadow-[0_0_20px_rgba(204,255,0,0.3)] transition-all hover:scale-105 active:scale-95"
+            className="flex items-center gap-2 bg-[#CCFF00] hover:bg-[#bceb00] text-black font-black text-xs px-4 py-2.5 rounded-xl shadow-[0_0_20px_rgba(204,255,0,0.3)] transition-all hover:scale-105 active:scale-95 cursor-pointer"
           >
             <Download className="w-4 h-4" />
-            <span>Download APK</span>
+            <span>{t.nav.downloadApk}</span>
           </a>
         </div>
 
-        {/* Mobile Hamburger Button */}
-        <button
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden p-2 text-slate-400 hover:text-white focus:outline-none"
-        >
-          {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
+        {/* Mobile Header Controls */}
+        <div className="flex items-center gap-2 lg:hidden">
+          <LanguageSelector compact />
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="p-2 text-slate-400 hover:text-white focus:outline-none"
+            aria-label="Toggle navigation menu"
+          >
+            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-[#0B0F19] border-b border-slate-800 px-4 pt-3 pb-6 space-y-4">
+        <div className="lg:hidden bg-[#0B0F19] border-b border-slate-800 px-4 pt-3 pb-6 space-y-4">
           <div className="flex flex-col space-y-3 text-sm font-semibold text-slate-300">
             <a 
               href="#demo" 
               onClick={() => setMobileMenuOpen(false)}
               className="py-1 hover:text-[#CCFF00]"
             >
-              Interactive Demo
+              {t.nav.demo}
             </a>
             <a 
               href="#tones" 
               onClick={() => setMobileMenuOpen(false)}
               className="py-1 hover:text-[#CCFF00]"
             >
-              Roast Levels
+              {t.nav.tones}
             </a>
             <a 
               href="#ghost-profiles" 
               onClick={() => setMobileMenuOpen(false)}
               className="py-1 hover:text-[#CCFF00]"
             >
-              How It Works
+              {t.nav.howItWorks}
             </a>
             <a 
               href="#cards" 
               onClick={() => setMobileMenuOpen(false)}
               className="py-1 hover:text-[#CCFF00]"
             >
-              Roast Deck
+              {t.nav.roastDeck}
             </a>
             <a 
               href="#faq" 
               onClick={() => setMobileMenuOpen(false)}
               className="py-1 hover:text-[#CCFF00]"
             >
-              FAQ
+              {t.nav.faq}
             </a>
           </div>
 
-          <div className="pt-2 border-t border-slate-800 space-y-2">
+          <div className="pt-3 border-t border-slate-800 space-y-2.5">
             <a
               href="#download"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full flex items-center justify-center gap-2 bg-[#CCFF00] text-black font-black text-xs py-3 rounded-xl shadow-md"
+              className="w-full flex items-center justify-center gap-2 bg-[#CCFF00] text-black font-black text-xs py-3 rounded-xl shadow-md cursor-pointer"
             >
               <Download className="w-4 h-4" />
-              <span>Download Android APK</span>
+              <span>{t.nav.downloadApk}</span>
             </a>
             <div className="text-center text-[11px] text-slate-400 py-1">
-              🍎 iOS Version Coming Soon
+              🍎 {t.nav.iosComingSoon}
             </div>
           </div>
         </div>

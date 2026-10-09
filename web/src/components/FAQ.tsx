@@ -1,10 +1,11 @@
 "use client";
 
 import React, { useState } from "react";
-import { activeSport } from "@/config/sportConfig";
 import { ChevronDown, HelpCircle } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function FAQ() {
+  const { t } = useLanguage();
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const toggle = (idx: number) => {
@@ -18,15 +19,15 @@ export default function FAQ() {
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-slate-300 text-xs font-bold uppercase tracking-wider mb-3">
             <HelpCircle className="w-3.5 h-3.5 text-[#00E5FF]" />
-            <span>Got Questions?</span>
+            <span>{t.faqSection.badge}</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight">
-            Frequently Asked Questions
+            {t.faqSection.title}
           </h2>
         </div>
 
         <div className="space-y-3">
-          {activeSport.faqs.map((faq, idx) => {
+          {t.faqSection.faqs.map((faq, idx) => {
             const isOpen = openIndex === idx;
             return (
               <div
