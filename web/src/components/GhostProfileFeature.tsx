@@ -1,143 +1,113 @@
 "use client";
 
 import React from "react";
-import { UserCheck, Users, ShieldAlert, Zap, ArrowRight, Share2, MessageSquare } from "lucide-react";
+import { Users, XCircle, CheckCircle2, MessageSquare, Zap, ShieldAlert } from "lucide-react";
 
 export default function GhostProfileFeature() {
   return (
-    <section id="ghost-profiles" className="py-20 bg-[#0B0F19] relative overflow-hidden">
+    <section id="ghost-profiles" className="py-24 bg-[#0B0F19] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        {/* Header */}
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#00E5FF]/15 border border-[#00E5FF]/40 text-[#00E5FF] text-xs font-black uppercase tracking-wider mb-3">
+            <Users className="w-3.5 h-3.5" />
+            <span>Zero Friction Technology</span>
+          </div>
+          <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight uppercase">
+            Only ONE person needs the app.{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00E5FF] to-[#CCFF00]">
+              Seriously.
+            </span>
+          </h2>
+          <p className="mt-4 text-base sm:text-lg text-slate-300 font-medium">
+            We all have that friend who refuses to download anything new. With Ghost Profiles, nobody has to sign up to get roasted.
+          </p>
+        </div>
+
+        {/* Side-by-side Comparison Grid: Brutally honest */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           
-          {/* Left Column: Visual Diagram */}
-          <div className="lg:col-span-6 order-2 lg:order-1">
-            <div className="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl relative">
-              <div className="absolute top-0 right-0 transform translate-x-2 -translate-y-2 bg-[#CCFF00] text-black text-[10px] font-black uppercase px-3 py-1 rounded-full shadow-md">
-                Zero Friction
+          {/* Other Apps: Frustrating */}
+          <div className="bg-rose-950/20 border-2 border-rose-900/60 rounded-3xl p-8 shadow-xl flex flex-col justify-between">
+            <div>
+              <div className="flex items-center justify-between mb-6">
+                <span className="text-xs font-black uppercase tracking-wider px-3 py-1 rounded-full bg-rose-500/20 text-rose-400 border border-rose-500/30">
+                  Every Other Padel App 😩
+                </span>
+                <XCircle className="w-6 h-6 text-rose-500" />
               </div>
 
-              <h4 className="text-xs font-bold uppercase tracking-wider text-[#00E5FF] mb-4">
-                The Frictionless Viral Loop
-              </h4>
+              <h3 className="text-xl font-black text-white mb-4">
+                The 20-Minute Registration Hostage Situation
+              </h3>
 
-              {/* Step 1: Organizer */}
-              <div className="flex items-start gap-4 p-4 rounded-2xl bg-slate-950 border border-slate-800 mb-3">
-                <div className="w-10 h-10 rounded-xl bg-[#CCFF00] text-black font-black flex items-center justify-center shrink-0 text-sm">
-                  YOU
+              <div className="space-y-3.5 text-xs sm:text-sm text-slate-300">
+                <div className="flex items-start gap-2.5">
+                  <span className="text-rose-400 font-bold shrink-0">✕</span>
+                  <span>Requires all 4 players to download the app from Google Play/App Store.</span>
                 </div>
-                <div>
-                  <div className="font-extrabold text-sm text-white flex items-center gap-2">
-                    <span>You log the match</span>
-                    <span className="text-[10px] bg-emerald-500/20 text-emerald-400 font-bold px-2 py-0.5 rounded">
-                      Only 1 App Needed
-                    </span>
-                  </div>
-                  <p className="text-xs text-slate-400 mt-1">
-                    Enter the score and names. No invites or account requests sent to anyone.
-                  </p>
+                <div className="flex items-start gap-2.5">
+                  <span className="text-rose-400 font-bold shrink-0">✕</span>
+                  <span>Friend forgets password, OTP email lands in spam folder.</span>
                 </div>
-              </div>
-
-              {/* Arrow */}
-              <div className="flex justify-center my-1 text-slate-600">
-                ↓
-              </div>
-
-              {/* Step 2: Ghost Profiles */}
-              <div className="flex items-start gap-4 p-4 rounded-2xl bg-slate-950 border border-slate-800 mb-3">
-                <div className="w-10 h-10 rounded-xl bg-slate-800 text-slate-300 font-bold flex items-center justify-center shrink-0 text-sm">
-                  👻
+                <div className="flex items-start gap-2.5">
+                  <span className="text-rose-400 font-bold shrink-0">✕</span>
+                  <span>Requests phone contacts, location tracking, and credit cards.</span>
                 </div>
-                <div>
-                  <div className="font-extrabold text-sm text-white">
-                    Ghost Profiles Auto-Created
-                  </div>
-                  <p className="text-xs text-slate-400 mt-1">
-                    Carlos, David, Alex, and Marcos get instant Elo tracking & match history without creating passwords.
-                  </p>
+                <div className="flex items-start gap-2.5">
+                  <span className="text-rose-400 font-bold shrink-0">✕</span>
+                  <span>Everyone gets annoyed and sends a blurry score photo in WhatsApp anyway.</span>
                 </div>
               </div>
+            </div>
 
-              {/* Arrow */}
-              <div className="flex justify-center my-1 text-slate-600">
-                ↓
-              </div>
-
-              {/* Step 3: WhatsApp Explosion */}
-              <div className="flex items-start gap-4 p-4 rounded-2xl bg-[#0b141a] border border-emerald-900/60">
-                <div className="w-10 h-10 rounded-xl bg-emerald-600 text-white font-black flex items-center justify-center shrink-0 text-sm">
-                  <MessageSquare className="w-5 h-5" />
-                </div>
-                <div>
-                  <div className="font-extrabold text-sm text-white flex items-center gap-2">
-                    <span>Dropped into WhatsApp</span>
-                    <span className="text-[10px] bg-rose-500/20 text-rose-400 font-bold px-2 py-0.5 rounded">
-                      Instant Chaos
-                    </span>
-                  </div>
-                  <p className="text-xs text-slate-300 mt-1">
-                    Cards and recaps get shared. The group chat erupts into banter and rematch challenges.
-                  </p>
-                </div>
-              </div>
-
+            <div className="mt-8 pt-4 border-t border-rose-900/40 text-xs text-rose-300/80 italic font-medium">
+              Result: 0 fun, dead social feature.
             </div>
           </div>
 
-          {/* Right Column: Copy & Details */}
-          <div className="lg:col-span-6 order-1 lg:order-2 space-y-6">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#00E5FF]/10 border border-[#00E5FF]/30 text-[#00E5FF] text-xs font-bold uppercase tracking-wider">
-              <Users className="w-3.5 h-3.5" />
-              <span>Ghost Profiles & Claim System</span>
+          {/* PadelRoast: Frictionless & Fun */}
+          <div className="bg-gradient-to-b from-slate-900 to-[#0F172A] border-2 border-[#CCFF00] rounded-3xl p-8 shadow-[0_0_35px_rgba(204,255,0,0.15)] flex flex-col justify-between relative">
+            <div className="absolute -top-3.5 -right-3.5 bg-[#CCFF00] text-black font-black text-xs uppercase px-3 py-1 rounded-full shadow-md border-2 border-black rotate-3">
+              The PadelRoast Way ⚡
             </div>
 
-            <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight leading-tight">
-              Don&apos;t force your friends to download another app.
-            </h2>
-
-            <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
-              We all know that one friend who refuses to install anything new. With PadelRoast, they don&apos;t have to.
-            </p>
-
-            <div className="space-y-4 pt-2">
-              <div className="flex items-start gap-3">
-                <div className="w-6 h-6 rounded-full bg-[#CCFF00]/20 text-[#CCFF00] flex items-center justify-center shrink-0 mt-0.5 font-black text-xs">
-                  ✓
-                </div>
-                <div>
-                  <h4 className="text-sm font-bold text-white">Instant Name Reuse</h4>
-                  <p className="text-xs text-slate-400 mt-0.5">
-                    After your first match, your regular playing partners are saved locally for 1-tap selection next time.
-                  </p>
-                </div>
+            <div>
+              <div className="flex items-center justify-between mb-6">
+                <span className="text-xs font-black uppercase tracking-wider px-3 py-1 rounded-full bg-[#CCFF00]/20 text-[#CCFF00] border border-[#CCFF00]/40">
+                  Ghost Profiles System 🔥
+                </span>
+                <CheckCircle2 className="w-6 h-6 text-[#CCFF00]" />
               </div>
 
-              <div className="flex items-start gap-3">
-                <div className="w-6 h-6 rounded-full bg-[#CCFF00]/20 text-[#CCFF00] flex items-center justify-center shrink-0 mt-0.5 font-black text-xs">
-                  ✓
-                </div>
-                <div>
-                  <h4 className="text-sm font-bold text-white">Personalized Player Titles</h4>
-                  <p className="text-xs text-slate-400 mt-0.5">
-                    The AI assigns titles like <span className="text-[#CCFF00] font-semibold">&quot;Fence Smasher&quot;</span>, <span className="text-[#00E5FF] font-semibold">&quot;Baseline Hugger&quot;</span>, or <span className="text-rose-400 font-semibold">&quot;The Lob Addict&quot;</span> based on match stats.
-                  </p>
-                </div>
-              </div>
+              <h3 className="text-xl font-black text-white mb-4">
+                10 Seconds. 1 Phone. Group Chat Explosion.
+              </h3>
 
-              <div className="flex items-start gap-3">
-                <div className="w-6 h-6 rounded-full bg-[#CCFF00]/20 text-[#CCFF00] flex items-center justify-center shrink-0 mt-0.5 font-black text-xs">
-                  ✓
+              <div className="space-y-3.5 text-xs sm:text-sm text-slate-200">
+                <div className="flex items-start gap-2.5">
+                  <span className="text-[#CCFF00] font-black shrink-0">✓</span>
+                  <span><strong>Only YOU need the app:</strong> Just type your 3 friends&apos; first names.</span>
                 </div>
-                <div>
-                  <h4 className="text-sm font-bold text-white">Claim Anytime</h4>
-                  <p className="text-xs text-slate-400 mt-0.5">
-                    When your friends eventually install PadelRoast, they can claim their Ghost Profile to instantly inherit their complete match record.
-                  </p>
+                <div className="flex items-start gap-2.5">
+                  <span className="text-[#CCFF00] font-black shrink-0">✓</span>
+                  <span><strong>Zero Signups:</strong> No invites, no emails, no SMS verification codes.</span>
+                </div>
+                <div className="flex items-start gap-2.5">
+                  <span className="text-[#CCFF00] font-black shrink-0">✓</span>
+                  <span><strong>Ghost Profiles track history:</strong> Elo ratings and titles accumulate automatically.</span>
+                </div>
+                <div className="flex items-start gap-2.5">
+                  <span className="text-[#CCFF00] font-black shrink-0">✓</span>
+                  <span><strong>Claim Anytime:</strong> If your friend eventually installs the app, they can claim their profile with 1 tap.</span>
                 </div>
               </div>
             </div>
 
+            <div className="mt-8 pt-4 border-t border-slate-800 text-xs text-[#CCFF00] font-black uppercase tracking-wider">
+              Result: 15 seconds to viral WhatsApp comedy.
+            </div>
           </div>
 
         </div>

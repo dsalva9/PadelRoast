@@ -232,18 +232,37 @@ export default function PhoneMockup() {
                     </span>
                   </div>
 
-                  <div className="my-2">
-                    <h4 className="text-xs font-black text-white leading-tight mb-1.5">
+                  {/* Mini Card Image Header */}
+                  <div className="relative h-18 w-full rounded-xl overflow-hidden my-1 bg-slate-950 border border-slate-800">
+                    <img
+                      src={
+                        selectedScenarioIndex === 0
+                          ? "/images/padel-player-shock.jpg"
+                          : selectedScenarioIndex === 1
+                          ? "/images/bagel-trophy.jpg"
+                          : "/images/padel-racket-fire.jpg"
+                      }
+                      alt="Roast Scene"
+                      className="object-cover w-full h-full"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                    <span className="absolute bottom-1 left-2 text-[9px] font-black text-[#CCFF00]">
+                      EVIDENCE #0{selectedScenarioIndex + 1}
+                    </span>
+                  </div>
+
+                  <div className="my-1">
+                    <h4 className="text-xs font-black text-white leading-tight mb-1">
                       {scenario.headline}
                     </h4>
-                    <p className="text-[10px] text-slate-300 leading-relaxed">
+                    <p className="text-[9px] text-slate-300 leading-snug line-clamp-3">
                       {scenario.body}
                     </p>
                   </div>
 
-                  <div className="bg-slate-950/70 p-2 rounded-xl border border-slate-800/80">
-                    <div className="text-[8px] uppercase font-bold text-slate-400">Match MVP</div>
-                    <div className="text-[9px] text-[#CCFF00] font-semibold truncate">
+                  <div className="bg-slate-950/80 p-1.5 rounded-lg border border-slate-800/80">
+                    <div className="text-[7px] uppercase font-black text-slate-400">Match MVP</div>
+                    <div className="text-[8px] text-[#00E5FF] font-semibold truncate">
                       The side glass panel (absorbed 16 direct shanks)
                     </div>
                   </div>

@@ -62,18 +62,29 @@ export default function WhatsAppPreview() {
               <div className="flex flex-col items-end">
                 <div className="bg-[#005c4b] text-white rounded-2xl rounded-br-xs p-3 max-w-[90%] shadow-md border border-emerald-500/20">
                   
-                  {/* Embedded Roast Card Mini */}
-                  <div className="bg-[#0b141a] rounded-xl p-3 border border-[#CCFF00]/40 mb-2">
-                    <div className="flex justify-between items-center text-[10px] mb-1">
-                      <span className="font-extrabold text-[#CCFF00]">🔥 PADELROAST REPORT</span>
-                      <span className="font-mono font-bold text-[#00E5FF]">6-1, 6-0</span>
+                  {/* Embedded Roast Card Mini with Real Graphic */}
+                  <div className="bg-[#0b141a] rounded-xl overflow-hidden border border-[#CCFF00]/40 mb-2.5">
+                    <div className="relative h-32 w-full">
+                      <img
+                        src="/images/bagel-trophy.jpg"
+                        alt="Roast Card Preview"
+                        className="object-cover w-full h-full"
+                      />
+                      <div className="absolute top-2 left-2 bg-black/80 px-2 py-0.5 rounded text-[9px] font-black text-[#CCFF00]">
+                        🔥 PADELROAST REPORT
+                      </div>
+                      <div className="absolute top-2 right-2 bg-black/80 px-2 py-0.5 rounded font-mono text-[9px] font-bold text-[#00E5FF]">
+                        6-1, 6-0
+                      </div>
                     </div>
-                    <p className="text-[11px] font-bold text-white leading-tight">
-                      &ldquo;A Formal Investigation Launched on Court 3&rdquo;
-                    </p>
-                    <p className="text-[9px] text-slate-300 mt-1 leading-snug">
-                      David and Alex suffered an unprecedented technical collapse. David&apos;s €340 carbon racket has filed for emotional emancipation.
-                    </p>
+                    <div className="p-2.5">
+                      <p className="text-[11px] font-black text-white leading-tight">
+                        &ldquo;A Formal Investigation Launched on Court 3&rdquo;
+                      </p>
+                      <p className="text-[9px] text-slate-300 mt-1 leading-snug">
+                        David & Alex suffered an unprecedented technical collapse. David&apos;s €340 carbon racket has filed for emotional emancipation.
+                      </p>
+                    </div>
                   </div>
 
                   <p className="text-xs leading-snug">
