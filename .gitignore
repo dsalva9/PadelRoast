@@ -16,3 +16,12 @@
 local.properties
 .env
 debug.keystore
+
+# Web Landing Page
+web/node_modules/
+web/.next/
+web/out/
+web/.vercel/
+web/*.tsbuildinfo
+web/npm-debug.log*
+
